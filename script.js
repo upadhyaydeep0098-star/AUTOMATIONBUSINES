@@ -9,14 +9,13 @@ setHeaderState();
 window.addEventListener("scroll", setHeaderState, { passive: true });
 
 /* ---------- Form handler ----------
- * Lets the form submit natively to Formspree when configured.
- * Falls back to opening a pre-filled mailto: until Formspree is set up.
+ * Lets configured forms submit natively to Formspree.
+ * Falls back to opening a pre-filled mailto: if a form has no form backend.
  */
 taskForms.forEach((form) => {
   form.addEventListener("submit", (event) => {
     const action = form.getAttribute("action") || "";
-    const formspreeReady =
-      action.startsWith("https://formspree.io/") && !action.includes("YOURFORMID");
+    const formspreeReady = action.startsWith("https://formspree.io/f/");
 
     if (formspreeReady) {
       // Let the form submit natively to Formspree.

@@ -123,16 +123,24 @@ Once propagation finishes, `yudilabs.com` shows your site with **automatic free 
 
 ## Part 5 — Optional but recommended
 
-### Set up Formspree for working contact forms
+### Contact forms
 
-1. Sign up at [formspree.io](https://formspree.io) (free tier: 50 submissions/month)
-2. Create a new form, copy your **form ID** (looks like `xyzabc12`)
-3. In your project files, find and replace `YOURFORMID` with your actual form ID across these 4 files:
-   - `index.html`
-   - `about.html`
-   - `services.html`
-   - `contact.html`
-4. Commit + push → forms now email you directly when someone submits
+The site forms are already wired to Formspree:
+
+```text
+https://formspree.io/f/xzdoqpke
+```
+
+Forms currently submit from:
+
+- `index.html`
+- `about.html`
+- `services.html`
+- `contact.html`
+- `blog.html`
+
+After deploying, submit one test message and confirm it appears in the
+Formspree dashboard and arrives at `hello@yudilabs.com`.
 
 ### Add analytics (free)
 

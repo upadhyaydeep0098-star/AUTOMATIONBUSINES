@@ -112,7 +112,13 @@
           <h2>One useful article a month. No fluff.</h2>
           <p>Subscribe to get new automation playbooks, AI agent breakdowns, and case studies in your inbox.</p>
         </div>
-        <form class="task-form" action="mailto:hello@yudilabs.com" method="post" enctype="text/plain">
+        <form class="task-form"
+              action="https://formspree.io/f/xzdoqpke"
+              method="POST"
+              aria-label="Yudi Labs newsletter signup form">
+          <input type="hidden" name="_subject" value="New Yudi Labs newsletter signup" />
+          <input type="hidden" name="_next" value="https://yudilabs.com/thank-you.html" />
+          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true" />
           <label>
             <span>Your email</span>
             <input type="email" name="email" placeholder="you@company.com" required />
