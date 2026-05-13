@@ -1,0 +1,17 @@
+{
+  "name": "Yudi Labs — AI Automation Agency",
+  "short_name": "Yudi Labs",
+  "description": "AI automation agency helping businesses automate workflows and admin work inside the tools they already use.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fbf8f1",
+  "theme_color": "#11615b",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
