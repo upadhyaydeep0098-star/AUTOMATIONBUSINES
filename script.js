@@ -1,4 +1,4 @@
-const header = document.querySelector(".site-header");
+const header = document.querySelector(".site-header, .m-header");
 const taskForms = document.querySelectorAll(".task-form");
 
 function setHeaderState() {
@@ -15,7 +15,8 @@ window.addEventListener("scroll", setHeaderState, { passive: true });
 taskForms.forEach((form) => {
   form.addEventListener("submit", (event) => {
     const action = form.getAttribute("action") || "";
-    const formspreeReady = action.startsWith("https://formspree.io/f/");
+    const formspreeReady =
+      action.startsWith("https://formspree.io/f/") && !action.includes("YOURFORMID");
 
     if (formspreeReady) {
       // Let the form submit natively to Formspree.
@@ -89,6 +90,6 @@ if ("IntersectionObserver" in window && counters.length) {
 }
 
 /* ---------- Marquee — duplicate children for seamless loop ---------- */
-document.querySelectorAll(".marquee-track").forEach((track) => {
+document.querySelectorAll(".marquee-track, .m-marquee-track").forEach((track) => {
   track.innerHTML += track.innerHTML;
 });
