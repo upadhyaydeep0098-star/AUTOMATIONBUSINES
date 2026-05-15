@@ -2813,6 +2813,9 @@ body.minimal .pain-list span { color: #df6d55; }
 
 /* Gap section — flatten warm background */
 body.minimal .gap {
+  width: 100%;
+  max-width: none;
+  margin: 0;
   background: transparent;
   border-top: 1px solid rgba(10, 10, 10, 0.06);
   border-bottom: 1px solid rgba(10, 10, 10, 0.06);
@@ -2834,6 +2837,12 @@ body.minimal .gap-grid article::before { display: none; }
 body.minimal .gap-label { color: rgba(10, 10, 10, 0.42); }
 body.minimal .gap-grid h3 { color: #0a0a0a; }
 body.minimal .gap-grid p { color: rgba(10, 10, 10, 0.55); }
+
+@media (max-width: 720px) {
+  body.minimal .gap {
+    padding: 80px 24px;
+  }
+}
 
 /* Card-based grids — soften */
 body.minimal .example-grid article,
