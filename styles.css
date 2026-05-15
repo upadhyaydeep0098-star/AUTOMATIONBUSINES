@@ -2148,7 +2148,13 @@ body.minimal {
   font-feature-settings: "ss01", "cv11";
 }
 
-body.minimal a { color: inherit; text-decoration: none; }
+body.minimal a { text-decoration: none; color: inherit; }
+body.minimal a.m-btn,
+body.minimal a.m-cta,
+body.minimal a.button,
+body.minimal a.header-cta {
+  color: #faf8f4 !important;
+}
 
 .m-container {
   width: min(1120px, calc(100% - 48px));
@@ -2684,3 +2690,380 @@ body.minimal .reveal.in-view {
   body.minimal .reveal { opacity: 1; transform: none; transition: none; }
   .m-marquee-track, .m-dot { animation: none; }
 }
+
+
+/* ==========================================================================
+   BODY.MINIMAL OVERRIDES — apply minimal aesthetic to legacy components
+   ========================================================================== */
+
+/* Hide the brutalist intro band entirely on minimal pages */
+body.minimal .intro-band {
+  background: transparent;
+  border-top: 1px solid rgba(10, 10, 10, 0.06);
+  border-bottom: 1px solid rgba(10, 10, 10, 0.06);
+  padding: 28px 24px;
+}
+body.minimal .intro-band p {
+  color: rgba(10, 10, 10, 0.55);
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: -0.005em;
+}
+
+/* Section padding + container */
+body.minimal .section {
+  padding: 120px 0;
+  width: min(1120px, calc(100% - 48px));
+}
+@media (max-width: 720px) {
+  body.minimal .section { padding: 80px 0; }
+}
+
+/* Typography overrides */
+body.minimal h1,
+body.minimal h2,
+body.minimal h3 {
+  font-family: "Inter Tight", "Inter", sans-serif;
+  letter-spacing: -0.03em;
+  color: #0a0a0a;
+}
+body.minimal h1 { font-weight: 700; line-height: 1; }
+body.minimal h2 { font-weight: 700; line-height: 1.05; }
+body.minimal h3 { font-weight: 600; letter-spacing: -0.02em; }
+
+body.minimal .eyebrow {
+  color: rgba(10, 10, 10, 0.42);
+  font-size: 0.74rem;
+  letter-spacing: 0.14em;
+}
+
+/* Page hero — clean & spacious */
+body.minimal .page-hero {
+  background: transparent;
+  padding: 200px 0 80px;
+}
+body.minimal .page-hero h1 {
+  font-size: clamp(2.6rem, 6.2vw, 5.4rem);
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  max-width: 900px;
+  text-wrap: balance;
+}
+body.minimal .page-hero p {
+  color: rgba(10, 10, 10, 0.55);
+  font-size: clamp(1.05rem, 1.4vw, 1.25rem);
+  font-weight: 400;
+  max-width: 640px;
+  letter-spacing: -0.005em;
+  margin-bottom: 32px;
+}
+@media (max-width: 720px) {
+  body.minimal .page-hero { padding: 140px 0 60px; }
+}
+
+/* Mission section — flatten gradient */
+body.minimal .mission {
+  background: transparent;
+  color: #0a0a0a;
+  padding: 120px max(24px, calc((100vw - 1120px) / 2));
+  border-top: 1px solid rgba(10, 10, 10, 0.06);
+  border-bottom: 1px solid rgba(10, 10, 10, 0.06);
+}
+body.minimal .mission .eyebrow,
+body.minimal .mission-eyebrow { color: rgba(10, 10, 10, 0.42) !important; }
+body.minimal .mission h2 { color: #0a0a0a; }
+body.minimal .mission p {
+  color: rgba(10, 10, 10, 0.55);
+  font-size: 1.05rem;
+}
+
+/* Mission values — clean cards */
+body.minimal .value-card {
+  background: transparent;
+  border: 1px solid rgba(10, 10, 10, 0.1);
+  padding: 28px;
+  border-radius: 12px;
+}
+body.minimal .value-card h3 { color: #0a0a0a; font-size: 1.05rem; }
+body.minimal .value-card p { color: rgba(10, 10, 10, 0.55); font-weight: 400; }
+body.minimal .value-num {
+  background: #0a0a0a;
+  color: #faf8f4;
+  font-size: 0.74rem;
+}
+
+/* Problem section — flatten dark gradient */
+body.minimal .problem {
+  background: transparent;
+  color: #0a0a0a;
+  padding: 120px max(24px, calc((100vw - 1120px) / 2));
+  border-top: 1px solid rgba(10, 10, 10, 0.06);
+}
+body.minimal .problem .eyebrow { color: rgba(10, 10, 10, 0.42) !important; }
+body.minimal .problem h2 { color: #0a0a0a; }
+body.minimal .problem-copy p { color: rgba(10, 10, 10, 0.55) !important; }
+body.minimal .pain-list div {
+  background: transparent;
+  border: 1px solid rgba(10, 10, 10, 0.08);
+  color: #0a0a0a;
+  font-weight: 500;
+}
+body.minimal .pain-list span { color: #df6d55; }
+
+/* Gap section — flatten warm background */
+body.minimal .gap {
+  background: transparent;
+  border-top: 1px solid rgba(10, 10, 10, 0.06);
+  border-bottom: 1px solid rgba(10, 10, 10, 0.06);
+  padding: 120px max(24px, calc((100vw - 1120px) / 2));
+}
+body.minimal .gap-grid article {
+  background: transparent;
+  border: 1px solid rgba(10, 10, 10, 0.1);
+  border-radius: 12px;
+  box-shadow: none;
+  transition: background 220ms ease, transform 220ms ease;
+}
+body.minimal .gap-grid article:hover {
+  background: rgba(10, 10, 10, 0.02);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(10, 10, 10, 0.06);
+}
+body.minimal .gap-grid article::before { display: none; }
+body.minimal .gap-label { color: rgba(10, 10, 10, 0.42); }
+body.minimal .gap-grid h3 { color: #0a0a0a; }
+body.minimal .gap-grid p { color: rgba(10, 10, 10, 0.55); }
+
+/* Card-based grids — soften */
+body.minimal .example-grid article,
+body.minimal .use-case-grid article,
+body.minimal .step-row article,
+body.minimal .blog-card,
+body.minimal .price-card,
+body.minimal .quote-grid figure,
+body.minimal .proof-list div {
+  background: transparent;
+  border: 1px solid rgba(10, 10, 10, 0.1);
+  border-radius: 12px;
+  box-shadow: none;
+  transition: background 220ms ease, transform 220ms ease, box-shadow 220ms ease;
+}
+body.minimal .example-grid article:hover,
+body.minimal .use-case-grid article:hover,
+body.minimal .blog-card:hover {
+  background: rgba(10, 10, 10, 0.02);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(10, 10, 10, 0.06);
+}
+body.minimal .example-grid article::before,
+body.minimal .use-case-grid article::before,
+body.minimal .blog-card::before { display: none; }
+
+body.minimal .example-grid p,
+body.minimal .use-case-grid p,
+body.minimal .step-row p,
+body.minimal .blog-card p { color: rgba(10, 10, 10, 0.55); font-weight: 400; }
+body.minimal .card-icon { color: rgba(10, 10, 10, 0.42); }
+body.minimal .use-case-icon {
+  background: rgba(10, 10, 10, 0.05);
+  color: #0a0a0a;
+}
+body.minimal .step-row span {
+  background: #0a0a0a;
+  color: #faf8f4;
+}
+
+/* Plain-copy sticky panel — flatten */
+body.minimal .plain-copy {
+  background: transparent;
+  border: 1px solid rgba(10, 10, 10, 0.1);
+  color: #0a0a0a;
+  box-shadow: none;
+  border-radius: 12px;
+}
+body.minimal .plain-copy p { color: #0a0a0a; }
+
+/* Quotes section */
+body.minimal .quote-grid blockquote { color: #0a0a0a; }
+body.minimal .quote-grid figcaption { color: rgba(10, 10, 10, 0.42); }
+body.minimal .quote-grid p { color: rgba(10, 10, 10, 0.55); }
+
+/* Pricing — minimal */
+body.minimal .price-card.featured {
+  background: #0a0a0a;
+  border-color: transparent;
+  color: #faf8f4;
+}
+body.minimal .price-card.featured h3 { color: #faf8f4; }
+body.minimal .price-card.featured p { color: rgba(250, 248, 244, 0.7); }
+body.minimal .plan-label { color: #df6d55; }
+
+/* Final CTA — flatten gradient */
+body.minimal .final-cta {
+  background: transparent;
+  border: 1px solid rgba(10, 10, 10, 0.1);
+  border-radius: 16px;
+  box-shadow: none;
+  color: #0a0a0a;
+}
+body.minimal .final-cta .eyebrow { color: rgba(10, 10, 10, 0.42) !important; }
+body.minimal .final-cta h2 { color: #0a0a0a; }
+body.minimal .final-cta p { color: rgba(10, 10, 10, 0.55) !important; }
+
+/* Form fields — minimal */
+body.minimal .task-form {
+  background: transparent;
+  border: 1px solid rgba(10, 10, 10, 0.1);
+  border-radius: 12px;
+}
+body.minimal .task-form span {
+  color: rgba(10, 10, 10, 0.7) !important;
+  font-size: 0.84rem;
+}
+body.minimal .task-form input,
+body.minimal .task-form textarea {
+  background: #fff;
+  border: 1px solid rgba(10, 10, 10, 0.12);
+  color: #0a0a0a;
+  border-radius: 8px;
+}
+body.minimal .task-form input:focus,
+body.minimal .task-form textarea:focus {
+  outline: none;
+  border-color: #0a0a0a;
+  box-shadow: 0 0 0 3px rgba(10, 10, 10, 0.06);
+}
+
+/* Buttons on legacy classes — restore visible text */
+body.minimal a.button,
+body.minimal button.button {
+  color: #faf8f4;
+  background: #0a0a0a;
+  border-radius: 999px;
+  border: none;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+}
+body.minimal .button-primary { background: #0a0a0a; color: #faf8f4; box-shadow: none; }
+body.minimal .button-primary:hover { background: #1a1a1a; }
+body.minimal .button-secondary {
+  background: transparent;
+  color: #0a0a0a;
+  border: 1px solid rgba(10, 10, 10, 0.18);
+}
+body.minimal .button-card {
+  background: transparent;
+  color: #0a0a0a;
+  border: 1px solid rgba(10, 10, 10, 0.18);
+}
+
+/* CTA band (in articles) */
+body.minimal .cta-band {
+  background: #0a0a0a;
+  border-radius: 16px;
+  color: #faf8f4;
+}
+body.minimal .cta-band h3 { color: #faf8f4; }
+body.minimal .cta-band p { color: rgba(250, 248, 244, 0.7); }
+body.minimal .cta-band .button { background: #faf8f4; color: #0a0a0a; }
+
+/* Article body typography */
+body.minimal .article-hero {
+  background: transparent;
+  padding: 200px 0 56px;
+}
+body.minimal .article-body h2 {
+  font-size: clamp(1.7rem, 3vw, 2.3rem);
+  margin-top: 56px;
+}
+body.minimal .article-body p,
+body.minimal .article-body ul,
+body.minimal .article-body ol { color: rgba(10, 10, 10, 0.7); }
+body.minimal .article-body strong { color: #0a0a0a; }
+
+/* FAQ on inner pages */
+body.minimal .faq-list details {
+  background: transparent;
+  border: 1px solid rgba(10, 10, 10, 0.1);
+  border-radius: 12px;
+  box-shadow: none;
+}
+body.minimal .faq-list details[open] {
+  background: rgba(10, 10, 10, 0.02);
+  box-shadow: none;
+}
+body.minimal .faq-list summary { color: #0a0a0a; }
+body.minimal .faq-list summary::after { color: #df6d55; }
+body.minimal .faq-list details p { color: rgba(10, 10, 10, 0.6); }
+
+/* Founder bio (about page) */
+body.minimal .founder-avatar {
+  background:
+    radial-gradient(circle at 30% 30%, rgba(255,255,255,0.12), transparent 50%),
+    linear-gradient(135deg, #1a1a1a, #0a0a0a);
+}
+body.minimal .founder-name { color: #0a0a0a !important; }
+body.minimal .founder-title { color: #df6d55 !important; }
+body.minimal .founder-bio p { color: rgba(10, 10, 10, 0.6); }
+body.minimal .founder-credentials li {
+  background: transparent;
+  border-left: 2px solid #df6d55;
+  color: #0a0a0a;
+}
+body.minimal .founder-credentials strong { color: #0a0a0a; }
+body.minimal .founder-link { color: #0a0a0a !important; }
+
+/* Stats row — keep minimal */
+body.minimal .stats-row {
+  background: transparent;
+  border: 1px solid rgba(10, 10, 10, 0.08);
+  border-radius: 16px;
+  box-shadow: none;
+}
+body.minimal .stat-num {
+  background: linear-gradient(135deg, #0a0a0a, #3a3a3a);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+body.minimal .stat-label { color: rgba(10, 10, 10, 0.5); }
+
+/* Marquee (legacy) */
+body.minimal .marquee {
+  background: transparent;
+  border-top: 1px solid rgba(10, 10, 10, 0.06);
+  border-bottom: 1px solid rgba(10, 10, 10, 0.06);
+}
+body.minimal .marquee-item { color: rgba(10, 10, 10, 0.42); }
+
+/* Bento (legacy) — soften */
+body.minimal .bento article {
+  background: transparent;
+  border: 1px solid rgba(10, 10, 10, 0.1);
+  box-shadow: none;
+}
+body.minimal .bento article:hover {
+  background: rgba(10, 10, 10, 0.02);
+}
+body.minimal .bento .b-num { color: rgba(10, 10, 10, 0.05); }
+body.minimal .bento .b-tag { background: rgba(10, 10, 10, 0.06); color: #0a0a0a; }
+
+/* TLDR boxes in articles */
+body.minimal .tldr {
+  background: rgba(10, 10, 10, 0.03);
+  border-left: 2px solid #0a0a0a;
+  color: #0a0a0a;
+}
+body.minimal .tldr strong { color: #0a0a0a; }
+
+/* Checklist (in pillar pages) */
+body.minimal .checklist li {
+  background: rgba(10, 10, 10, 0.03);
+  color: #0a0a0a;
+}
+body.minimal .checklist li::before {
+  background: #0a0a0a;
+}
+
+/* Hide hero overlay/image on minimal — they're for old hero */
+body.minimal .hero { background: transparent; }
