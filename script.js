@@ -93,3 +93,61 @@ if ("IntersectionObserver" in window && counters.length) {
 document.querySelectorAll(".marquee-track, .m-marquee-track").forEach((track) => {
   track.innerHTML += track.innerHTML;
 });
+
+/* ---------- Services page: plain English toggle ---------- */
+const serviceLanguageButtons = document.querySelectorAll("[data-service-language]");
+const serviceCopyBlocks = document.querySelectorAll("[data-service-copy]");
+
+function setServiceLanguage(language) {
+  serviceLanguageButtons.forEach((button) => {
+    button.setAttribute(
+      "aria-pressed",
+      button.dataset.serviceLanguage === language ? "true" : "false"
+    );
+  });
+
+  serviceCopyBlocks.forEach((block) => {
+    block.hidden = block.dataset.serviceCopy !== language;
+  });
+}
+
+if (serviceLanguageButtons.length && serviceCopyBlocks.length) {
+  setServiceLanguage("plain");
+  serviceLanguageButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      setServiceLanguage(button.dataset.serviceLanguage || "plain");
+    });
+  });
+}
+
+/* ---------- Services page: ROI calculator ---------- */
+const roiCalculator = document.querySelector("[data-roi-calculator]");
+
+if (roiCalculator) {
+  const hoursInput = roiCalculator.querySelector("[data-roi-hours]");
+  const rateInput = roiCalculator.querySelector("[data-roi-rate]");
+  const hoursValue = roiCalculator.querySelector("[data-roi-hours-value]");
+  const annualOutput = roiCalculator.querySelector("[data-roi-annual]");
+  const summaryOutput = roiCalculator.querySelector("[data-roi-summary]");
+  const money = new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
+    maximumFractionDigits: 0,
+  });
+
+  const updateRoi = () => {
+    const hours = Math.max(0, Number(hoursInput?.value || 0));
+    const rate = Math.max(0, Number(rateInput?.value || 0));
+    const annualCost = hours * rate * 52;
+
+    if (hoursValue) hoursValue.textContent = hours.toString();
+    if (annualOutput) annualOutput.textContent = money.format(annualCost);
+    if (summaryOutput) {
+      summaryOutput.textContent = `Based on ${hours} hours/week at ${money.format(rate)}/hour.`;
+    }
+  };
+
+  hoursInput?.addEventListener("input", updateRoi);
+  rateInput?.addEventListener("input", updateRoi);
+  updateRoi();
+}
