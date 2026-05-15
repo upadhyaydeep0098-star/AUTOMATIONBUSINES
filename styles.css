@@ -220,10 +220,13 @@ h1 {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  max-width: 100%;
   min-height: 52px;
   padding: 0 24px;
   border: 1px solid transparent;
   border-radius: 8px;
+  line-height: 1.15;
+  text-align: center;
   font-size: 0.98rem;
   font-weight: 800;
   transition:
@@ -2321,11 +2324,14 @@ body.minimal a.header-cta {
   display: inline-flex;
   align-items: center;
   padding: 14px 26px;
+  max-width: 100%;
   border-radius: 999px;
   background: #0a0a0a;
   color: #faf8f4;
   font-size: 0.98rem;
   font-weight: 600;
+  line-height: 1.15;
+  text-align: center;
   letter-spacing: -0.005em;
   transition: background 220ms ease, transform 220ms ease, box-shadow 220ms ease;
 }
