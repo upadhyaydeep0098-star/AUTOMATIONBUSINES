@@ -12,6 +12,61 @@
       "source": "/index",
       "destination": "/",
       "permanent": true
+    },
+    {
+      "source": "/about.html",
+      "destination": "/about",
+      "permanent": true
+    },
+    {
+      "source": "/services.html",
+      "destination": "/services",
+      "permanent": true
+    },
+    {
+      "source": "/workflow-automation.html",
+      "destination": "/workflow-automation",
+      "permanent": true
+    },
+    {
+      "source": "/ai-agents-for-business.html",
+      "destination": "/ai-agents-for-business",
+      "permanent": true
+    },
+    {
+      "source": "/contact.html",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
+      "source": "/blog.html",
+      "destination": "/blog",
+      "permanent": true
+    },
+    {
+      "source": "/privacy.html",
+      "destination": "/privacy",
+      "permanent": true
+    },
+    {
+      "source": "/terms.html",
+      "destination": "/terms",
+      "permanent": true
+    },
+    {
+      "source": "/thank-you.html",
+      "destination": "/thank-you",
+      "permanent": true
+    },
+    {
+      "source": "/blog/_template",
+      "destination": "/blog",
+      "permanent": false
+    },
+    {
+      "source": "/blog/_template.html",
+      "destination": "/blog",
+      "permanent": false
     }
   ],
   "headers": [
@@ -20,7 +75,7 @@
       "headers": [
         {
           "key": "Content-Security-Policy",
-          "value": "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self' https://formspree.io; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com data:; connect-src 'self' https://formspree.io; upgrade-insecure-requests"
+          "value": "default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; form-action 'self' https://formspree.io; script-src 'self' 'sha256-C858sqH2IyW0QVROLQGnJMu+dgyquof1eDpKyrmoT2E=' 'sha256-9ZEeKFzxMw10LJJIVC9Mk47twGFiQp3tY6btAyygk/U=' 'sha256-g5tQK56V57VaACf5blreKkToMior0JGeEhu/SA5H6qU=' 'sha256-3nwkp6APGBgtm6XeqYJp1QpJV0t1u5hdMlMoc2lI1Nc=' 'sha256-9Wowr+8imPPoCtHm6VZKeIDunRSI1pqwDxteNOnhga4=' 'sha256-+tH8cbJP57nZNDqgVyKylF/7qE4JgFo7z9DOzhH2BcY=' 'sha256-zsTVtQ2AECZQbuVU6+cK3iaavTjXB4+gOAu/stYV3XQ=' 'sha256-Pqw1ln9drOZuPz6+muOR9+74X34eN31WZHSaB3oHb7s=' 'sha256-HLas2UKd6uVYAaxQEsTE87CMZhntFBJBWw27VTfJLxs='; script-src-attr 'none'; style-src 'self' https://fonts.googleapis.com; style-src-attr 'none'; img-src 'self' data:; font-src 'self' https://fonts.gstatic.com data:; connect-src 'self' https://formspree.io; manifest-src 'self'; media-src 'none'; frame-src 'none'; child-src 'none'; worker-src 'none'; navigate-to 'self' https://formspree.io https://calendly.com mailto:; upgrade-insecure-requests; require-trusted-types-for 'script'; trusted-types default"
         },
         {
           "key": "Strict-Transport-Security",
@@ -45,6 +100,18 @@
         {
           "key": "Cross-Origin-Opener-Policy",
           "value": "same-origin"
+        },
+        {
+          "key": "Origin-Agent-Cluster",
+          "value": "?1"
+        },
+        {
+          "key": "X-Permitted-Cross-Domain-Policies",
+          "value": "none"
+        },
+        {
+          "key": "X-Download-Options",
+          "value": "noopen"
         }
       ]
     },

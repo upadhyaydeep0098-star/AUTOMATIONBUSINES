@@ -91,7 +91,15 @@ if ("IntersectionObserver" in window && counters.length) {
 
 /* ---------- Marquee — duplicate children for seamless loop ---------- */
 document.querySelectorAll(".marquee-track, .m-marquee-track").forEach((track) => {
-  track.innerHTML += track.innerHTML;
+  if (track.dataset.marqueeReady === "true") return;
+
+  [...track.children].forEach((child) => {
+    const clone = child.cloneNode(true);
+    clone.setAttribute("aria-hidden", "true");
+    track.appendChild(clone);
+  });
+
+  track.dataset.marqueeReady = "true";
 });
 
 /* ---------- Services page: plain English toggle ---------- */

@@ -3,7 +3,9 @@
 
 User-agent: *
 Allow: /
-Disallow:
+Disallow: /thank-you
+Disallow: /blog/_template
+Disallow: /blog/_template.html
 
 # Major AI crawlers — explicitly allowed so the brand surfaces in AI answers
 User-agent: GPTBot

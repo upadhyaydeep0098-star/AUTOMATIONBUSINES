@@ -129,20 +129,20 @@
             </p>
           </div>
           <div>
-            <p style="font-size:1.08rem;color:var(--ink-soft);margin-bottom:18px;">
+            <p class="story-copy">
               Our founder spent years building automation systems for high-stakes
               financial teams — workflows where a single error meant regulatory
               exposure rather than a refund. That standard of precision shapes
               every Yudi Labs engagement.
             </p>
-            <p style="font-size:1.08rem;color:var(--ink-soft);margin-bottom:18px;">
+            <p class="story-copy">
               The same pattern appeared in every business we observed — banks,
               clinics, logistics operations, property managers, finance teams:
               capable software handling the predictable path, and people
               quietly handling everything else. Reconciling reports. Collecting
               attachments. Checking the same portals each morning.
             </p>
-            <p style="font-size:1.08rem;color:var(--ink-soft);">
+            <p class="story-copy">
               Yudi Labs brings that financial-services discipline to businesses that do
               not have a 200-person internal automation team — but lose just as
               many hours to the same repetitive admin work.
@@ -251,18 +251,19 @@
         <form class="task-form"
               action="https://formspree.io/f/xzdoqpke"
               method="POST"
+              accept-charset="UTF-8"
               aria-label="AI automation request form">
                     <input type="hidden" name="_subject" value="New Yudi Labs enquiry" />
           <input type="hidden" name="_next" value="https://yudilabs.com/thank-you" />
-          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true" />
+          <input class="honeypot" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" />
 
           <label>
             <span>Your email</span>
-            <input type="email" name="email" placeholder="you@company.com" required />
+            <input type="email" name="email" autocomplete="email" maxlength="120" placeholder="you@company.com" required />
           </label>
           <label>
             <span>The task</span>
-            <textarea name="task" rows="3" placeholder="Every morning we have to..." required></textarea>
+            <textarea name="task" rows="3" maxlength="1200" placeholder="Every morning we have to..." required></textarea>
           </label>
           <button class="button button-primary" type="submit">Send the Task First</button>
           <a class="button button-secondary" href="https://calendly.com/hello-yudilabs/30min" target="_blank" rel="noopener noreferrer">Book a Mapping Call</a>

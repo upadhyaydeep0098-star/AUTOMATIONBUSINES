@@ -77,13 +77,13 @@
             <p class="gap-label">Booking</p>
             <h3>Workflow Mapping Call</h3>
             <p>Best when you want to walk through the task live and leave with a clear next step.</p>
-            <p style="margin-top:14px;"><a href="https://calendly.com/hello-yudilabs/30min" target="_blank" rel="noopener noreferrer" style="color:var(--teal);font-weight:800;">Book 30 minutes →</a></p>
+            <p class="link-row"><a class="text-link-strong" href="https://calendly.com/hello-yudilabs/30min" target="_blank" rel="noopener noreferrer">Book 30 minutes →</a></p>
           </article>
           <article>
             <p class="gap-label">Email</p>
             <h3>hello@yudilabs.com</h3>
             <p>Best for detailed enquiries. We typically respond within one business day.</p>
-            <p style="margin-top:14px;"><a href="mailto:hello@yudilabs.com" style="color:var(--teal);font-weight:800;">Send an email →</a></p>
+            <p class="link-row"><a class="text-link-strong" href="mailto:hello@yudilabs.com">Send an email →</a></p>
           </article>
           <article>
             <p class="gap-label">Form below</p>
@@ -102,18 +102,19 @@
         <form class="task-form"
               action="https://formspree.io/f/xzdoqpke"
               method="POST"
+              accept-charset="UTF-8"
               aria-label="Automation request form">
                     <label>
             <span>Your email</span>
-            <input type="email" name="email" autocomplete="email" placeholder="you@company.com" required />
+            <input type="email" name="email" autocomplete="email" maxlength="120" placeholder="you@company.com" required />
           </label>
           <label>
             <span>The task</span>
-            <textarea name="task" rows="4" placeholder="Every morning we have to..." required></textarea>
+            <textarea name="task" rows="4" maxlength="1200" placeholder="Every morning we have to..." required></textarea>
           </label>
           <input type="hidden" name="_subject" value="New Yudi Labs enquiry" />
           <input type="hidden" name="_next" value="https://yudilabs.com/thank-you" />
-          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true" />
+          <input class="honeypot" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" />
           <button class="button button-primary" type="submit">Send Brief</button>
           <a class="button button-secondary" href="https://calendly.com/hello-yudilabs/30min" target="_blank" rel="noopener noreferrer">Book Instead</a>
         </form>

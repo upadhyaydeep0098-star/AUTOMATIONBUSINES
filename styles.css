@@ -464,6 +464,15 @@ h3 {
   color: var(--ink-soft);
 }
 
+.link-row {
+  margin-top: 14px;
+}
+
+.text-link-strong {
+  color: var(--teal);
+  font-weight: 800;
+}
+
 .urgency {
   display: grid;
   grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.22fr);
@@ -1065,6 +1074,12 @@ h3 {
   font-size: 0.95rem;
 }
 
+.article-intro-copy {
+  max-width: 680px;
+  color: var(--ink-soft);
+  font-size: 1.18rem;
+}
+
 /* ===== Blog index ===== */
 .blog-grid {
   display: grid;
@@ -1132,6 +1147,10 @@ h3 {
   text-transform: uppercase;
   font-size: 0.82rem;
   letter-spacing: 0.06em;
+}
+
+.tldr-copy {
+  margin: 8px 0 0;
 }
 
 .checklist {
@@ -1228,6 +1247,66 @@ h3 {
   margin-bottom: 24px;
   color: var(--ink-soft);
   font-size: clamp(1.05rem, 1.4vw, 1.2rem);
+}
+
+.status-hero {
+  padding: 180px 0 100px;
+  text-align: center;
+}
+
+.status-hero.is-compact {
+  padding-bottom: 80px;
+}
+
+.status-hero .page-hero-inner {
+  text-align: center;
+}
+
+.inline-eyebrow {
+  display: inline-block;
+}
+
+.status-title {
+  max-width: 900px;
+  margin-right: auto;
+  margin-left: auto;
+  font-size: clamp(3rem, 8vw, 6rem);
+}
+
+.status-title.is-thanks {
+  max-width: 760px;
+  font-size: clamp(2.4rem, 5vw, 4rem);
+}
+
+.status-copy {
+  max-width: 620px;
+  margin: 0 auto 32px;
+  font-size: 1.18rem;
+}
+
+.status-copy.is-thanks {
+  margin-top: 24px;
+  font-size: 1.15rem;
+}
+
+.button-row-center {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+}
+
+.story-copy {
+  color: var(--ink-soft);
+  font-size: 1.08rem;
+}
+
+.story-copy + .story-copy {
+  margin-top: 18px;
+}
+
+.honeypot {
+  display: none;
 }
 
 /* Responsive footer + mission + stats */
