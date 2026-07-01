@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Yudi Labs | AI Automation Studio</title>
-  <meta name="description" content="Yudi Labs builds AI automations around the software your business already uses, helping teams reclaim hours from repetitive operational work.">
+  <title>Yudi Labs | AI Workflow Automation Studio</title>
+  <meta name="description" content="Yudi Labs maps, builds, and maintains AI workflows across the tools your business already uses.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:opsz,wght@5..1200,600;5..1200,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/styles.css?v=20260701a">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/styles.css?v=20260701b">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -17,300 +17,355 @@
     <div class="nav-shell">
       <a class="brand" href="#top" aria-label="Yudi Labs home">
         <span class="brand-mark" aria-hidden="true">
-          <span></span><span></span><span></span><span></span>
+          <span></span>
+          <span></span>
+          <span></span>
         </span>
         <span>Yudi Labs</span>
       </a>
       <nav class="nav-links" aria-label="Primary navigation">
         <a href="#work">Work</a>
+        <a href="#process">Process</a>
+        <a href="#security">Security</a>
         <a href="#about">About</a>
-        <a href="#writing">Writing</a>
       </nav>
       <a class="button button-primary nav-cta" href="#contact">Book a call</a>
       <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" data-menu-toggle>
-        <span></span><span></span><span></span>
+        <span></span>
+        <span></span>
+        <span></span>
       </button>
     </div>
     <nav class="mobile-menu" aria-label="Mobile navigation" data-mobile-menu>
       <a href="#work">Work</a>
+      <a href="#process">Process</a>
+      <a href="#security">Security</a>
       <a href="#about">About</a>
-      <a href="#writing">Writing</a>
       <a href="#contact">Book a call</a>
     </nav>
   </header>
 
   <main id="main">
-    <section class="hero section-dark" id="top">
+    <section class="hero" id="top">
       <div class="page-grid hero-grid">
         <div class="hero-copy reveal">
-          <h1>AI automation, built around the software you already use.</h1>
-          <p>We give business teams back the hours their software was supposed to save.</p>
+          <h1>Automate the weekly work your team keeps doing by hand.</h1>
+          <p>Yudi Labs maps, builds, and maintains AI workflows across the tools your business already uses.</p>
           <div class="hero-actions">
-            <a class="button button-primary" href="#contact">Book a mapping call</a>
-            <button class="button button-secondary" type="button" data-task-focus>Send the task first</button>
+            <a class="button button-primary" href="#contact">Book a workflow audit</a>
+            <button class="button button-secondary" type="button" data-task-focus>Send us a task</button>
           </div>
-          <div class="trust-row" aria-label="Yudi Labs operating principles">
-            <span><i aria-hidden="true"></i> Toronto based</span>
-            <span><i aria-hidden="true"></i> Secure by default</span>
-            <span><i aria-hidden="true"></i> Fast to value</span>
+          <div class="proof-strip" aria-label="Yudi Labs operating principles">
+            <span><i class="proof-icon target-icon" aria-hidden="true"></i>Focused on outcomes</span>
+            <span><i class="proof-icon lock-icon" aria-hidden="true"></i>Secure by design</span>
+            <span><i class="proof-icon bolt-icon" aria-hidden="true"></i>Built fast, shipped carefully</span>
           </div>
         </div>
 
-        <div class="workflow-shell reveal" aria-label="Animated workflow preview">
-          <div class="workflow-toolbar">
+        <div class="audit-card reveal" aria-label="Workflow audit preview">
+          <div class="audit-card-top">
             <div>
-              <span class="system-dot"></span>
-              <strong>Revenue Ops - Customer Onboarding</strong>
-              <em>Live</em>
+              <span>Workflow audit</span>
+              <strong>Invoice exception workflow</strong>
             </div>
-            <button type="button" data-run-toggle>Pause</button>
-          </div>
-
-          <div class="workflow-stage">
-            <div class="trigger-column">
-              <div class="panel-title">Triggers</div>
-              <div class="trigger-card active" data-node="0"><span class="app-icon app-salesforce">S</span>New customer</div>
-              <div class="trigger-card" data-node="1"><span class="app-icon app-typeform">T</span>Form submitted</div>
-              <div class="trigger-card" data-node="2"><span class="app-icon app-stripe">St</span>Invoice paid</div>
-            </div>
-
-            <div class="map-area" aria-hidden="true">
-              <svg class="connection-map" viewBox="0 0 520 440" fill="none">
-                <path class="line line-a" d="M74 78 C178 78 154 156 244 156 C335 156 330 234 438 234"/>
-                <path class="line line-b" d="M78 220 C150 180 178 260 248 260 C318 260 330 338 442 338"/>
-                <path class="line line-c" d="M98 338 C168 310 172 78 250 78 C350 78 360 156 446 156"/>
-              </svg>
-              <div class="moving-packet packet-one"></div>
-              <div class="moving-packet packet-two"></div>
-              <div class="moving-packet packet-three"></div>
-
-              <article class="automation-node node-one active" data-step="1">
-                <span class="app-icon app-salesforce">S</span>
-                <div><strong>Check customer</strong><small>Salesforce</small></div>
-              </article>
-              <article class="automation-node node-two" data-step="2">
-                <span class="app-icon app-clickup">C</span>
-                <div><strong>Create project</strong><small>ClickUp</small></div>
-              </article>
-              <article class="automation-node node-three" data-step="3">
-                <span class="app-icon app-drive">D</span>
-                <div><strong>Collect documents</strong><small>Google Drive</small></div>
-              </article>
-              <article class="automation-node node-four" data-step="4">
-                <span class="app-icon app-gmail">G</span>
-                <div><strong>Send welcome email</strong><small>Gmail</small></div>
-              </article>
-              <article class="automation-node node-five" data-step="5">
-                <span class="app-icon app-slack">Sl</span>
-                <div><strong>Notify team</strong><small>Slack</small></div>
-              </article>
-              <article class="automation-node node-six" data-step="6">
-                <span class="app-icon app-sheets">Sh</span>
-                <div><strong>Add to reporting</strong><small>Google Sheets</small></div>
-              </article>
-            </div>
-
-            <div class="apps-column">
-              <div class="panel-title">Apps</div>
-              <ul>
-                <li><span class="app-icon app-salesforce">S</span>Salesforce</li>
-                <li><span class="app-icon app-hubspot">H</span>HubSpot</li>
-                <li><span class="app-icon app-quickbooks">Q</span>QuickBooks</li>
-                <li><span class="app-icon app-xero">X</span>Xero</li>
-                <li><span class="app-icon app-notion">N</span>Notion</li>
-                <li><span class="app-icon app-slack">Sl</span>Slack</li>
-                <li><span class="app-icon app-gmail">G</span>Gmail</li>
-                <li><span class="app-icon app-office">M</span>Microsoft 365</li>
-                <li><span class="app-icon app-airtable">A</span>Airtable</li>
-                <li><span class="app-icon app-stripe">St</span>Stripe</li>
-              </ul>
+            <div class="view-switch" role="group" aria-label="Audit view">
+              <button type="button" data-view="before">Before</button>
+              <button class="active" type="button" data-view="after">After</button>
             </div>
           </div>
 
-          <div class="run-status">
-            <span>Running...</span>
+          <p class="audit-summary" data-audit-summary>We remove manual steps and let your team focus on exceptions that actually need attention.</p>
+
+          <div class="audit-flow" data-audit-flow>
+            <button class="audit-step active" type="button" data-step="0">
+              <span class="step-check" aria-hidden="true"></span>
+              <i class="tool-icon mail-icon" aria-hidden="true"></i>
+              <span><strong>1. Invoice inbox</strong><em>Collect invoices from email and upload portals</em></span>
+              <small>Manual<br>2-3 hrs/week</small>
+            </button>
+            <button class="audit-step" type="button" data-step="1">
+              <span class="step-check" aria-hidden="true"></span>
+              <i class="tool-icon qb-icon" aria-hidden="true">qb</i>
+              <span><strong>2. Match in QuickBooks</strong><em>Match invoices to bills and payments</em></span>
+              <small>Manual<br>3-5 hrs/week</small>
+            </button>
+            <button class="audit-step" type="button" data-step="2">
+              <span class="step-check" aria-hidden="true"></span>
+              <i class="tool-icon sheet-icon" aria-hidden="true"></i>
+              <span><strong>3. Update tracker</strong><em>Update status, due dates, and approvals</em></span>
+              <small>Manual<br>2-4 hrs/week</small>
+            </button>
+            <button class="audit-step" type="button" data-step="3">
+              <span class="step-check" aria-hidden="true"></span>
+              <i class="tool-icon gmail-icon" aria-hidden="true">M</i>
+              <span><strong>4. Send exception list</strong><em>Email exceptions with context and next steps</em></span>
+              <small>Manual<br>1-2 hrs/week</small>
+            </button>
+          </div>
+
+          <div class="run-line">
+            <span>Run completed</span>
             <div class="progress-track"><div class="progress-bar"></div></div>
-            <button type="button" data-view-run>View run</button>
+            <strong>Exceptions found: 7</strong>
           </div>
         </div>
       </div>
+
+      <div class="page-grid integration-row reveal" aria-label="Works inside the tools you already use">
+        <p>Works inside the tools you already use</p>
+        <div class="integration-list">
+          <span><i class="mini-logo salesforce">S</i>Salesforce</span>
+          <span><i class="mini-logo hubspot">H</i>HubSpot</span>
+          <span><i class="mini-logo quickbooks">qb</i>QuickBooks</span>
+          <span><i class="mini-logo xero">X</i>Xero</span>
+          <span><i class="mini-logo netsuite">N</i>NetSuite</span>
+          <span><i class="mini-logo notion">N</i>Notion</span>
+          <span><i class="mini-logo slack">Sl</i>Slack</span>
+          <span><i class="mini-logo gmail">M</i>Gmail</span>
+          <span><i class="mini-logo microsoft">365</i>Microsoft 365</span>
+          <span><i class="mini-logo google">G</i>Google Workspace</span>
+          <span><i class="mini-logo airtable">A</i>Airtable</span>
+          <span><i class="mini-logo stripe">S</i>Stripe</span>
+        </div>
+      </div>
     </section>
 
-    <section class="tax-section section-dark">
-      <div class="page-grid tax-grid">
+    <section class="leak-section">
+      <div class="page-grid split-grid">
         <div class="section-copy reveal">
-          <h2>The hidden tax</h2>
-          <p>Your team loses 10 to 20 hours a week to work the software was supposed to handle.</p>
+          <span class="section-label">The hidden tax</span>
+          <h2>Where the hours leak.</h2>
+          <p>Small gaps in your tools create big time drains across the week.</p>
+          <a class="text-link" href="#work">See how we fix this</a>
         </div>
-        <div class="tax-list reveal">
+        <div class="leak-list reveal">
           <article>
-            <span class="mini-icon">01</span>
-            <div><h3>Work lives in too many places</h3><p>Teams copy, paste, and chase updates across tools.</p></div>
+            <i class="line-icon stack-icon" aria-hidden="true"></i>
+            <div>
+              <h3>Work scattered across tools</h3>
+              <p>Teams copy, paste, and chase updates in email, spreadsheets, and portals.</p>
+            </div>
+            <strong><span>Impact</span>Lots of context switching</strong>
           </article>
           <article>
-            <span class="mini-icon">02</span>
-            <div><h3>Manual steps create delays</h3><p>Approvals, lookups, and follow-ups slow everything down.</p></div>
+            <i class="line-icon clock-icon" aria-hidden="true"></i>
+            <div>
+              <h3>Manual steps slow everything</h3>
+              <p>Lookups, approvals, and follow-ups create avoidable delays.</p>
+            </div>
+            <strong><span>Impact</span>Longer cycle times</strong>
           </article>
           <article>
-            <span class="mini-icon">03</span>
-            <div><h3>Errors and rework cost more</h3><p>Small misses turn into support tickets, refunds, and lost time.</p></div>
+            <i class="line-icon alert-icon" aria-hidden="true"></i>
+            <div>
+              <h3>Errors create rework</h3>
+              <p>Missed details turn into tickets, refunds, and frustrated customers.</p>
+            </div>
+            <strong><span>Impact</span>More cost, less trust</strong>
           </article>
           <article>
-            <span class="mini-icon">04</span>
-            <div><h3>No visibility, no leverage</h3><p>Leadership cannot improve work they cannot see clearly.</p></div>
+            <i class="line-icon eye-icon" aria-hidden="true"></i>
+            <div>
+              <h3>No visibility, no improvement</h3>
+              <p>Leaders cannot improve what they cannot see clearly.</p>
+            </div>
+            <strong><span>Impact</span>Stagnant processes</strong>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="automation-section section-dark" id="work">
+    <section class="automation-section" id="work">
       <div class="page-grid">
-        <div class="section-copy wide reveal">
-          <h2>What we automate</h2>
-          <p>We start where your team already feels the drag: repeated checks, handoffs, updates, and report work that touches multiple systems.</p>
+        <div class="section-heading reveal">
+          <div>
+            <span class="section-label">What we automate</span>
+            <h2>The repetitive work we take off your plate.</h2>
+          </div>
+          <a class="text-link" href="#contact">Explore all automations</a>
         </div>
 
-        <div class="workflow-list reveal" data-workflow-list>
+        <div class="automation-table reveal" data-workflow-list>
+          <div class="table-head" aria-hidden="true">
+            <span>Workflow</span>
+            <span>What it does</span>
+            <span>Tools we connect</span>
+            <span>Outcome</span>
+          </div>
           <button class="workflow-row active" type="button" data-row="0">
-            <span class="row-index">01</span>
-            <span class="row-copy"><strong>Portal checks</strong><em>Monitor portals and pull updates so your team does not have to.</em></span>
-            <span class="row-apps"><i class="app-icon app-globe">Gl</i><i class="app-icon app-salesforce">S</i><i class="app-icon app-slack">Sl</i><i class="app-icon app-notion">N</i></span>
-            <span class="row-result">Issues surfaced</span>
+            <span><i class="row-icon portal-icon" aria-hidden="true"></i><strong>Portal checks</strong></span>
+            <span>Monitor portals and surface updates</span>
+            <span class="tool-cluster"><i class="mini-logo salesforce">S</i><i class="mini-logo globe">Gl</i><i class="mini-logo slack">Sl</i><i class="mini-logo notion">N</i></span>
+            <span>Issues surfaced early</span>
           </button>
           <button class="workflow-row" type="button" data-row="1">
-            <span class="row-index">02</span>
-            <span class="row-copy"><strong>Document collection</strong><em>Request, collect, and organize documents automatically.</em></span>
-            <span class="row-apps"><i class="app-icon app-gmail">G</i><i class="app-icon app-drive">D</i><i class="app-icon app-airtable">A</i><i class="app-icon app-slack">Sl</i></span>
-            <span class="row-result">Docs organized</span>
+            <span><i class="row-icon docs-icon" aria-hidden="true"></i><strong>Document collection</strong></span>
+            <span>Request, collect, and organize docs</span>
+            <span class="tool-cluster"><i class="mini-logo gmail">M</i><i class="mini-logo google">G</i><i class="mini-logo airtable">A</i></span>
+            <span>Docs organized automatically</span>
           </button>
           <button class="workflow-row" type="button" data-row="2">
-            <span class="row-index">03</span>
-            <span class="row-copy"><strong>Cross-system reconciliation</strong><em>Match data across systems and flag the exceptions.</em></span>
-            <span class="row-apps"><i class="app-icon app-quickbooks">Q</i><i class="app-icon app-xero">X</i><i class="app-icon app-stripe">St</i><i class="app-icon app-sheets">Sh</i></span>
-            <span class="row-result">Reconciled</span>
+            <span><i class="row-icon reconcile-icon" aria-hidden="true"></i><strong>Cross-system reconciliation</strong></span>
+            <span>Match data across systems and flag gaps</span>
+            <span class="tool-cluster"><i class="mini-logo quickbooks">qb</i><i class="mini-logo xero">X</i><i class="mini-logo stripe">S</i><i class="mini-logo google">G</i></span>
+            <span>Reconciled and ready</span>
           </button>
           <button class="workflow-row" type="button" data-row="3">
-            <span class="row-index">04</span>
-            <span class="row-copy"><strong>Exception lists</strong><em>Detect anomalies and build review-ready exception lists.</em></span>
-            <span class="row-apps"><i class="app-icon app-database">Db</i><i class="app-icon app-notion">N</i><i class="app-icon app-slack">Sl</i><i class="app-icon app-mail">Ma</i></span>
-            <span class="row-result">Exceptions ready</span>
+            <span><i class="row-icon exception-icon" aria-hidden="true"></i><strong>Exception lists</strong></span>
+            <span>Detect anomalies and build review-ready lists</span>
+            <span class="tool-cluster"><i class="mini-logo notion">N</i><i class="mini-logo slack">Sl</i><i class="mini-logo gmail">M</i></span>
+            <span>Exceptions ready to review</span>
           </button>
           <button class="workflow-row" type="button" data-row="4">
-            <span class="row-index">05</span>
-            <span class="row-copy"><strong>Recurring report packs</strong><em>Assemble, summarize, and distribute reports on schedule.</em></span>
-            <span class="row-apps"><i class="app-icon app-sheets">Sh</i><i class="app-icon app-looker">L</i><i class="app-icon app-gmail">G</i><i class="app-icon app-office">M</i></span>
-            <span class="row-result">Reports delivered</span>
+            <span><i class="row-icon report-icon" aria-hidden="true"></i><strong>Recurring report packs</strong></span>
+            <span>Assemble, summarize, and distribute reports</span>
+            <span class="tool-cluster"><i class="mini-logo google">G</i><i class="mini-logo gmail">M</i><i class="mini-logo microsoft">365</i></span>
+            <span>Reports delivered on time</span>
           </button>
         </div>
       </div>
     </section>
 
-    <section class="process-section section-dark">
-      <div class="page-grid">
+    <section class="process-section" id="process">
+      <div class="page-grid process-grid">
         <div class="section-copy reveal">
-          <h2>How we work</h2>
+          <span class="section-label">Your process</span>
+          <h2>From messy workflow to managed system.</h2>
         </div>
         <div class="process-track reveal">
           <article>
             <span>1</span>
-            <div class="process-icon observe-icon" aria-hidden="true"></div>
-            <h3>Observe</h3>
-            <p>We map your workflow end to end, measure the friction, and prioritize what matters.</p>
+            <h3>Map and prioritize</h3>
+            <p>We map the real workflow, measure the friction, and prioritize high-impact opportunities.</p>
           </article>
           <article>
             <span>2</span>
-            <div class="process-icon build-icon" aria-hidden="true"></div>
-            <h3>Build</h3>
-            <p>We build automations that fit your stack, your data model, and your governance.</p>
+            <h3>Build and integrate</h3>
+            <p>We build the automation inside your existing stack and validate it with your team.</p>
           </article>
           <article>
             <span>3</span>
-            <div class="process-icon maintain-icon" aria-hidden="true"></div>
-            <h3>Maintain</h3>
-            <p>We monitor, refine, and expand automations as your business and tools evolve.</p>
+            <h3>Maintain and adapt</h3>
+            <p>We monitor, support, and continuously improve as your business and tools evolve.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="about-section section-dark" id="about">
-      <div class="page-grid about-grid">
-        <div class="founder-art reveal" aria-hidden="true">
-          <div class="portrait-frame">
-            <span class="portrait-mark">YU</span>
-            <div class="portrait-lines"></div>
-          </div>
-        </div>
-        <blockquote class="founder-quote reveal">
-          <p>I started Yudi Labs after years inside operations and engineering at RBC, CIBC, BMO, and TD. I saw the same tax everywhere: smart teams doing manual work no one should have to do. We build automations that let people focus on judgment, relationships, and growth.</p>
-          <footer><strong>Yudi Upadhyay</strong><span>Founder, Yudi Labs</span></footer>
-        </blockquote>
-      </div>
-    </section>
-
-    <section class="writing-section section-dark" id="writing">
-      <div class="page-grid writing-grid">
+    <section class="controls-section" id="security">
+      <div class="page-grid controls-grid">
         <div class="section-copy reveal">
-          <h2>Writing</h2>
-          <p>Short notes on operations, workflow design, and where AI actually saves time.</p>
+          <span class="section-label">Built with controls</span>
+          <h2>Security and trust are built in.</h2>
         </div>
-        <div class="notes-list reveal">
-          <a href="#contact">
-            <span>01</span>
-            <strong>Start with the handoff nobody owns</strong>
-            <em>Why the best first automation is usually hiding between two systems.</em>
-          </a>
-          <a href="#contact">
-            <span>02</span>
-            <strong>Automate the exception path, not only the happy path</strong>
-            <em>A practical rule for making automations useful after week one.</em>
-          </a>
+        <div class="control-list reveal">
+          <article>
+            <i class="control-icon approval-icon" aria-hidden="true"></i>
+            <h3>Human approval</h3>
+            <p>AI suggests. Humans approve. You stay in control.</p>
+          </article>
+          <article>
+            <i class="control-icon audit-icon" aria-hidden="true"></i>
+            <h3>Audit trail</h3>
+            <p>Every run is logged with inputs, outputs, and decisions.</p>
+          </article>
+          <article>
+            <i class="control-icon boundary-icon" aria-hidden="true"></i>
+            <h3>Data boundaries</h3>
+            <p>Your data stays in your environment with least-privilege access.</p>
+          </article>
+          <article>
+            <i class="control-icon monitor-icon" aria-hidden="true"></i>
+            <h3>Monitoring</h3>
+            <p>We monitor runs, alerts, and failures so you do not have to.</p>
+          </article>
         </div>
       </div>
     </section>
 
-    <section class="contact-section section-dark" id="contact">
+    <section class="founder-section" id="about">
+      <div class="page-grid founder-grid">
+        <blockquote class="founder-quote reveal">
+          <span class="quote-mark" aria-hidden="true"></span>
+          <p>Years inside RBC, CIBC, BMO, and TD taught us one thing: even the best software leaves gaps. We close them with AI instead of hands.</p>
+          <footer>
+            <strong>Deep Upadhyay</strong>
+            <span>Founder, Yudi Labs</span>
+          </footer>
+        </blockquote>
+        <div class="bank-grid reveal" aria-label="Founder background">
+          <span class="bank-card rbc">RBC</span>
+          <span class="bank-card cibc">CIBC</span>
+          <span class="bank-card bmo">BMO</span>
+          <span class="bank-card td">TD</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact">
       <div class="page-grid contact-grid">
-        <div class="final-copy reveal">
+        <div class="section-copy reveal">
+          <span class="section-label">Let's fix one workflow</span>
           <h2>Map the workflow your team wants gone.</h2>
-          <div class="closing-principles" aria-label="Engagement principles">
-            <span>Clarity in the first call</span>
-            <span>No lock-in</span>
-            <span>Built for your stack</span>
+          <p>Book a 30-minute call. We will walk through one repetitive workflow, estimate the hours being lost, and show the simplest path to automate it.</p>
+          <div class="contact-actions">
+            <a class="button button-primary" href="mailto:hello@yudilabs.com?subject=Workflow%20audit%20request">Book a workflow audit</a>
+            <button class="button button-secondary" type="button" data-task-focus>Send us a task</button>
           </div>
         </div>
 
         <form class="contact-form reveal" action="mailto:hello@yudilabs.com" method="post" enctype="text/plain" data-contact-form>
-          <label>
-            Your email
-            <input name="email" type="email" autocomplete="email" placeholder="you@company.com" required>
-          </label>
-          <label>
-            Workflow to map
-            <textarea name="workflow" rows="5" placeholder="Example: Every Friday we copy invoices from Stripe, match them in QuickBooks, update a spreadsheet, then send the same status email..." required data-task-input></textarea>
-          </label>
-          <div class="form-actions">
-            <button class="button button-primary" type="submit">Book a mapping call</button>
-            <a class="button button-secondary" href="mailto:hello@yudilabs.com">Email instead</a>
+          <div class="form-row">
+            <label>
+              Full name
+              <input name="name" type="text" autocomplete="name" placeholder="Your name" required>
+            </label>
+            <label>
+              Work email
+              <input name="email" type="email" autocomplete="email" placeholder="you@company.com" required>
+            </label>
           </div>
+          <div class="form-row">
+            <label>
+              Company
+              <input name="company" type="text" autocomplete="organization" placeholder="Company name">
+            </label>
+            <label>
+              Team size
+              <select name="team-size">
+                <option value="">Select team size</option>
+                <option>1-10</option>
+                <option>11-50</option>
+                <option>51-200</option>
+                <option>200+</option>
+              </select>
+            </label>
+          </div>
+          <label>
+            What is the workflow you want to fix?
+            <textarea name="workflow" rows="5" placeholder="Describe the repetitive workflow..." required data-task-input></textarea>
+          </label>
+          <button class="button button-primary form-submit" type="submit">Book my workflow audit</button>
           <p class="form-status" role="status" data-form-status></p>
         </form>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer section-dark">
+  <footer class="site-footer">
     <div class="page-grid footer-grid">
       <a class="brand" href="#top" aria-label="Yudi Labs home">
         <span class="brand-mark" aria-hidden="true">
-          <span></span><span></span><span></span><span></span>
+          <span></span>
+          <span></span>
+          <span></span>
         </span>
         <span>Yudi Labs</span>
       </a>
-      <p>Copyright &copy; 2026 Yudi Labs. AI automation for business workflows.</p>
+      <p>Copyright &copy; 2026 Yudi Labs. AI workflow automation for business teams.</p>
     </div>
   </footer>
 
-  <script src="assets/site.js?v=20260701a"></script>
+  <script src="assets/site.js?v=20260701b"></script>
 </body>
 </html>
