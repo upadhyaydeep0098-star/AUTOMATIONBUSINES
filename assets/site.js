@@ -1,37 +1,18 @@
 const header = document.querySelector("[data-header]");
 const menuToggle = document.querySelector("[data-menu-toggle]");
 const mobileMenu = document.querySelector("[data-mobile-menu]");
-const taskFocusButtons = [...document.querySelectorAll("[data-task-focus]")];
+const runToggle = document.querySelector("[data-run-toggle]");
+const viewRun = document.querySelector("[data-view-run]");
+const taskFocus = document.querySelector("[data-task-focus]");
 const taskInput = document.querySelector("[data-task-input]");
 const contactForm = document.querySelector("[data-contact-form]");
 const formStatus = document.querySelector("[data-form-status]");
 const workflowRows = [...document.querySelectorAll("[data-row]")];
-const auditSteps = [...document.querySelectorAll("[data-step]")];
-const viewButtons = [...document.querySelectorAll("[data-view]")];
-const auditSummary = document.querySelector("[data-audit-summary]");
-
-const afterCopy = {
-  summary: "We remove manual steps and let your team focus on exceptions that actually need attention.",
-  labels: [
-    ["Automated", "Inbox watched"],
-    ["Automated", "Matched"],
-    ["Automated", "Tracker updated"],
-    ["Human review", "Exceptions only"]
-  ]
-};
-
-const beforeCopy = {
-  summary: "This is the manual workflow your team repeats every week before automation.",
-  labels: [
-    ["Manual", "2-3 hrs/week"],
-    ["Manual", "3-5 hrs/week"],
-    ["Manual", "2-4 hrs/week"],
-    ["Manual", "1-2 hrs/week"]
-  ]
-};
+const triggers = [...document.querySelectorAll("[data-node]")];
+const nodes = [...document.querySelectorAll("[data-step]")];
 
 const updateHeader = () => {
-  header?.classList.toggle("is-scrolled", window.scrollY > 10);
+  header?.classList.toggle("is-scrolled", window.scrollY > 12);
 };
 
 updateHeader();
@@ -69,52 +50,38 @@ if ("IntersectionObserver" in window) {
   revealItems.forEach((item) => item.classList.add("is-visible"));
 }
 
-let activeAuditStep = 0;
-let auditTimer;
+let activeIndex = 0;
+let nodeTimer;
 
-const setActiveAuditStep = (index) => {
-  if (auditSteps.length === 0) return;
-  activeAuditStep = index % auditSteps.length;
-  auditSteps.forEach((step, stepIndex) => {
-    step.classList.toggle("active", stepIndex === activeAuditStep);
+const setActiveNode = (index) => {
+  activeIndex = index % Math.max(nodes.length, 1);
+  triggers.forEach((trigger, triggerIndex) => {
+    trigger.classList.toggle("active", triggerIndex === activeIndex % triggers.length);
+  });
+  nodes.forEach((node, nodeIndex) => {
+    node.classList.toggle("active", nodeIndex === activeIndex);
   });
 };
 
-const startAuditLoop = () => {
-  window.clearInterval(auditTimer);
-  auditTimer = window.setInterval(() => {
-    setActiveAuditStep(activeAuditStep + 1);
-  }, 1900);
+const startNodeLoop = () => {
+  window.clearInterval(nodeTimer);
+  nodeTimer = window.setInterval(() => {
+    if (document.body.classList.contains("paused")) return;
+    setActiveNode(activeIndex + 1);
+  }, 1700);
 };
 
-setActiveAuditStep(0);
-startAuditLoop();
+setActiveNode(0);
+startNodeLoop();
 
-auditSteps.forEach((step, index) => {
-  step.addEventListener("click", () => {
-    setActiveAuditStep(index);
-    startAuditLoop();
-  });
+runToggle?.addEventListener("click", () => {
+  const paused = !document.body.classList.contains("paused");
+  document.body.classList.toggle("paused", paused);
+  runToggle.textContent = paused ? "Resume" : "Pause";
 });
 
-const setAuditView = (view) => {
-  const copy = view === "before" ? beforeCopy : afterCopy;
-  if (auditSummary) auditSummary.textContent = copy.summary;
-  viewButtons.forEach((button) => {
-    button.classList.toggle("active", button.dataset.view === view);
-  });
-  auditSteps.forEach((step, index) => {
-    const detail = step.querySelector("small");
-    if (!detail) return;
-    const [label, value] = copy.labels[index] || ["", ""];
-    detail.replaceChildren(label, document.createElement("br"), value);
-  });
-};
-
-viewButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    setAuditView(button.dataset.view || "after");
-  });
+viewRun?.addEventListener("click", () => {
+  setActiveNode(activeIndex + 1);
 });
 
 workflowRows.forEach((row) => {
@@ -124,11 +91,9 @@ workflowRows.forEach((row) => {
   });
 });
 
-taskFocusButtons.forEach((button) => {
-  button.addEventListener("click", () => {
-    document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth", block: "start" });
-    window.setTimeout(() => taskInput?.focus(), 420);
-  });
+taskFocus?.addEventListener("click", () => {
+  document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth", block: "start" });
+  window.setTimeout(() => taskInput?.focus(), 420);
 });
 
 contactForm?.addEventListener("submit", () => {
