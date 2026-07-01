@@ -4682,3 +4682,533 @@ body.minimal .checklist li::before {
 
 /* Hide hero overlay/image on minimal — they're for old hero */
 body.minimal .hero { background: transparent; }
+
+/* ==========================================================================
+   VISUAL SYSTEM REFINEMENT — calmer color, stronger hierarchy, better rhythm
+   ========================================================================== */
+
+body.minimal {
+  --ui-bg: #f6f8f5;
+  --ui-surface: #ffffff;
+  --ui-surface-soft: #eef7f2;
+  --ui-ink: #102522;
+  --ui-muted: #5f716c;
+  --ui-subtle: #7b8984;
+  --ui-line: rgba(16, 37, 34, 0.12);
+  --ui-line-strong: rgba(16, 37, 34, 0.18);
+  --ui-green: #0f766e;
+  --ui-green-deep: #063f3a;
+  --ui-mint: #dff2eb;
+  --ui-warm: #fff7ed;
+  --ui-coral: #d96d52;
+  --ui-shadow: 0 24px 70px rgba(6, 63, 58, 0.1);
+  background:
+    linear-gradient(180deg, #f8faf7 0%, #f3f8f4 48%, #f7f8f5 100%);
+  color: var(--ui-ink);
+}
+
+body.minimal .m-container {
+  width: min(1180px, calc(100% - 48px));
+}
+
+body.minimal .m-header {
+  padding-right: max(24px, calc((100vw - 1180px) / 2));
+  padding-left: max(24px, calc((100vw - 1180px) / 2));
+  background: rgba(246, 248, 245, 0.82);
+  border-bottom-color: var(--ui-line);
+}
+
+body.minimal .m-header.is-scrolled {
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 14px 36px rgba(6, 63, 58, 0.07);
+}
+
+body.minimal .m-brand,
+body.minimal h1,
+body.minimal h2,
+body.minimal h3,
+body.minimal .m-display,
+body.minimal .m-display-md,
+body.minimal .m-h2,
+body.minimal .m-statement,
+body.minimal .m-li-label,
+body.minimal .m-big,
+body.minimal .m-quote,
+body.minimal .service-card h3 {
+  color: var(--ui-ink);
+}
+
+body.minimal .m-nav {
+  color: var(--ui-muted);
+}
+
+body.minimal .m-nav a:hover,
+body.minimal .m-link:hover {
+  color: var(--ui-green-deep);
+}
+
+body.minimal .m-cta,
+body.minimal .m-btn,
+body.minimal a.button,
+body.minimal button.button,
+body.minimal .button-primary {
+  background: var(--ui-green-deep);
+  color: #f8faf7 !important;
+  box-shadow: none;
+}
+
+body.minimal .m-cta:hover,
+body.minimal .m-btn:hover,
+body.minimal .button-primary:hover {
+  background: #082f2d;
+  box-shadow: 0 16px 32px rgba(6, 63, 58, 0.18);
+}
+
+body.minimal a.button.button-secondary,
+body.minimal button.button.button-secondary {
+  color: var(--ui-green-deep) !important;
+  border-color: rgba(6, 63, 58, 0.22);
+  background: rgba(255, 255, 255, 0.5);
+}
+
+body.minimal .m-link {
+  color: var(--ui-green-deep);
+}
+
+body.minimal .m-link::after {
+  background: rgba(15, 118, 110, 0.3);
+}
+
+body.minimal .m-eyebrow,
+body.minimal .eyebrow,
+body.minimal .gap-label,
+body.minimal .service-kicker {
+  color: var(--ui-green) !important;
+}
+
+body.minimal .m-pill {
+  color: var(--ui-green-deep);
+  border-color: rgba(15, 118, 110, 0.18);
+  background: rgba(223, 242, 235, 0.72);
+}
+
+body.minimal .m-dot,
+body.minimal .mini-flow span::before,
+body.minimal .motion-signal {
+  background: var(--ui-coral);
+}
+
+body.minimal .m-dim {
+  color: var(--ui-green);
+}
+
+body.minimal .m-lead,
+body.minimal .m-sub,
+body.minimal .m-li-value,
+body.minimal .m-cap,
+body.minimal .section-heading p,
+body.minimal .comparison-columns p,
+body.minimal .service-card p,
+body.minimal .human-loop-copy p:last-child {
+  color: var(--ui-muted);
+}
+
+body.minimal .m-hero {
+  min-height: 100vh;
+  padding: 132px 0 92px;
+  background:
+    linear-gradient(90deg, rgba(246, 248, 245, 1) 0%, rgba(246, 248, 245, 0.92) 52%, rgba(223, 242, 235, 0.62) 100%);
+}
+
+body.minimal .m-hero-grid {
+  grid-template-columns: minmax(520px, 0.95fr) minmax(430px, 0.75fr);
+  gap: clamp(52px, 7vw, 104px);
+  align-items: center;
+}
+
+body.minimal .m-hero-copy {
+  max-width: 690px;
+}
+
+body.minimal .m-hero-grid .m-display {
+  max-width: 680px;
+  font-size: clamp(3.25rem, 6vw, 5.55rem);
+  line-height: 0.97;
+  letter-spacing: -0.055em;
+}
+
+body.minimal .m-hero-grid .m-lead {
+  max-width: 610px;
+  color: var(--ui-muted);
+}
+
+body.minimal .motion-board,
+body.minimal .service-map-preview,
+body.minimal .motion-flow-panel,
+body.minimal .ops-console,
+body.minimal .roi-panel,
+body.minimal .comparison-grid article,
+body.minimal .service-card,
+body.minimal .approval-board,
+body.minimal .task-form,
+body.minimal .final-cta {
+  border-color: var(--ui-line);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.68)),
+    var(--ui-surface);
+  box-shadow: var(--ui-shadow);
+}
+
+body.minimal .motion-board,
+body.minimal .service-map-preview {
+  min-height: 500px;
+  border-radius: 26px;
+}
+
+body.minimal .motion-grid-bg,
+body.minimal .service-map-preview::before,
+body.minimal .ops-console::before {
+  opacity: 0.58;
+  background-image:
+    linear-gradient(rgba(15, 118, 110, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(15, 118, 110, 0.07) 1px, transparent 1px);
+}
+
+body.minimal .motion-card,
+body.minimal .motion-runlog,
+body.minimal .map-node,
+body.minimal .map-stat,
+body.minimal .ops-console-top,
+body.minimal .ops-lane {
+  border-color: var(--ui-line);
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 16px 40px rgba(6, 63, 58, 0.08);
+}
+
+body.minimal .motion-card span,
+body.minimal .motion-core span,
+body.minimal .motion-review span,
+body.minimal .motion-runlog span,
+body.minimal .map-node span,
+body.minimal .map-stat span,
+body.minimal .motion-result-card span,
+body.minimal .motion-flow-label,
+body.minimal .ops-console-top span,
+body.minimal .ops-lane span,
+body.minimal .ops-output span {
+  color: var(--ui-subtle);
+}
+
+body.minimal .motion-core,
+body.minimal .map-node-build,
+body.minimal .motion-result-card,
+body.minimal .ops-output,
+body.minimal .roi-result {
+  background: var(--ui-green-deep);
+  color: #f8faf7;
+}
+
+body.minimal .motion-core strong,
+body.minimal .map-node-build strong,
+body.minimal .motion-result-card strong,
+body.minimal .ops-output strong,
+body.minimal .roi-result strong {
+  color: #f8faf7;
+}
+
+body.minimal .motion-review,
+body.minimal .map-node-review {
+  background: var(--ui-surface-soft);
+  border-color: rgba(15, 118, 110, 0.2);
+}
+
+body.minimal .motion-review strong,
+body.minimal .map-node-review strong,
+body.minimal .service-card-link,
+body.minimal .roi-result p,
+body.minimal .ops-lane em {
+  color: var(--ui-green);
+}
+
+body.minimal .motion-runlog i,
+body.minimal .motion-line::after,
+body.minimal .motion-signal-two {
+  background: var(--ui-green);
+}
+
+body.minimal .motion-line,
+body.minimal .map-path,
+body.minimal .ops-lanes::before {
+  background: linear-gradient(90deg, transparent, rgba(15, 118, 110, 0.48), transparent);
+}
+
+body.minimal .m-strip,
+body.minimal .service-tool-strip {
+  background: var(--ui-surface);
+  border-color: var(--ui-line);
+}
+
+body.minimal .m-marquee-track,
+body.minimal .service-tool-row span {
+  color: var(--ui-subtle);
+}
+
+body.minimal .motion-story,
+body.minimal .ops-system,
+body.minimal .m-section-stats {
+  background: rgba(255, 255, 255, 0.58);
+  border-color: var(--ui-line);
+}
+
+body.minimal .motion-flow-panel::before {
+  border-color: rgba(15, 118, 110, 0.22);
+}
+
+body.minimal .motion-chip {
+  color: var(--ui-ink);
+  border-color: var(--ui-line);
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 14px 32px rgba(6, 63, 58, 0.06);
+}
+
+body.minimal .motion-pulse-ring {
+  border-color: rgba(15, 118, 110, 0.34);
+  background:
+    linear-gradient(135deg, rgba(15, 118, 110, 0.18), rgba(217, 109, 82, 0.12)),
+    rgba(255, 255, 255, 0.86);
+}
+
+body.minimal .m-line-list {
+  border-color: var(--ui-line);
+}
+
+body.minimal .m-line-list li {
+  border-color: var(--ui-line);
+}
+
+body.minimal .m-line-list li:hover {
+  background: rgba(223, 242, 235, 0.46);
+}
+
+body.minimal .page-hero {
+  padding: 132px 0 72px;
+  background:
+    linear-gradient(90deg, rgba(246, 248, 245, 1), rgba(238, 247, 242, 0.8));
+}
+
+body.minimal .page-hero-inner.service-hero-grid {
+  width: min(1180px, calc(100% - 48px));
+}
+
+body.minimal .service-hero-grid {
+  grid-template-columns: minmax(520px, 0.95fr) minmax(430px, 0.75fr);
+  gap: clamp(52px, 7vw, 104px);
+}
+
+body.minimal .page-hero h1 {
+  max-width: 720px;
+  font-size: clamp(3.05rem, 5.5vw, 5.2rem);
+  letter-spacing: -0.055em;
+}
+
+body.minimal .map-stat {
+  background: var(--ui-warm);
+  border-color: rgba(217, 109, 82, 0.28);
+}
+
+body.minimal .map-stat strong {
+  color: var(--ui-green-deep);
+}
+
+body.minimal .service-card:hover,
+body.minimal .comparison-grid article:hover {
+  border-color: var(--ui-line-strong);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(238, 247, 242, 0.62)),
+    var(--ui-surface);
+  box-shadow: 0 22px 48px rgba(6, 63, 58, 0.1);
+}
+
+body.minimal .mini-flow span {
+  border-color: var(--ui-line);
+  background: rgba(255, 255, 255, 0.78);
+}
+
+body.minimal .service-card:hover .mini-flow span {
+  border-color: rgba(15, 118, 110, 0.22);
+  background: rgba(223, 242, 235, 0.6);
+}
+
+body.minimal .language-toggle {
+  border-color: var(--ui-line);
+  background: rgba(255, 255, 255, 0.7);
+}
+
+body.minimal .language-toggle button[aria-pressed="true"] {
+  background: var(--ui-green-deep);
+}
+
+body.minimal .final-cta {
+  background:
+    linear-gradient(135deg, rgba(223, 242, 235, 0.82), rgba(255, 255, 255, 0.88)),
+    var(--ui-surface);
+}
+
+body.minimal .task-form input,
+body.minimal .task-form textarea,
+body.minimal .roi-controls input[type="number"] {
+  border-color: var(--ui-line);
+}
+
+body.minimal .task-form input:focus,
+body.minimal .task-form textarea:focus {
+  border-color: var(--ui-green);
+  box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.09);
+}
+
+@media (max-width: 980px) {
+  body.minimal .m-hero-grid,
+  body.minimal .service-hero-grid {
+    grid-template-columns: 1fr;
+  }
+
+  body.minimal .m-hero {
+    min-height: auto;
+  }
+}
+
+@media (max-width: 720px) {
+  body.minimal .m-container,
+  body.minimal .page-hero-inner.service-hero-grid {
+    width: min(100% - 40px, 1180px);
+  }
+
+  body.minimal .m-hero {
+    padding: 132px 0 82px;
+  }
+
+  body.minimal .m-hero-grid .m-display,
+  body.minimal .page-hero h1 {
+    font-size: clamp(2.8rem, 12vw, 4.05rem);
+    line-height: 0.96;
+  }
+
+  body.minimal .m-hero-grid .m-lead,
+  body.minimal .page-hero p {
+    font-size: 1.08rem;
+  }
+
+  body.minimal .motion-board,
+  body.minimal .service-map-preview {
+    min-height: 430px;
+  }
+}
+
+/* Final polish: remove tiny visual rough edges from the refined system. */
+body.minimal .skip-link {
+  position: fixed;
+  top: 12px;
+  transform: translateY(calc(-100% - 24px));
+  transition: transform 180ms ease;
+}
+
+body.minimal .skip-link:focus {
+  transform: translateY(0);
+}
+
+body.minimal h1,
+body.minimal h2,
+body.minimal h3,
+body.minimal .m-display,
+body.minimal .m-display-md,
+body.minimal .m-h2,
+body.minimal .m-statement,
+body.minimal .m-quote,
+body.minimal .service-card h3,
+body.minimal .m-big,
+body.minimal .map-stat strong,
+body.minimal .roi-result strong {
+  letter-spacing: 0;
+}
+
+body.minimal .m-hero-grid .m-display {
+  max-width: 640px;
+  font-size: 4.45rem;
+  line-height: 1.02;
+  letter-spacing: 0;
+}
+
+body.minimal .page-hero h1 {
+  max-width: 660px;
+  font-size: 3.85rem;
+  line-height: 1.06;
+  letter-spacing: 0;
+}
+
+body.minimal .service-hero-copy {
+  max-width: 680px;
+}
+
+body.minimal .service-map-preview {
+  align-self: center;
+}
+
+@media (max-width: 980px) {
+  body.minimal .m-hero-grid .m-display {
+    font-size: 4.05rem;
+  }
+
+  body.minimal .page-hero h1 {
+    font-size: 3.55rem;
+  }
+}
+
+@media (max-width: 720px) {
+  body.minimal .m-hero {
+    padding: 124px 0 72px;
+  }
+
+  body.minimal .page-hero {
+    padding: 124px 0 64px;
+  }
+
+  body.minimal .m-hero-grid,
+  body.minimal .service-hero-grid {
+    gap: 34px;
+  }
+
+  body.minimal .service-hero-grid {
+    gap: 22px;
+  }
+
+  body.minimal .m-hero-grid .m-display {
+    font-size: 3.18rem;
+    line-height: 1.02;
+  }
+
+  body.minimal .page-hero h1 {
+    font-size: 3.05rem;
+    line-height: 1.03;
+  }
+
+  body.minimal .service-hero-actions .button,
+  body.minimal .m-actions .m-btn,
+  body.minimal .m-actions .m-link {
+    width: 100%;
+  }
+
+  body.minimal .motion-board,
+  body.minimal .service-map-preview {
+    min-height: 410px;
+  }
+}
+
+@media (max-width: 430px) {
+  body.minimal .m-hero-grid .m-display {
+    font-size: 2.95rem;
+  }
+
+  body.minimal .page-hero h1 {
+    font-size: 2.58rem;
+  }
+}
