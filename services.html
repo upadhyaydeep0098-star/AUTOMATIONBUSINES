@@ -67,17 +67,39 @@
 
     <main id="main">
       <section class="page-hero">
-        <div class="page-hero-inner">
-          <p class="eyebrow">Workflow automation for busy teams</p>
-          <h1>Make the Office Work Your Team Repeats Every Week Happen Automatically.</h1>
-          <p>
-            Bring us one task your team keeps doing by hand. We map the steps,
-            build the repeatable parts, and keep a person in control anywhere a
-            final decision matters.
-          </p>
-          <div class="service-hero-actions">
-            <a class="button button-primary" href="https://calendly.com/hello-yudilabs/30min" target="_blank" rel="noopener noreferrer">Book a Mapping Call</a>
-            <a class="button button-secondary" href="#roi">Estimate Savings</a>
+        <div class="page-hero-inner service-hero-grid">
+          <div class="service-hero-copy">
+            <p class="eyebrow reveal">Workflow automation for busy teams</p>
+            <h1 class="reveal reveal-delay-1">Make the Office Work Your Team Repeats Every Week Happen Automatically.</h1>
+            <p class="reveal reveal-delay-2">
+              Bring us one task your team keeps doing by hand. We map the steps,
+              build the repeatable parts, and keep a person in control anywhere a
+              final decision matters.
+            </p>
+            <div class="service-hero-actions reveal reveal-delay-3">
+              <a class="button button-primary" href="https://calendly.com/hello-yudilabs/30min" target="_blank" rel="noopener noreferrer">Book a Mapping Call</a>
+              <a class="button button-secondary" href="#roi">Estimate Savings</a>
+            </div>
+          </div>
+          <div class="service-map-preview reveal reveal-delay-2" data-parallax-scene aria-label="Workflow mapping preview">
+            <div class="map-node map-node-source" data-depth="0.14">
+              <span>Current work</span>
+              <strong>12 manual steps</strong>
+            </div>
+            <div class="map-path" aria-hidden="true"></div>
+            <div class="map-node map-node-build" data-depth="0.05">
+              <span>Yudi Labs</span>
+              <strong>Builds the repeatable path</strong>
+            </div>
+            <div class="map-path map-path-two" aria-hidden="true"></div>
+            <div class="map-node map-node-review" data-depth="-0.08">
+              <span>After launch</span>
+              <strong>Review only exceptions</strong>
+            </div>
+            <div class="map-stat" data-depth="-0.12">
+              <strong>8 hrs</strong>
+              <span>saved weekly</span>
+            </div>
           </div>
         </div>
       </section>
@@ -108,7 +130,7 @@
           <h2 id="roi-title">What is one repeated task costing you?</h2>
           <p>Use rough numbers. The point is not accounting precision; it is seeing whether the work is worth mapping.</p>
         </div>
-        <div class="roi-panel" data-roi-calculator>
+        <div class="roi-panel reveal" data-roi-calculator>
           <div class="roi-controls">
             <label>
               <span>Hours spent each week</span>
@@ -134,7 +156,7 @@
           <p class="eyebrow">Before and after</p>
           <h2 id="before-after-title">Concrete examples, not buzzwords.</h2>
         </div>
-        <div class="comparison-grid">
+        <div class="comparison-grid reveal">
           <article>
             <p class="gap-label">Invoices</p>
             <div class="comparison-columns">
@@ -190,7 +212,7 @@
           </div>
         </div>
 
-        <div class="service-card-grid">
+        <div class="service-card-grid reveal">
           <article class="service-card">
             <div class="mini-flow" aria-hidden="true">
               <span>PDF invoice</span>
@@ -294,7 +316,7 @@
             uncontrolled tool.
           </p>
         </div>
-        <div class="approval-board" aria-label="Human approval workflow">
+        <div class="approval-board reveal" aria-label="Human approval workflow">
           <div class="approval-step">
             <span>1</span>
             <p>Collect files, emails, and portal updates</p>
