@@ -1,13 +1,11 @@
-# Yudi Labs — AI Automation Agency
-# https://yudilabs.com
+# Yudi Labs — AI automation agency
+# https://www.yudilabs.com
 
 User-agent: *
 Allow: /
-Disallow: /thank-you
-Disallow: /blog/_template
-Disallow: /blog/_template.html
+Disallow:
 
-# Major AI crawlers — explicitly allowed so the brand surfaces in AI answers
+# Major AI crawlers — explicitly allowed so the brand can surface in AI answers
 User-agent: GPTBot
 Allow: /
 
@@ -23,4 +21,4 @@ Allow: /
 User-agent: CCBot
 Allow: /
 
-Sitemap: https://yudilabs.com/sitemap.xml
+Sitemap: https://www.yudilabs.com/sitemap.xml

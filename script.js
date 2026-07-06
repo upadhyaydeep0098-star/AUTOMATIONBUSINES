@@ -1,5 +1,8 @@
 const header = document.querySelector(".site-header, .m-header");
 const taskForms = document.querySelectorAll(".task-form");
+const menuToggle = document.querySelector(".menu-toggle");
+const mobileNav = document.querySelector("#mobile-nav");
+const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 function setHeaderState() {
   header?.classList.toggle("is-scrolled", window.scrollY > 24);
@@ -7,6 +10,44 @@ function setHeaderState() {
 
 setHeaderState();
 window.addEventListener("scroll", setHeaderState, { passive: true });
+
+/* ---------- Mobile navigation ---------- */
+function setMobileNav(open) {
+  if (!menuToggle || !mobileNav) return;
+
+  menuToggle.setAttribute("aria-expanded", String(open));
+  menuToggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+  menuToggle.classList.toggle("is-open", open);
+  mobileNav.hidden = !open;
+  document.body.classList.toggle("nav-open", open);
+
+  if (!open) {
+    menuToggle.focus({ preventScroll: true });
+  }
+}
+
+menuToggle?.addEventListener("click", () => {
+  const isOpen = menuToggle.getAttribute("aria-expanded") === "true";
+  setMobileNav(!isOpen);
+});
+
+mobileNav?.addEventListener("click", (event) => {
+  if (event.target.closest("a")) {
+    setMobileNav(false);
+  }
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && menuToggle?.getAttribute("aria-expanded") === "true") {
+    setMobileNav(false);
+  }
+});
+
+window.addEventListener("resize", () => {
+  if (window.innerWidth > 1040 && menuToggle?.getAttribute("aria-expanded") === "true") {
+    setMobileNav(false);
+  }
+});
 
 /* ---------- Form handler ----------
  * Lets configured forms submit natively to Formspree.
@@ -36,7 +77,9 @@ taskForms.forEach((form) => {
 
 /* ---------- Scroll reveal ---------- */
 const revealEls = document.querySelectorAll(".reveal");
-if ("IntersectionObserver" in window && revealEls.length) {
+if (prefersReducedMotion) {
+  revealEls.forEach((el) => el.classList.add("in-view"));
+} else if ("IntersectionObserver" in window && revealEls.length) {
   const io = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {
@@ -55,7 +98,7 @@ if ("IntersectionObserver" in window && revealEls.length) {
 
 /* ---------- Animated stat counters ---------- */
 const counters = document.querySelectorAll("[data-count]");
-if ("IntersectionObserver" in window && counters.length) {
+if (!prefersReducedMotion && "IntersectionObserver" in window && counters.length) {
   const animateCounter = (el) => {
     const target = parseFloat(el.dataset.count);
     const suffix = el.dataset.suffix || "";
@@ -90,72 +133,12 @@ if ("IntersectionObserver" in window && counters.length) {
 }
 
 /* ---------- Marquee — duplicate children for seamless loop ---------- */
-document.querySelectorAll(".marquee-track, .m-marquee-track").forEach((track) => {
-  if (track.dataset.marqueeReady === "true") return;
-
-  [...track.children].forEach((child) => {
-    const clone = child.cloneNode(true);
-    clone.setAttribute("aria-hidden", "true");
-    track.appendChild(clone);
-  });
-
-  track.dataset.marqueeReady = "true";
-});
-
-/* ---------- Services page: plain English toggle ---------- */
-const serviceLanguageButtons = document.querySelectorAll("[data-service-language]");
-const serviceCopyBlocks = document.querySelectorAll("[data-service-copy]");
-
-function setServiceLanguage(language) {
-  serviceLanguageButtons.forEach((button) => {
-    button.setAttribute(
-      "aria-pressed",
-      button.dataset.serviceLanguage === language ? "true" : "false"
-    );
-  });
-
-  serviceCopyBlocks.forEach((block) => {
-    block.hidden = block.dataset.serviceCopy !== language;
-  });
-}
-
-if (serviceLanguageButtons.length && serviceCopyBlocks.length) {
-  setServiceLanguage("plain");
-  serviceLanguageButtons.forEach((button) => {
-    button.addEventListener("click", () => {
-      setServiceLanguage(button.dataset.serviceLanguage || "plain");
+if (!prefersReducedMotion) {
+  document.querySelectorAll(".marquee-track, .m-marquee-track").forEach((track) => {
+    Array.from(track.children).forEach((child) => {
+      const clone = child.cloneNode(true);
+      clone.setAttribute("aria-hidden", "true");
+      track.appendChild(clone);
     });
   });
-}
-
-/* ---------- Services page: ROI calculator ---------- */
-const roiCalculator = document.querySelector("[data-roi-calculator]");
-
-if (roiCalculator) {
-  const hoursInput = roiCalculator.querySelector("[data-roi-hours]");
-  const rateInput = roiCalculator.querySelector("[data-roi-rate]");
-  const hoursValue = roiCalculator.querySelector("[data-roi-hours-value]");
-  const annualOutput = roiCalculator.querySelector("[data-roi-annual]");
-  const summaryOutput = roiCalculator.querySelector("[data-roi-summary]");
-  const money = new Intl.NumberFormat("en-US", {
-    style: "currency",
-    currency: "USD",
-    maximumFractionDigits: 0,
-  });
-
-  const updateRoi = () => {
-    const hours = Math.max(0, Number(hoursInput?.value || 0));
-    const rate = Math.max(0, Number(rateInput?.value || 0));
-    const annualCost = hours * rate * 52;
-
-    if (hoursValue) hoursValue.textContent = hours.toString();
-    if (annualOutput) annualOutput.textContent = money.format(annualCost);
-    if (summaryOutput) {
-      summaryOutput.textContent = `Based on ${hours} hours/week at ${money.format(rate)}/hour.`;
-    }
-  };
-
-  hoursInput?.addEventListener("input", updateRoi);
-  rateInput?.addEventListener("input", updateRoi);
-  updateRoi();
 }

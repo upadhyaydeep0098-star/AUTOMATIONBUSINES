@@ -4,39 +4,36 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Yudi Labs — AI Automation Built Around the Software You Already Use</title>
+    <title>Yudi Labs — AI Automation for Admin Work</title>
 
-    <meta name="description" content="Yudi Labs is an AI automation agency that gives business teams back the hours their software was supposed to save. Custom workflow automation and AI agents, live in 2–4 weeks." />
-    <meta name="keywords" content="AI automation, AI automation agency, workflow automation, business process automation, AI agents, admin automation, automation services, intelligent automation, custom AI agents, automate repetitive tasks" />
+    <meta name="description" content="Yudi Labs helps small teams automate repetitive admin work inside the tools they already use, so reports, portal checks, and updates happen before login." />
     <meta name="author" content="Yudi Labs" />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
     <meta name="theme-color" content="#0a0a0a" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" sizes="180x180" />
+    <link rel="manifest" href="/site.webmanifest" />
 
-    <link rel="canonical" href="https://yudilabs.com/" />
-    <link rel="alternate" hreflang="en" href="https://yudilabs.com/" />
-    <link rel="alternate" hreflang="x-default" href="https://yudilabs.com/" />
 
+    <link rel="canonical" href="https://www.yudilabs.com/" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Yudi Labs" />
     <meta property="og:locale" content="en_US" />
-    <meta property="og:url" content="https://yudilabs.com/" />
-    <meta property="og:title" content="Yudi Labs — AI Automation Built Around Your Existing Stack" />
-    <meta property="og:description" content="Custom workflow automation and AI agents for teams ready to remove manual admin work. Live in 2–4 weeks, inside the tools you already use." />
-    <meta property="og:image" content="https://yudilabs.com/assets/yudilabs-logo.svg" />
-
+    <meta property="og:title" content="Yudi Labs — Admin Work, Done Before Your Team Logs In" />
+    <meta property="og:description" content="Workflow automation for small teams that need portal checks, reports, files, and updates handled inside the software they already use." />
+    <meta property="og:url" content="https://www.yudilabs.com/" />
+    <meta property="og:image" content="https://www.yudilabs.com/assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="@yudilabs" />
-    <meta name="twitter:title" content="Yudi Labs — AI Automation Agency" />
-    <meta name="twitter:description" content="We give business teams back the hours their software was supposed to save." />
-    <meta name="twitter:image" content="https://yudilabs.com/assets/yudilabs-logo.svg" />
-
-    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
-    <link rel="apple-touch-icon" href="favicon.svg" />
-    <link rel="manifest" href="site.webmanifest" />
-
+    <meta name="twitter:title" content="Yudi Labs — Admin Work, Done Before Your Team Logs In" />
+    <meta name="twitter:description" content="Workflow automation for small teams that need portal checks, reports, files, and updates handled inside the software they already use." />
+    <meta name="twitter:image" content="https://www.yudilabs.com/assets/og-image.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Inter+Tight:wght@500;600;700;800;900&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400..900&family=Inter+Tight:wght@500..900&display=swap" />
 
     <link rel="stylesheet" href="styles.css" />
 
@@ -46,11 +43,18 @@
       "@graph": [
         {
           "@type": "Organization",
-          "@id": "https://yudilabs.com/#organization",
+          "@id": "https://www.yudilabs.com/#organization",
           "name": "Yudi Labs",
           "alternateName": "Yudi Labs AI Automation",
-          "url": "https://yudilabs.com/",
-          "logo": { "@type": "ImageObject", "url": "https://yudilabs.com/assets/yudilabs-logo.svg" },
+          "url": "https://www.yudilabs.com/",
+          "logo": { "@type": "ImageObject", "url": "https://www.yudilabs.com/assets/yudilabs-logo.svg" },
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Toronto",
+            "addressRegion": "ON",
+            "addressCountry": "CA"
+          },
+          "areaServed": ["Toronto", "Ontario", "Canada", "United States"],
           "description": "AI automation agency helping businesses automate repetitive admin work inside the software they already use.",
           "sameAs": [
             "https://www.linkedin.com/company/yudi-labs",
@@ -65,17 +69,17 @@
         },
         {
           "@type": "WebSite",
-          "@id": "https://yudilabs.com/#website",
-          "url": "https://yudilabs.com/",
+          "@id": "https://www.yudilabs.com/#website",
+          "url": "https://www.yudilabs.com/",
           "name": "Yudi Labs",
-          "publisher": { "@id": "https://yudilabs.com/#organization" },
+          "publisher": { "@id": "https://www.yudilabs.com/#organization" },
           "inLanguage": "en-US"
         },
         {
           "@type": "ProfessionalService",
-          "@id": "https://yudilabs.com/#service",
+          "@id": "https://www.yudilabs.com/#service",
           "name": "Yudi Labs AI Automation Services",
-          "provider": { "@id": "https://yudilabs.com/#organization" },
+          "provider": { "@id": "https://www.yudilabs.com/#organization" },
           "areaServed": "Worldwide",
           "serviceType": [
             "AI Automation",
@@ -93,75 +97,52 @@
 
     <header class="m-header">
       <a class="m-brand" href="/" aria-label="Yudi Labs home">
-        <img src="assets/yudilabs-logo.svg" alt="" width="22" height="22" />
+        <img src="assets/yudilabs-logo.svg" alt="Yudi Labs" width="22" height="22" />
         <span>Yudi Labs</span>
       </a>
       <nav class="m-nav" aria-label="Primary">
-        <a href="/services">Work</a>
+        <a href="/services">Services</a>
         <a href="/about">About</a>
         <a href="/blog">Writing</a>
       </nav>
-      <a class="m-cta" href="https://calendly.com/hello-yudilabs/30min" target="_blank" rel="noopener noreferrer">Book a call</a>
+      <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <a class="m-cta" href="https://calendly.com/hello-yudilabs/30min" target="_blank" rel="noopener">Book a call</a>
     </header>
+
+    <div class="mobile-nav-panel" id="mobile-nav" hidden>
+      <nav class="mobile-nav" aria-label="Mobile navigation">
+        <a href="/services">Services</a>
+        <a href="/about">About</a>
+        <a href="/blog">Writing</a>
+        <a href="/workflow-automation">Workflow Automation</a>
+        <a href="/ai-agents-for-business">AI Agents</a>
+        <a class="mobile-nav-button" href="https://calendly.com/hello-yudilabs/30min" target="_blank" rel="noopener">Book a mapping call</a>
+      </nav>
+    </div>
 
     <main id="main">
 
       <!-- HERO ──────────────────────────────────────── -->
       <section class="m-hero">
-        <div class="m-container m-hero-grid">
-          <div class="m-hero-copy">
-            <span class="m-pill reveal">
-              <span class="m-dot"></span> Now booking workflow mapping calls
-            </span>
-            <h1 class="m-display reveal reveal-delay-1">
-              Admin work,<br />
-              done before<br />
-              <span class="m-dim">your team logs in.</span>
-            </h1>
-            <p class="m-lead reveal reveal-delay-2">
-              Send us one workflow your team repeats every week. We map it,
-              automate the boring steps, and surface only the exceptions that
-              need a person.
-            </p>
-            <div class="m-actions reveal reveal-delay-3">
-              <a class="m-btn" href="https://calendly.com/hello-yudilabs/30min" target="_blank" rel="noopener noreferrer">Book a mapping call</a>
-              <a class="m-link" href="/contact">Send the task first <span aria-hidden="true">→</span></a>
-            </div>
-          </div>
-
-          <div class="motion-board reveal reveal-delay-2" data-parallax-scene aria-label="Animated admin workflow preview">
-            <div class="motion-grid-bg" aria-hidden="true"></div>
-            <div class="motion-card motion-card-a" data-depth="0.18">
-              <span>Portal</span>
-              <strong>Status changed</strong>
-            </div>
-            <div class="motion-card motion-card-b" data-depth="0.1">
-              <span>Inbox</span>
-              <strong>3 invoices found</strong>
-            </div>
-            <div class="motion-card motion-card-c" data-depth="-0.12">
-              <span>Spreadsheet</span>
-              <strong>Row updated</strong>
-            </div>
-            <div class="motion-core" data-depth="0.06">
-              <span>Yudi Labs</span>
-              <strong>Maps the repeat steps</strong>
-            </div>
-            <div class="motion-review" data-depth="-0.08">
-              <span>Human review</span>
-              <strong>Approve, edit, or hold</strong>
-            </div>
-            <div class="motion-runlog" data-depth="0.04">
-              <span>Today’s run</span>
-              <p><i></i> Report downloaded</p>
-              <p><i></i> Sheet updated</p>
-              <p><i></i> 3 exceptions found</p>
-            </div>
-            <div class="motion-line motion-line-one" aria-hidden="true"></div>
-            <div class="motion-line motion-line-two" aria-hidden="true"></div>
-            <div class="motion-line motion-line-three" aria-hidden="true"></div>
-            <div class="motion-signal motion-signal-one" aria-hidden="true"></div>
-            <div class="motion-signal motion-signal-two" aria-hidden="true"></div>
+        <div class="m-container">
+          <span class="m-pill reveal">
+            <span class="m-dot"></span> Now booking · Q3 2026
+          </span>
+          <h1 class="m-display reveal reveal-delay-1">
+            AI automation,<br />
+            <span class="m-dim">built around the software</span><br />
+            <span class="m-dim">you already use.</span>
+          </h1>
+          <p class="m-lead reveal reveal-delay-2">
+            We give business teams back the hours their software was supposed to save.
+          </p>
+          <div class="m-actions reveal reveal-delay-3">
+            <a class="m-btn" href="/contact">Start a project</a>
+            <a class="m-link" href="/services">See the work <span aria-hidden="true">→</span></a>
           </div>
         </div>
       </section>
@@ -184,87 +165,6 @@
               <span>Google Workspace</span>
               <span>Airtable</span>
               <span>Stripe</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- MOTION STORY ──────────────────────────────────────── -->
-      <section class="m-section motion-story" aria-labelledby="motion-story-title">
-        <div class="m-container motion-story-grid">
-          <div class="motion-story-copy reveal">
-            <p class="m-eyebrow">What changes</p>
-            <h2 class="m-h2" id="motion-story-title">Messy admin work becomes one clean review queue.</h2>
-            <p class="m-sub">
-              The animation is the business model: collect the repetitive pieces,
-              run the predictable steps, and only pull your team in when judgment is needed.
-            </p>
-          </div>
-          <div class="motion-flow-panel reveal reveal-delay-1" aria-label="Before and after automation flow">
-            <div class="motion-flow-column">
-              <span class="motion-flow-label">Before</span>
-              <div class="motion-chip chip-one">Download report</div>
-              <div class="motion-chip chip-two">Check portal</div>
-              <div class="motion-chip chip-three">Copy to sheet</div>
-              <div class="motion-chip chip-four">Chase missing file</div>
-            </div>
-            <div class="motion-flow-center">
-              <span class="motion-pulse-ring" aria-hidden="true"></span>
-              <strong>Automation runs the repeat steps</strong>
-            </div>
-            <div class="motion-flow-column">
-              <span class="motion-flow-label">After</span>
-              <div class="motion-result-card">
-                <span>Exception list</span>
-                <strong>3 items need review</strong>
-                <p>Everything else completed overnight.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- AUTOMATION CONSOLE ──────────────────────────────────────── -->
-      <section class="m-section ops-system" aria-labelledby="ops-title">
-        <div class="m-container ops-grid">
-          <div class="ops-copy reveal">
-            <p class="m-eyebrow">Built to feel calm</p>
-            <h2 class="m-h2" id="ops-title">The boring work runs quietly. Your team sees what matters.</h2>
-            <p class="m-sub">
-              Each automation is designed like a small operating system for one
-              repeated workflow: collect, check, update, and escalate.
-            </p>
-          </div>
-          <div class="ops-console reveal reveal-delay-1" aria-label="Automation operating console">
-            <div class="ops-console-top">
-              <span>Workflow run</span>
-              <strong>Daily admin close</strong>
-            </div>
-            <div class="ops-lanes">
-              <div class="ops-lane">
-                <span>Collect</span>
-                <strong>Portal reports</strong>
-                <em>Complete</em>
-              </div>
-              <div class="ops-lane">
-                <span>Check</span>
-                <strong>Missing fields</strong>
-                <em>2 issues</em>
-              </div>
-              <div class="ops-lane">
-                <span>Update</span>
-                <strong>Sheets + CRM</strong>
-                <em>Synced</em>
-              </div>
-              <div class="ops-lane">
-                <span>Escalate</span>
-                <strong>Human review</strong>
-                <em>Ready</em>
-              </div>
-            </div>
-            <div class="ops-output">
-              <span>Outcome</span>
-              <strong>47 routine steps completed. 3 items need review.</strong>
             </div>
           </div>
         </div>
@@ -351,17 +251,45 @@
         <div class="m-container">
           <div class="m-stats reveal">
             <div class="m-stat">
-              <span class="m-big" data-count="1000" data-suffix="+">0</span>
-              <span class="m-cap">Hours saved annually</span>
-            </div>
-            <div class="m-stat">
-              <span class="m-big" data-count="95" data-suffix="%">0</span>
-              <span class="m-cap">Less manual reporting</span>
+              <span class="m-big">10–20<span class="m-big-unit">hrs/wk</span></span>
+              <span class="m-cap">Typical time reclaimed per automated workflow</span>
             </div>
             <div class="m-stat">
               <span class="m-big">2–4<span class="m-big-unit">wk</span></span>
               <span class="m-cap">Typical build time</span>
             </div>
+            <div class="m-stat">
+              <span class="m-big">0<span class="m-big-unit">new systems</span></span>
+              <span class="m-cap">Built inside software your team already uses</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- MINI CASE STUDIES ──────────────────────────────────────── -->
+      <section class="m-section">
+        <div class="m-container">
+          <div class="m-section-head reveal">
+            <p class="m-eyebrow">Before and after</p>
+            <h2 class="m-h2">What this looks like when it works.</h2>
+          </div>
+          <div class="m-case-grid reveal">
+            <!-- TODO: replace placeholder mini case studies with real client data before using in sales material. -->
+            <article class="m-case-card">
+              <p class="m-case-kicker">Accounting · 12-person team</p>
+              <h3>Month-end files stopped arriving as a messy chase.</h3>
+              <p>Before: statements pulled from inboxes and portals by hand. After: a review queue with missing items called out before close week.</p>
+            </article>
+            <article class="m-case-card">
+              <p class="m-case-kicker">Logistics · dispatch ops</p>
+              <h3>Shipment checks became an exception list.</h3>
+              <p>Before: staff opened carrier portals all morning. After: delayed, stuck, or mismatched shipments surfaced for human follow-up.</p>
+            </article>
+            <article class="m-case-card">
+              <p class="m-case-kicker">Clinic admin · front desk</p>
+              <h3>Portal work moved out of the front desk's day.</h3>
+              <p>Before: repetitive status checks between appointments. After: routine checks handled overnight, with only unclear cases escalated.</p>
+            </article>
           </div>
         </div>
       </section>
@@ -385,11 +313,11 @@
       <!-- CTA ──────────────────────────────────────── -->
       <section class="m-cta-section">
         <div class="m-container m-center reveal">
-          <h2 class="m-display-md">Map the workflow your team wants gone.</h2>
-          <p class="m-sub">Book a 30-minute call. We will walk through one repetitive workflow, estimate the hours being lost, and show the simplest path to automate it.</p>
+          <h2 class="m-display-md">Ready when you are.</h2>
+          <p class="m-sub">Tell us the workflow your team would most like to remove.</p>
           <div class="m-actions m-actions-center">
-            <a class="m-btn" href="https://calendly.com/hello-yudilabs/30min" target="_blank" rel="noopener noreferrer">Book a mapping call</a>
-            <a class="m-link" href="/contact">Send the task first</a>
+            <a class="m-btn" href="/contact">Start a project</a>
+            <a class="m-link" href="mailto:hello@yudilabs.com">hello@yudilabs.com</a>
           </div>
         </div>
       </section>
@@ -399,7 +327,7 @@
     <footer class="m-footer">
       <div class="m-container m-footer-inner">
         <a class="m-brand" href="/" aria-label="Yudi Labs home">
-          <img src="assets/yudilabs-logo.svg" alt="" width="22" height="22" />
+          <img src="assets/yudilabs-logo.svg" alt="Yudi Labs" width="22" height="22" />
           <span>Yudi Labs</span>
         </a>
         <nav class="m-footer-nav" aria-label="Footer">
@@ -415,7 +343,6 @@
         <p class="m-footer-meta">© 2026 Yudi Labs · Toronto</p>
       </div>
     </footer>
-
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
   </body>
 </html>

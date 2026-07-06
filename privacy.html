@@ -5,29 +5,67 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Privacy Policy | Yudi Labs</title>
-    <meta name="description" content="How Yudi Labs collects, uses, stores, and protects information when you interact with our website and services." />
+    <meta name="description" content="Read how Yudi Labs handles contact details, workflow information, security practices, and data shared during admin automation projects for small teams." />
     <meta name="robots" content="index, follow" />
-    <link rel="canonical" href="https://yudilabs.com/privacy" />
+    <link rel="canonical" href="https://www.yudilabs.com/privacy" />
 
-    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
-    <link rel="manifest" href="site.webmanifest" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Yudi Labs" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:title" content="Privacy Policy — Yudi Labs" />
+    <meta property="og:description" content="How Yudi Labs handles website inquiries and project information for workflow automation work." />
+    <meta property="og:url" content="https://www.yudilabs.com/privacy" />
+    <meta property="og:image" content="https://www.yudilabs.com/assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@yudilabs" />
+    <meta name="twitter:title" content="Privacy Policy — Yudi Labs" />
+    <meta name="twitter:description" content="How Yudi Labs handles website inquiries and project information for workflow automation work." />
+    <meta name="twitter:image" content="https://www.yudilabs.com/assets/og-image.png" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" sizes="180x180" />
+    <link rel="manifest" href="/site.webmanifest" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400..900&family=Inter+Tight:wght@500..900&display=swap" />
     <link rel="stylesheet" href="styles.css" />
   </head>
-  <body class="minimal">
+  <body>
     <a class="skip-link" href="#main">Skip to main content</a>
 
-    <header class="m-header">
-      <a class="m-brand" href="/" aria-label="Yudi Labs home">
-        <img src="assets/yudilabs-logo.svg" alt="" width="22" height="22" />
+    <header class="site-header" role="banner">
+      <a class="brand" href="/" aria-label="Yudi Labs home">
+        <span class="brand-mark"><img src="assets/yudilabs-logo.svg" alt="Yudi Labs" width="34" height="34" /></span>
         <span>Yudi Labs</span>
       </a>
-      <nav class="m-nav" aria-label="Primary">
-        <a href="/services">Work</a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="/about">About</a>
+        <a href="/services">Services</a>
+        <a href="/workflow-automation">Workflow Automation</a>
+        <a href="/ai-agents-for-business">AI Agents</a>
+        <a href="/blog">Blog</a>
+      </nav>
+      <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <a class="header-cta" href="https://calendly.com/hello-yudilabs/30min" target="_blank" rel="noopener">Book a call</a>
+    </header>
+
+    <div class="mobile-nav-panel" id="mobile-nav" hidden>
+      <nav class="mobile-nav" aria-label="Mobile navigation">
+        <a href="/services">Services</a>
         <a href="/about">About</a>
         <a href="/blog">Writing</a>
+        <a href="/workflow-automation">Workflow Automation</a>
+        <a href="/ai-agents-for-business">AI Agents</a>
+        <a class="mobile-nav-button" href="https://calendly.com/hello-yudilabs/30min" target="_blank" rel="noopener">Book a mapping call</a>
       </nav>
-      <a class="m-cta" href="https://calendly.com/hello-yudilabs/30min" target="_blank" rel="noopener noreferrer">Book a call</a>
-    </header>
+    </div>
 
     <main id="main">
       <section class="page-hero">
@@ -139,24 +177,48 @@
       </article>
     </main>
 
-    <footer class="m-footer">
-      <div class="m-container m-footer-inner">
-        <a class="m-brand" href="/" aria-label="Yudi Labs home">
-          <img src="assets/yudilabs-logo.svg" alt="" width="22" height="22" />
-          <span>Yudi Labs</span>
-        </a>
-        <nav class="m-footer-nav" aria-label="Footer">
-          <a href="/about">About</a>
-          <a href="/services">Services</a>
-          <a href="/workflow-automation">Workflow Automation</a>
-          <a href="/ai-agents-for-business">AI Agents</a>
-          <a href="/blog">Writing</a>
-          <a href="/contact">Contact</a>
-          <a href="/privacy">Privacy</a>
-          <a href="/terms">Terms</a>
-        </nav>
-        <p class="m-footer-meta">© 2026 Yudi Labs · Toronto</p>
+    <footer class="site-footer" role="contentinfo">
+      <div class="footer-grid">
+        <div class="footer-col footer-brand">
+          <a class="brand" href="/" aria-label="Yudi Labs home">
+            <span class="brand-mark"><img src="assets/yudilabs-logo.svg" alt="Yudi Labs" width="34" height="34" /></span>
+            <span>Yudi Labs</span>
+          </a>
+          <p>AI automation agency for businesses tired of repetitive admin work. Automate the boring. Amplify the brilliant.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="/about">About</a></li>
+            <li><a href="/services">Services</a></li>
+            <li><a href="/services#pricing">Pricing</a></li>
+            <li><a href="/contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Solutions</h4>
+          <ul>
+            <li><a href="/workflow-automation">Workflow Automation</a></li>
+            <li><a href="/ai-agents-for-business">AI Agents for Business</a></li>
+            <li><a href="/services">Business Process Automation</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Resources</h4>
+          <ul>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="mailto:hello@yudilabs.com">hello@yudilabs.com</a></li>
+            <li><a href="/privacy">Privacy</a></li>
+            <li><a href="/terms">Terms</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-meta">
+        <span>© 2026 Yudi Labs · AI Automation Agency</span>
+        <span>Workflow Automation · AI Agents · Business Process Automation</span>
       </div>
     </footer>
+    <script src="script.js" defer></script>
   </body>
 </html>

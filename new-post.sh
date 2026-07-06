@@ -72,7 +72,7 @@ echo ""
 read -p "$(echo -e "${B}Add to sitemap.xml?${N} (y/N): ")" ADD_SITEMAP
 if [[ "$ADD_SITEMAP" =~ ^[Yy] ]]; then
   ENTRY="  <url>\\
-    <loc>https:\\/\\/yudilabs.com\\/blog\\/${SLUG}<\\/loc>\\
+    <loc>https:\\/\\/yudilabs.com\\/blog\\/${SLUG}.html<\\/loc>\\
     <lastmod>${DATE_ISO}<\\/lastmod>\\
     <changefreq>monthly<\\/changefreq>\\
     <priority>0.7<\\/priority>\\
@@ -86,7 +86,7 @@ fi
 echo ""
 read -p "$(echo -e "${B}Add a card to blog.html?${N} (y/N): ")" ADD_BLOG
 if [[ "$ADD_BLOG" =~ ^[Yy] ]]; then
-  CARD="          <a href=\"/blog/${SLUG}\" class=\"blog-card\">\\
+  CARD="          <a href=\"blog/${SLUG}.html\" class=\"blog-card\">\\
             <span class=\"tag\">${TAG_E}<\\/span>\\
             <h3>${TITLE_E}<\\/h3>\\
             <p>${DESC_E}<\\/p>\\

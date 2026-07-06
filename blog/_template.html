@@ -6,25 +6,34 @@
 
     <title>{{TITLE}} | Yudi Labs</title>
     <meta name="description" content="{{DESCRIPTION}}" />
-    <meta name="keywords" content="{{KEYWORDS}}" />
-    <meta name="robots" content="noindex, nofollow" />
-    <link rel="canonical" href="https://yudilabs.com/blog/{{SLUG}}" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href="https://www.yudilabs.com/blog/{{SLUG}}" />
 
-    <meta property="og:type" content="article" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Yudi Labs" />
+    <meta property="og:locale" content="en_US" />
     <meta property="og:title" content="{{TITLE}} — Yudi Labs" />
     <meta property="og:description" content="{{DESCRIPTION}}" />
-    <meta property="og:url" content="https://yudilabs.com/blog/{{SLUG}}" />
-    <meta property="og:image" content="https://yudilabs.com/assets/autoadmin-hero.png" />
+    <meta property="og:url" content="https://www.yudilabs.com/blog/{{SLUG}}" />
+    <meta property="og:image" content="https://www.yudilabs.com/assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@yudilabs" />
+    <meta name="twitter:title" content="{{TITLE}} — Yudi Labs" />
+    <meta name="twitter:description" content="{{DESCRIPTION}}" />
+    <meta name="twitter:image" content="https://www.yudilabs.com/assets/og-image.png" />
     <meta property="article:published_time" content="{{DATE}}T00:00:00+00:00" />
     <meta property="article:author" content="Yudi Labs" />
     <meta property="article:section" content="{{TAG}}" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" sizes="180x180" />
+    <link rel="manifest" href="/site.webmanifest" />
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="{{TITLE}} — Yudi Labs" />
-    <meta name="twitter:description" content="{{DESCRIPTION}}" />
-
-    <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
-    <link rel="manifest" href="../site.webmanifest" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400..900&family=Inter+Tight:wght@500..900&display=swap" />
     <link rel="stylesheet" href="../styles.css" />
 
     <script type="application/ld+json">
@@ -33,16 +42,16 @@
       "@type": "BlogPosting",
       "headline": "{{TITLE}}",
       "description": "{{DESCRIPTION}}",
-      "image": "https://yudilabs.com/assets/autoadmin-hero.png",
-      "author": { "@type": "Organization", "name": "Yudi Labs", "url": "https://yudilabs.com/" },
+      "image": "https://www.yudilabs.com/assets/og-image.png",
+      "author": { "@type": "Organization", "name": "Yudi Labs", "url": "https://www.yudilabs.com/" },
       "publisher": {
         "@type": "Organization",
         "name": "Yudi Labs",
-        "logo": { "@type": "ImageObject", "url": "https://yudilabs.com/assets/yudilabs-logo.svg" }
+        "logo": { "@type": "ImageObject", "url": "https://www.yudilabs.com/assets/yudilabs-logo.svg" }
       },
       "datePublished": "{{DATE}}",
       "dateModified": "{{DATE}}",
-      "mainEntityOfPage": "https://yudilabs.com/blog/{{SLUG}}"
+      "mainEntityOfPage": "https://www.yudilabs.com/blog/{{SLUG}}"
     }
     </script>
   </head>
@@ -51,7 +60,7 @@
 
     <header class="site-header" role="banner">
       <a class="brand" href="/" aria-label="Yudi Labs home">
-        <span class="brand-mark"><img src="../assets/yudilabs-logo.svg" alt="" width="34" height="34" /></span>
+        <span class="brand-mark"><img src="../assets/yudilabs-logo.svg" alt="Yudi Labs" width="34" height="34" /></span>
         <span>Yudi Labs</span>
       </a>
       <nav class="nav-links" aria-label="Primary navigation">
@@ -61,8 +70,24 @@
         <a href="/ai-agents-for-business">AI Agents</a>
         <a href="/blog" aria-current="page">Blog</a>
       </nav>
-      <a class="header-cta" href="https://calendly.com/hello-yudilabs/30min" target="_blank" rel="noopener noreferrer">Book a call</a>
+      <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <a class="header-cta" href="https://calendly.com/hello-yudilabs/30min" target="_blank" rel="noopener">Book a call</a>
     </header>
+
+    <div class="mobile-nav-panel" id="mobile-nav" hidden>
+      <nav class="mobile-nav" aria-label="Mobile navigation">
+        <a href="/services">Services</a>
+        <a href="/about">About</a>
+        <a href="/blog">Writing</a>
+        <a href="/workflow-automation">Workflow Automation</a>
+        <a href="/ai-agents-for-business">AI Agents</a>
+        <a class="mobile-nav-button" href="https://calendly.com/hello-yudilabs/30min" target="_blank" rel="noopener">Book a mapping call</a>
+      </nav>
+    </div>
 
     <main id="main">
       <section class="article-hero">
@@ -73,7 +98,7 @@
             <span>· {{READTIME}}</span>
           </div>
           <h1>{{TITLE}}</h1>
-          <p class="article-intro-copy">
+          <p style="color:var(--ink-soft);font-size:1.18rem;max-width:680px;">
             {{DESCRIPTION}}
           </p>
         </div>
@@ -82,7 +107,7 @@
       <article class="article-body">
         <div class="tldr">
           <strong>TL;DR</strong>
-          <p class="tldr-copy">
+          <p style="margin:8px 0 0;">
             <!-- Write a 1–2 sentence summary of what readers will learn. -->
             Replace this with the article's key takeaway in one short paragraph.
           </p>
@@ -124,8 +149,8 @@
 
         <div class="cta-band">
           <h3>Want this kind of automation for your team?</h3>
-          <p>Book a 30-minute workflow mapping call. We will walk through the task your team is doing by hand and show what can be automated first.</p>
-          <a class="button" href="https://calendly.com/hello-yudilabs/30min" target="_blank" rel="noopener noreferrer">Book a Mapping Call</a>
+          <p>Send us the task your team is doing by hand. We will respond within one business day with an honest assessment.</p>
+          <a class="button" href="/contact">Contact Yudi Labs</a>
         </div>
       </article>
     </main>
@@ -134,7 +159,7 @@
       <div class="footer-grid">
         <div class="footer-col footer-brand">
           <a class="brand" href="/" aria-label="Yudi Labs home">
-            <span class="brand-mark"><img src="../assets/yudilabs-logo.svg" alt="" width="34" height="34" /></span>
+            <span class="brand-mark"><img src="../assets/yudilabs-logo.svg" alt="Yudi Labs" width="34" height="34" /></span>
             <span>Yudi Labs</span>
           </a>
           <p>AI automation agency for businesses tired of repetitive admin work. Automate the boring. Amplify the brilliant.</p>
@@ -144,7 +169,7 @@
           <ul>
             <li><a href="/about">About</a></li>
             <li><a href="/services">Services</a></li>
-            <li><a href="/services">Services</a></li>
+            <li><a href="/services#pricing">Pricing</a></li>
             <li><a href="/contact">Contact</a></li>
           </ul>
         </div>
@@ -172,5 +197,6 @@
         <span>Workflow Automation · AI Agents · Business Process Automation</span>
       </div>
     </footer>
+    <script src="../script.js" defer></script>
   </body>
 </html>
