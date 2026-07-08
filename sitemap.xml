@@ -61,6 +61,12 @@
     <priority>0.7</priority>
   </url>
   <url>
+    <loc>https://www.yudilabs.com/blog/what-is-ai-automation</loc>
+    <lastmod>2026-07-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://www.yudilabs.com/privacy</loc>
     <lastmod>2026-07-08</lastmod>
     <changefreq>yearly</changefreq>

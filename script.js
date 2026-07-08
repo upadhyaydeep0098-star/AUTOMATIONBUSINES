@@ -196,3 +196,84 @@ if (roiCalculator) {
   rateInput?.addEventListener("input", updateRoi);
   updateRoi();
 }
+
+/* ---------- Hero headline: word-by-word rise ---------- */
+const displayEl = document.querySelector(".m-display");
+if (displayEl && !prefersReducedMotion) {
+  const splitWords = (node) => {
+    [...node.childNodes].forEach((child) => {
+      if (child.nodeType === Node.TEXT_NODE) {
+        if (!child.textContent.trim()) return;
+        const frag = document.createDocumentFragment();
+        child.textContent.split(/(\s+)/).forEach((part) => {
+          if (!part) return;
+          if (!part.trim()) {
+            frag.appendChild(document.createTextNode(part));
+            return;
+          }
+          const outer = document.createElement("span");
+          outer.className = "split-word";
+          const inner = document.createElement("span");
+          inner.textContent = part;
+          outer.appendChild(inner);
+          frag.appendChild(outer);
+        });
+        node.replaceChild(frag, child);
+      } else if (child.nodeType === Node.ELEMENT_NODE && child.tagName !== "BR") {
+        splitWords(child);
+      }
+    });
+  };
+  splitWords(displayEl);
+  // The word animation replaces the container reveal for the headline.
+  displayEl.classList.remove("reveal", "reveal-delay-1");
+  displayEl.classList.add("in-view");
+  displayEl.querySelectorAll(".split-word > span").forEach((el, i) => {
+    el.style.transitionDelay = `${120 + i * 80}ms`;
+  });
+  const armSplit = () => displayEl.classList.add("split-ready");
+  requestAnimationFrame(() => {
+    requestAnimationFrame(armSplit);
+  });
+  // rAF can be throttled in hidden/background tabs — never leave the headline hidden.
+  setTimeout(armSplit, 400);
+}
+
+/* ---------- Hero cursor glow (fine pointers only) ---------- */
+const heroEl = document.querySelector(".m-hero");
+if (heroEl && !prefersReducedMotion && window.matchMedia("(pointer: fine)").matches) {
+  const glow = document.createElement("div");
+  glow.className = "m-cursor-glow";
+  glow.setAttribute("aria-hidden", "true");
+  heroEl.appendChild(glow);
+
+  let targetX = heroEl.offsetWidth * 0.68;
+  let targetY = heroEl.offsetHeight * 0.42;
+  let x = targetX;
+  let y = targetY;
+  let raf = null;
+
+  const render = () => {
+    x += (targetX - x) * 0.09;
+    y += (targetY - y) * 0.09;
+    glow.style.transform = `translate(${x}px, ${y}px)`;
+    if (Math.abs(targetX - x) > 0.5 || Math.abs(targetY - y) > 0.5) {
+      raf = requestAnimationFrame(render);
+    } else {
+      raf = null;
+    }
+  };
+
+  glow.style.transform = `translate(${x}px, ${y}px)`;
+
+  heroEl.addEventListener(
+    "pointermove",
+    (event) => {
+      const rect = heroEl.getBoundingClientRect();
+      targetX = event.clientX - rect.left;
+      targetY = event.clientY - rect.top;
+      if (!raf) raf = requestAnimationFrame(render);
+    },
+    { passive: true }
+  );
+}

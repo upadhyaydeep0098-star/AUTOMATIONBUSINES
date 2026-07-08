@@ -5369,3 +5369,169 @@ body.minimal .m-mobile-panel {
     transition: none;
   }
 }
+
+/* ==========================================================================
+   Motion pass — Webflow-style polish
+   ========================================================================== */
+
+/* Richer reveal: rise + soft blur-in */
+body.minimal .reveal {
+  transform: translateY(34px);
+  filter: blur(10px);
+  transition:
+    opacity 900ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 900ms cubic-bezier(0.22, 1, 0.36, 1),
+    filter 900ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform, filter;
+}
+
+body.minimal .reveal.in-view {
+  opacity: 1;
+  transform: none;
+  filter: none;
+}
+
+/* Staggered children — add data-stagger to a .reveal parent */
+body.minimal .reveal[data-stagger] > * {
+  opacity: 0;
+  transform: translateY(24px);
+  filter: blur(8px);
+  transition:
+    opacity 800ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 800ms cubic-bezier(0.22, 1, 0.36, 1),
+    filter 800ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+body.minimal .reveal.in-view[data-stagger] > * {
+  opacity: 1;
+  transform: none;
+  filter: none;
+}
+
+body.minimal .reveal.in-view[data-stagger] > *:nth-child(1) { transition-delay: 60ms; }
+body.minimal .reveal.in-view[data-stagger] > *:nth-child(2) { transition-delay: 150ms; }
+body.minimal .reveal.in-view[data-stagger] > *:nth-child(3) { transition-delay: 240ms; }
+body.minimal .reveal.in-view[data-stagger] > *:nth-child(4) { transition-delay: 330ms; }
+body.minimal .reveal.in-view[data-stagger] > *:nth-child(5) { transition-delay: 420ms; }
+body.minimal .reveal.in-view[data-stagger] > *:nth-child(6) { transition-delay: 510ms; }
+body.minimal .reveal.in-view[data-stagger] > *:nth-child(7) { transition-delay: 600ms; }
+body.minimal .reveal.in-view[data-stagger] > *:nth-child(8) { transition-delay: 690ms; }
+
+/* Hero headline: word-by-word rise (spans injected by script.js) */
+.split-word {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+  padding-bottom: 0.08em;
+  margin-bottom: -0.08em;
+}
+
+.split-word > span {
+  display: inline-block;
+  transform: translateY(112%);
+  transition: transform 900ms cubic-bezier(0.19, 1, 0.22, 1);
+  will-change: transform;
+}
+
+.split-ready .split-word > span { transform: translateY(0); }
+
+/* Hero cursor glow (injected by script.js on fine pointers only) */
+.m-cursor-glow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 560px;
+  height: 560px;
+  margin: -280px 0 0 -280px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(15, 118, 110, 0.13) 0%, rgba(15, 118, 110, 0.05) 42%, rgba(15, 118, 110, 0) 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+body.minimal .m-hero-grid {
+  position: relative;
+  z-index: 1;
+}
+
+/* Buttons: springy lift */
+body.minimal a.m-btn,
+body.minimal a.m-cta,
+body.minimal a.button,
+body.minimal .m-mobile-cta,
+body.minimal button.button {
+  transition:
+    transform 260ms cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 260ms ease,
+    background 200ms ease;
+}
+
+body.minimal a.m-btn:hover,
+body.minimal a.m-cta:hover,
+body.minimal a.button:hover,
+body.minimal .m-mobile-cta:hover,
+body.minimal button.button:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 14px 32px rgba(6, 63, 58, 0.22);
+}
+
+body.minimal a.m-btn:active,
+body.minimal a.m-cta:active,
+body.minimal a.button:active,
+body.minimal button.button:active {
+  transform: translateY(0) scale(0.98);
+  box-shadow: 0 6px 16px rgba(6, 63, 58, 0.16);
+}
+
+/* Arrow-link nudge */
+body.minimal .m-link::after {
+  transition: transform 240ms cubic-bezier(0.34, 1.56, 0.64, 1), background 200ms ease;
+}
+
+body.minimal .m-link:hover::after { transform: translateX(4px); }
+
+/* Cards: gentle lift on hover */
+body.minimal .m-steps article,
+body.minimal .blog-card,
+body.minimal .comparison-grid article,
+body.minimal .value-card,
+body.minimal .motion-result-card {
+  transition: transform 320ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 320ms ease;
+}
+
+body.minimal .m-steps article:hover,
+body.minimal .blog-card:hover,
+body.minimal .comparison-grid article:hover,
+body.minimal .value-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 18px 44px rgba(6, 63, 58, 0.1);
+}
+
+/* Marquee: pause on hover */
+.m-marquee:hover .m-marquee-track { animation-play-state: paused; }
+
+/* Reduced motion: everything lands instantly, no blur, no glow */
+@media (prefers-reduced-motion: reduce) {
+  body.minimal .reveal,
+  body.minimal .reveal[data-stagger] > * {
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+    transition: none !important;
+  }
+
+  .split-word > span {
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .m-cursor-glow { display: none; }
+
+  body.minimal a.m-btn:hover,
+  body.minimal a.m-cta:hover,
+  body.minimal a.button:hover,
+  body.minimal .m-steps article:hover,
+  body.minimal .blog-card:hover {
+    transform: none;
+  }
+}
