@@ -39,3 +39,9 @@ These items need founder or account-owner input before they can be completed saf
   - "What task do you want to automate?"
   - "Which tools does your team use for this task?"
   - "How often does this task happen?"
+
+## Cache busting
+styles.css and script.js are cached for 1 year (immutable). When either file changes,
+bump the `?v=` query string in ALL html files (currently `?v=20260708`), e.g.:
+  sed -i "" "s/?v=20260708/?v=NEWDATE/g" *.html blog/*.html
+Otherwise returning visitors keep the old stylesheet and pages look broken/mixed.
