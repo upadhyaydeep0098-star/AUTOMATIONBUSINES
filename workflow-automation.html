@@ -47,18 +47,33 @@
           "mainEntity": [
             {
               "@type": "Question",
-              "name": "What is workflow automation?",
-              "acceptedAnswer": { "@type": "Answer", "text": "Workflow automation uses software and AI to perform the repetitive steps that make up a business process — moving data between systems, checking portals, sending notifications, and updating records — without a person doing each step by hand." }
+              "name": "Will workflow automation replace my team?",
+              "acceptedAnswer": { "@type": "Answer", "text": "No. It removes the work your team doesn't want to do anyway — the repetitive admin layer — and gives them back the hours to do the work only humans can." }
             },
             {
               "@type": "Question",
-              "name": "How is AI workflow automation different from no-code tools like Zapier?",
-              "acceptedAnswer": { "@type": "Answer", "text": "No-code tools connect APIs with rigid triggers. AI workflow automation handles judgment-heavy steps — reading messy documents, classifying exceptions, summarizing context, and adapting when an interface changes. Yudi Labs combines both where it makes sense." }
+              "name": "What if my \"workflow\" only exists in someone's head?",
+              "acceptedAnswer": { "@type": "Answer", "text": "That's normal. The first week of any build is observation — we watch the real task and document it before we automate it. Tacit knowledge becomes a system you actually own." }
             },
             {
               "@type": "Question",
-              "name": "Which workflows are best to automate first?",
-              "acceptedAnswer": { "@type": "Answer", "text": "Start with workflows that are repetitive, rule-based, and touch software your team already uses daily. High-ROI candidates: portal checks, document collection, reconciliation, exception alerts, and recurring report assembly." }
+              "name": "Do I need to use specific software for Yudi Labs to help?",
+              "acceptedAnswer": { "@type": "Answer", "text": "No. We work with whatever stack you have — Microsoft 365, Google Workspace, QuickBooks, Xero, Salesforce, HubSpot, NetSuite, Notion, custom internal tools, and the messy spreadsheets in between." }
+            },
+            {
+              "@type": "Question",
+              "name": "How much does workflow automation cost for a small business?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Single-workflow builds start in the low five figures as a fixed quote, with an optional monthly care plan after launch. The number of systems, the messiness of the documents, and the exception rate drive the price." }
+            },
+            {
+              "@type": "Question",
+              "name": "Is workflow automation safe for financial data?",
+              "acceptedAnswer": { "@type": "Answer", "text": "It should be — and that bar is where we started. Yudi Labs was founded on automation work inside RBC, CIBC, BMO, and TD, where every workflow needed audit logs, access controls, and approval gates by default. Your automations get the same structure: logged runs, least-privilege access, and a person approving anything that moves money or commitments." }
+            },
+            {
+              "@type": "Question",
+              "name": "What happens if the automation breaks?",
+              "acceptedAnswer": { "@type": "Answer", "text": "It fails loudly, not silently. Every run is monitored; if a portal changes or an input looks wrong, the automation stops, flags a person, and the manual process continues uninterrupted. Under the care plan breaks are fixed as part of the retainer." }
             }
           ]
         }
@@ -138,6 +153,16 @@
           difference between an automation that breaks every month and one that
           runs reliably for a year.
         </p>
+        <p>
+          A concrete example: an operations coordinator starts each day by logging
+          into two supplier portals, downloading yesterday's reports, checking them
+          against the order spreadsheet, and emailing anyone whose shipment status
+          changed. That is forty minutes of clicking before the real work starts.
+          Automated, the same routine runs at 6am: reports collected, rows
+          cross-checked, a short Slack message posted with the two orders that
+          actually need attention. The person still makes every decision that
+          matters — they just stop doing the collection.
+        </p>
 
         <h2>Why businesses invest in workflow automation</h2>
         <ul class="checklist">
@@ -147,6 +172,16 @@
           <li>Scale operations without proportional headcount growth</li>
           <li>Free skilled people to focus on judgment, relationships, and strategy</li>
         </ul>
+        <p>
+          The arithmetic is straightforward. If one workflow consumes twelve hours a
+          week and the person running it costs your business $40 an hour fully
+          loaded, that single workflow costs roughly $25,000 a year — every year,
+          before you count the errors, the delays, and the fact that nobody enjoys
+          doing it. A build that removes it typically pays for itself inside the
+          first few months. We walk through this calculation for your specific
+          workflow on the <a href="/contact">mapping call</a>, with your numbers,
+          not ours.
+        </p>
 
         <h2>What kinds of workflows are best to automate?</h2>
         <p>The highest-ROI candidates share three traits:</p>
@@ -164,6 +199,16 @@
           <li>Renaming, filing, and routing documents into the right folder or system</li>
           <li>Catching missing data and chasing it before month-end close</li>
         </ul>
+        <h3>And what should stay manual?</h3>
+        <p>
+          Being honest about this saves everyone money. Workflows that change
+          shape every time they run, decisions that hinge on relationships or
+          negotiation, and anything a person does twice a year are usually not
+          worth automating. If the workflow you bring us falls in that category,
+          we will say so on the call rather than build something you don't need.
+          The full list of what we do take on is on the
+          <a href="/services">services page</a>.
+        </p>
 
         <h2>AI workflow automation vs RPA vs no-code tools</h2>
         <p>
@@ -182,6 +227,46 @@
           review. Yudi Labs selects the combination that fits each engagement; we are
           not tied to a single platform.
         </p>
+        <div class="article-table-wrap">
+          <table class="article-table">
+            <thead>
+              <tr>
+                <th>Approach</th>
+                <th>Where it shines</th>
+                <th>Where it breaks</th>
+                <th>Typical fit</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Traditional RPA</strong></td>
+                <td>Stable, unchanging interfaces with high-volume identical tasks</td>
+                <td>Silently fails when a screen, button, or layout changes</td>
+                <td>Large enterprises with dedicated RPA maintenance teams</td>
+              </tr>
+              <tr>
+                <td><strong>No-code tools (Zapier, Make, n8n)</strong></td>
+                <td>Clean API-to-API handoffs — "new form entry creates a CRM record"</td>
+                <td>PDFs, judgment calls, exceptions, and anything without an API</td>
+                <td>Simple two-app connections a team can maintain itself</td>
+              </tr>
+              <tr>
+                <td><strong>AI workflow automation</strong></td>
+                <td>Messy inputs, judgment-heavy steps, exception handling with human review</td>
+                <td>Workflows that change shape completely on every run</td>
+                <td>The document-heavy admin work described on this page</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>
+          When a workflow needs to take real actions across systems — not just
+          move data — the build usually involves an AI agent with human approval
+          gates. We cover when that is the right call (and when it is overkill) on
+          the <a href="/ai-agents-for-business">AI agents for business</a> page,
+          and compare the no-code path honestly in
+          <a href="/blog/ai-agents-vs-zapier">AI agents vs Zapier</a>.
+        </p>
 
         <blockquote>
           "We don't pick a platform first and force your workflow into it. We pick the
@@ -195,6 +280,16 @@
           automation programs — incremental, production-ready deliveries compound
           faster than extended initiatives.
         </p>
+        <p>A typical four-week build looks like this:</p>
+        <ol>
+          <li><strong>Week 1 — Observe.</strong> We watch the workflow actually happen, exceptions included, and write it down. You approve the map before anything is built.</li>
+          <li><strong>Weeks 2–3 — Build.</strong> The automation is assembled inside your stack and tested against real historical data, not demo data.</li>
+          <li><strong>Week 4 — Run in parallel.</strong> The automation runs alongside the person for a week. When its output matches theirs, it takes over and they move to reviewing the exception list.</li>
+        </ol>
+        <p>
+          Nothing goes live on trust. It goes live because you watched it produce
+          the same output your team did, for a week, side by side.
+        </p>
 
         <h2>What does it cost?</h2>
         <p>
@@ -203,6 +298,19 @@
           Care Plan (hosting, monitoring, ongoing improvements) is structured as a
           monthly retainer and starts at a smaller commitment. Every build is
           quoted at a fixed fee — no open-ended hourly arrangements.
+        </p>
+        <p>Four things move the price, in order of impact:</p>
+        <ul>
+          <li><strong>Number of systems.</strong> A two-system workflow (inbox → QuickBooks) is a smaller build than one spanning portals, a CRM, and a reporting layer.</li>
+          <li><strong>Messiness of the inputs.</strong> Clean CSV exports are cheap to handle; scanned PDFs in fourteen supplier formats are not.</li>
+          <li><strong>Exception rate.</strong> A workflow where 2% of items need judgment is simpler than one where 30% do.</li>
+          <li><strong>Approval requirements.</strong> Each human sign-off gate adds design work — and is usually worth it.</li>
+        </ul>
+        <p>
+          We published a fuller breakdown, including the ranges we quote and the
+          pricing patterns to avoid, in
+          <a href="/blog/how-much-does-workflow-automation-cost">How much does
+          workflow automation cost?</a>
         </p>
 
         <h2>Frequently asked questions</h2>
@@ -217,6 +325,18 @@
         <details>
           <summary>Do I need to use specific software for Yudi Labs to help?</summary>
           <p>No. We work with whatever stack you have — Microsoft 365, Google Workspace, QuickBooks, Xero, Salesforce, HubSpot, NetSuite, Notion, custom internal tools, and the messy spreadsheets in between.</p>
+        </details>
+        <details>
+          <summary>How much does workflow automation cost for a small business?</summary>
+          <p>Single-workflow builds start in the low five figures as a fixed quote, with an optional monthly care plan after launch. The number of systems, the messiness of the documents, and the exception rate drive the price. We published an honest breakdown in <a href="/blog/how-much-does-workflow-automation-cost">our pricing article</a>.</p>
+        </details>
+        <details>
+          <summary>Is workflow automation safe for financial data?</summary>
+          <p>It should be — and that bar is where we started. Yudi Labs was founded on automation work inside RBC, CIBC, BMO, and TD, where every workflow needed audit logs, access controls, and approval gates by default. Your automations get the same structure: logged runs, least-privilege access, and a person approving anything that moves money or commitments.</p>
+        </details>
+        <details>
+          <summary>What happens if the automation breaks?</summary>
+          <p>It fails loudly, not silently. Every run is monitored; if a portal changes or an input looks wrong, the automation stops, flags a person, and the manual process continues uninterrupted. Under the care plan we fix breaks as part of the retainer — you never debug a workflow you didn't write.</p>
         </details>
 
         <div class="cta-band">

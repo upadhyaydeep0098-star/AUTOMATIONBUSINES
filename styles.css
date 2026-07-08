@@ -1066,6 +1066,41 @@ h3 {
   color: var(--ink);
 }
 
+.article-table-wrap {
+  margin: 28px 0;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.article-table {
+  width: 100%;
+  min-width: 560px;
+  border-collapse: collapse;
+  font-size: 0.98rem;
+  line-height: 1.5;
+}
+
+.article-table th,
+.article-table td {
+  padding: 12px 14px;
+  border-bottom: 1px solid rgba(10, 10, 10, 0.1);
+  text-align: left;
+  vertical-align: top;
+  color: var(--ink-soft);
+}
+
+.article-table th {
+  color: var(--ink);
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.article-table td strong {
+  color: var(--ink);
+}
+
 .article-body code {
   padding: 2px 6px;
   border-radius: 4px;
@@ -2231,6 +2266,23 @@ body.minimal {
 }
 
 body.minimal a { text-decoration: none; color: inherit; }
+
+body.minimal a.m-inline-link,
+body.minimal .article-body a:not(.button),
+body.minimal details a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: rgba(17, 97, 91, 0.35);
+  transition: color 160ms ease, text-decoration-color 160ms ease;
+}
+
+body.minimal a.m-inline-link:hover,
+body.minimal .article-body a:not(.button):hover,
+body.minimal details a:hover {
+  color: #11615b;
+  text-decoration-color: #11615b;
+}
+
 body.minimal a.m-btn,
 body.minimal a.m-cta,
 body.minimal a.button,

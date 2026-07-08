@@ -47,18 +47,33 @@
           "mainEntity": [
             {
               "@type": "Question",
-              "name": "What is an AI agent?",
-              "acceptedAnswer": { "@type": "Answer", "text": "An AI agent is a software system that uses AI models to perceive context, make decisions, and take actions toward a goal — like reading an inbox, classifying messages, extracting data from PDFs, and updating records in your CRM, with minimal human supervision." }
+              "name": "Do I need to be an AI company to use AI agents?",
+              "acceptedAnswer": { "@type": "Answer", "text": "No. Most of Yudi Labs' clients aren't technical. The whole point is that the agent quietly handles work — you don't need a team to babysit it." }
             },
             {
               "@type": "Question",
-              "name": "How are AI agents different from chatbots?",
-              "acceptedAnswer": { "@type": "Answer", "text": "Chatbots answer questions. AI agents take actions. A chatbot tells your customer where their order is. An AI agent reads the carrier portal, detects the delay, drafts the customer message, and files the exception for your team — without being asked." }
+              "name": "What happens when the AI model is wrong?",
+              "acceptedAnswer": { "@type": "Answer", "text": "That's why scope and guardrails matter. Agents are deployed in narrow domains where we can evaluate them on real cases first, with approval gates on anything irreversible. The goal isn't perfection — it's better and faster than what you do today, with full audit." }
             },
             {
               "@type": "Question",
-              "name": "Are AI agents safe to deploy in business workflows?",
-              "acceptedAnswer": { "@type": "Answer", "text": "Yes — when scoped properly. Yudi Labs deploys agents with explicit boundaries, audit logs, human-in-the-loop checkpoints for high-stakes decisions, and rollback mechanisms. We treat AI agents like any other production system." }
+              "name": "Will my data train someone else's model?",
+              "acceptedAnswer": { "@type": "Answer", "text": "No. We deploy through providers and configurations that contractually do not train on your data. We're happy to walk through the specific setup before any work begins." }
+            },
+            {
+              "@type": "Question",
+              "name": "Are AI agents safe with financial data?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Yes, when built with the right defaults: least-privilege access to each system, audit logs on every action, and human approval on anything that moves money. That standard comes from our founder's years building automation inside Canada's largest banks." }
+            },
+            {
+              "@type": "Question",
+              "name": "How much does a custom AI agent cost?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Agent builds are quoted as a fixed fee, typically starting in the low five figures for a single-purpose agent, plus an optional monthly care plan for monitoring and improvements. The drivers are the number of systems, messiness of inputs, and how many approval gates the work needs." }
+            },
+            {
+              "@type": "Question",
+              "name": "We already use Zapier. Do we still need an AI agent?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Maybe not — and we will tell you if so. Zapier is excellent at clean app-to-app triggers. Agents earn their fee when the workflow involves documents, judgment, or exceptions." }
             }
           ]
         }
@@ -136,6 +151,15 @@
           — unexpected formats, missing data, new categories — using AI judgment,
           while staying inside the rules you set.
         </p>
+        <p>
+          Here is what that looks like on a Tuesday morning. Overnight, the agent
+          read forty emails across two shared inboxes. It filed thirty-one
+          invoices into the right folders and logged them in QuickBooks, matched
+          six against purchase orders, and left three in a review queue: one
+          duplicate, one with a total that doesn't match the PO, and one from a
+          supplier it hasn't seen before. Your bookkeeper opens one list, makes
+          three decisions, and is done by 9:15. That is the entire product.
+        </p>
 
         <h2>AI agents vs chatbots: a different category</h2>
         <ul>
@@ -147,6 +171,52 @@
           the carrier portal, identifies the delay, drafts the customer message,
           and files the exception — proactively, without being prompted.
         </p>
+        <div class="article-table-wrap">
+          <table class="article-table">
+            <thead>
+              <tr>
+                <th>&nbsp;</th>
+                <th>Chatbot</th>
+                <th>No-code automation</th>
+                <th>AI agent</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Core job</strong></td>
+                <td>Answers questions</td>
+                <td>Moves clean data between apps</td>
+                <td>Completes a task end to end</td>
+              </tr>
+              <tr>
+                <td><strong>Handles messy inputs</strong></td>
+                <td>No — conversation only</td>
+                <td>No — breaks on PDFs and exceptions</td>
+                <td>Yes — reads, classifies, extracts</td>
+              </tr>
+              <tr>
+                <td><strong>Makes judgment calls</strong></td>
+                <td>No</td>
+                <td>No — rigid rules only</td>
+                <td>Yes, within boundaries you approve</td>
+              </tr>
+              <tr>
+                <td><strong>Best fit</strong></td>
+                <td>Customer FAQ pages</td>
+                <td>Simple two-app triggers</td>
+                <td>Judgment-heavy admin workflows</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p>
+          If your workflow is a clean API-to-API handoff, you may not need an
+          agent at all — we say exactly where the no-code path wins in
+          <a href="/blog/ai-agents-vs-zapier">AI agents vs Zapier</a>. And when
+          the task is repetitive but doesn't need judgment, plain
+          <a href="/workflow-automation">workflow automation</a> is usually the
+          cheaper, simpler build.
+        </p>
 
         <h2>Where AI agents earn their keep in business</h2>
         <ul class="checklist">
@@ -157,6 +227,14 @@
           <li>Drafting recurring reports, summaries, and packs from raw data</li>
           <li>Answering internal "where do I find X" questions over company knowledge</li>
         </ul>
+        <p>
+          The pattern across all of these: unstructured input, a repeatable
+          decision, and an existing system of record. If a person currently opens
+          three tabs, reads something, decides, and types the result somewhere —
+          that is agent-shaped work. What stays with your team is everything the
+          decision was ultimately for: the client conversation, the negotiation,
+          the judgment about what the numbers mean.
+        </p>
 
         <h2>Are AI agents safe to deploy?</h2>
         <p>Yes — when scoped properly. Yudi Labs deploys every agent with:</p>
@@ -167,6 +245,13 @@
           <li><strong>Rollback paths.</strong> If something goes wrong, we can pause the agent and revert affected records.</li>
           <li><strong>Evaluation suites.</strong> We test the agent against real historical data before it touches production.</li>
         </ul>
+        <p>
+          This discipline isn't something we bolted on for AI. It is how
+          automation had to be built inside RBC, CIBC, BMO, and TD — where our
+          founder spent years shipping systems that regulators could audit. The
+          same defaults apply to a ten-person company's invoice agent: logged,
+          bounded, and supervised where it counts.
+        </p>
 
         <blockquote>
           "An AI agent should feel like a trusted junior teammate — eager, fast,
@@ -174,6 +259,13 @@
         </blockquote>
 
         <h2>How Yudi Labs builds custom AI agents</h2>
+        <p>
+          Every engagement follows the same six steps. The order is deliberate:
+          scope and evaluation come before any deployment, because an agent that
+          hasn't been tested against your real historical cases is a demo, not a
+          system. You see it pass on last quarter's actual invoices, emails, or
+          portal reports before it touches a live record.
+        </p>
         <ol>
           <li><strong>Scope the job.</strong> What is the agent's goal? What can it touch? What can it not?</li>
           <li><strong>Pick the right model.</strong> Reasoning model for judgment, smaller models for cheap classification, embedding models for search.</li>
@@ -189,6 +281,30 @@
           agents that touch several systems take 6–10. We start narrow and high-value
           — and only expand after the agent proves itself in production.
         </p>
+        <p>
+          The sequencing matters more than the speed. An agent that reads invoices
+          ships first and earns trust for a month. Then it learns to match purchase
+          orders. Then it starts drafting the supplier emails a person approves.
+          Each expansion is a small, reviewed step — never a big-bang deployment
+          your team has to hope works.
+        </p>
+
+        <h2>Where should a business start with AI agents?</h2>
+        <p>
+          Not with the biggest workflow — with the most annoying <em>bounded</em>
+          one. The best first agent has a clear input (an inbox, a portal, a
+          folder), a clear output (a filed record, an exception list, a draft),
+          and a person who currently spends hours a week in between. Invoice
+          intake, document collection, and daily portal checks are the classic
+          starting points because success is easy to measure: the hours simply
+          stop being spent.
+        </p>
+        <p>
+          If you are not sure whether your workflow is agent-shaped, that is
+          literally what the <a href="/contact">mapping call</a> is for — we map
+          it with you and tell you honestly whether it needs an agent, a simpler
+          <a href="/workflow-automation">workflow automation</a>, or nothing at all.
+        </p>
 
         <h2>Frequently asked questions</h2>
         <details>
@@ -202,6 +318,18 @@
         <details>
           <summary>Will my data train someone else's model?</summary>
           <p>No. We deploy through providers and configurations that contractually do not train on your data. We're happy to walk through the specific setup before any work begins.</p>
+        </details>
+        <details>
+          <summary>Are AI agents safe with financial data?</summary>
+          <p>Yes, when built with the right defaults: least-privilege access to each system, audit logs on every action, and human approval on anything that moves money. That standard comes from our founder's years building automation inside Canada's largest banks — it applies to every agent we ship, regardless of company size.</p>
+        </details>
+        <details>
+          <summary>How much does a custom AI agent cost?</summary>
+          <p>Agent builds are quoted as a fixed fee, typically starting in the low five figures for a single-purpose agent, plus an optional monthly care plan for monitoring and improvements. The drivers are the same as any automation: number of systems, messiness of inputs, and how many approval gates the work needs. See <a href="/blog/how-much-does-workflow-automation-cost">our honest cost breakdown</a>.</p>
+        </details>
+        <details>
+          <summary>We already use Zapier. Do we still need an agent?</summary>
+          <p>Maybe not — and we will tell you if so. Zapier is excellent at clean app-to-app triggers. Agents earn their fee when the workflow involves documents, judgment, or exceptions. We wrote up the honest decision line in <a href="/blog/ai-agents-vs-zapier">AI agents vs Zapier</a>.</p>
         </details>
 
         <div class="cta-band">
