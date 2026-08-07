@@ -3,44 +3,65 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>document.documentElement.classList.add("js");</script>
 
     <title>Workflow Automation Services | Yudi Labs</title>
     <meta name="description" content="Workflow automation services for small teams that need invoices, portal checks, reports, and CRM updates handled with less manual work and fewer errors." />
-    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta name="author" content="Yudi Labs" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+    <meta name="theme-color" content="#070c0b" />
     <link rel="canonical" href="https://www.yudilabs.com/workflow-automation" />
 
-    <meta property="og:type" content="article" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Yudi Labs" />
-    <meta property="og:title" content="Workflow Automation Services — Yudi Labs" />
-    <meta property="og:description" content="Custom AI-powered workflow automation that runs inside the tools your business already uses. Save 10–20 hours per week per role." />
+    <meta property="og:locale" content="en_CA" />
     <meta property="og:url" content="https://www.yudilabs.com/workflow-automation" />
+    <meta property="og:title" content="Workflow Automation Services — Yudi Labs" />
+    <meta property="og:description" content="Custom AI-powered workflow automation that runs inside the tools your business already uses. A single automated workflow typically hands back 10–20 hours a week." />
     <meta property="og:image" content="https://www.yudilabs.com/assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Yudi Labs — AI automation agency" />
+
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@yudilabs" />
+    <meta name="twitter:title" content="Workflow Automation Services — Yudi Labs" />
+    <meta name="twitter:description" content="Custom workflow automation inside the tools you already use. A single automated workflow typically hands back 10–20 hours a week." />
     <meta name="twitter:image" content="https://www.yudilabs.com/assets/og-image.png" />
+    <meta name="twitter:image:alt" content="Yudi Labs — AI automation agency" />
+
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png" />
     <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" sizes="180x180" />
     <link rel="manifest" href="/site.webmanifest" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400..900&family=Inter+Tight:wght@500..900&display=swap" />
-    <link rel="stylesheet" href="/styles.css?v=20260709" />
+    <link rel="preload" href="/assets/fonts/inter-tight-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="/styles.css?v=20260807" />
 
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@graph": [
         {
+          "@type": "Organization",
+          "@id": "https://www.yudilabs.com/#organization",
+          "name": "Yudi Labs",
+          "url": "https://www.yudilabs.com/"
+        },
+        {
           "@type": "Service",
           "name": "Workflow Automation Services",
           "serviceType": "Workflow Automation",
-          "provider": { "@type": "Organization", "name": "Yudi Labs", "url": "https://www.yudilabs.com/" },
-          "areaServed": "Worldwide",
+          "url": "https://www.yudilabs.com/workflow-automation",
+          "provider": { "@id": "https://www.yudilabs.com/#organization" },
+          "areaServed": ["Canada", "United States", "Europe"],
           "description": "AI-powered workflow automation services for businesses. Yudi Labs automates repetitive workflows inside your existing software stack."
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.yudilabs.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Workflow Automation", "item": "https://www.yudilabs.com/workflow-automation" }
+          ]
         },
         {
           "@type": "FAQPage",
@@ -63,17 +84,17 @@
             {
               "@type": "Question",
               "name": "How much does workflow automation cost for a small business?",
-              "acceptedAnswer": { "@type": "Answer", "text": "Single-workflow builds start in the low five figures as a fixed quote, with an optional monthly care plan after launch. The number of systems, the messiness of the documents, and the exception rate drive the price." }
+              "acceptedAnswer": { "@type": "Answer", "text": "Single-workflow builds start in the low five figures as a fixed quote, with an optional monthly care plan after launch. The number of systems, the messiness of the documents, and the exception rate drive the price. We published an honest breakdown in our pricing article." }
             },
             {
               "@type": "Question",
               "name": "Is workflow automation safe for financial data?",
-              "acceptedAnswer": { "@type": "Answer", "text": "It should be — and that bar is where we started. Yudi Labs was founded on automation work inside RBC, CIBC, BMO, and TD, where every workflow needed audit logs, access controls, and approval gates by default. Your automations get the same structure: logged runs, least-privilege access, and a person approving anything that moves money or commitments." }
+              "acceptedAnswer": { "@type": "Answer", "text": "It should be — and we treat it that way by default. That bar comes from years automating inside Canada's largest banks. Your automations get the same structure: logged runs, least-privilege access, and a person approving anything that moves money or commitments." }
             },
             {
               "@type": "Question",
               "name": "What happens if the automation breaks?",
-              "acceptedAnswer": { "@type": "Answer", "text": "It fails loudly, not silently. Every run is monitored; if a portal changes or an input looks wrong, the automation stops, flags a person, and the manual process continues uninterrupted. Under the care plan breaks are fixed as part of the retainer." }
+              "acceptedAnswer": { "@type": "Answer", "text": "It fails loudly, not silently. Every run is monitored; if a portal changes or an input looks wrong, the automation stops, flags a person, and the manual process continues uninterrupted. Under the care plan we fix breaks as part of the retainer — you never debug a workflow you didn't write." }
             }
           ]
         }
@@ -81,51 +102,67 @@
     }
     </script>
   </head>
-  <body class="minimal">
+  <body data-floating-cta>
     <a class="skip-link" href="#main">Skip to main content</a>
 
     <header class="m-header">
       <a class="m-brand" href="/" aria-label="Yudi Labs home">
-        <img src="assets/yudilabs-logo.svg" alt="Yudi Labs" width="22" height="22" />
+        <img src="/assets/yudilabs-logo.svg" alt="" width="22" height="22" />
         <span>Yudi Labs</span>
       </a>
       <nav class="m-nav" aria-label="Primary">
-        <a href="/services">Work</a>
+        <a href="/services">Services</a>
+        <a href="/workflow-automation" aria-current="page">Workflow Automation</a>
+        <a href="/ai-agents-for-business">AI Agents</a>
         <a href="/about">About</a>
-        <a href="/blog">Writing</a>
+        <a href="/blog">Blog</a>
       </nav>
-      <button class="m-menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      <a class="m-cta" href="https://calendly.com/hello-yudilabs/30min" target="_blank" rel="noopener noreferrer">Book a call</a>
+      <div class="m-header-right">
+        <button class="m-menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <a class="m-cta" href="https://calendly.com/hello-yudilabs/30min" target="_blank" rel="noopener noreferrer">Book a call<span class="sr-only"> (opens in new tab)</span></a>
+      </div>
     </header>
 
     <div class="m-mobile-panel" id="mobile-nav" hidden>
-      <nav class="m-mobile-nav" aria-label="Mobile navigation">
-        <a href="/services">Work</a>
-        <a href="/about">About</a>
-        <a href="/blog">Writing</a>
-        <a href="/workflow-automation">Workflow Automation</a>
+      <nav class="m-mobile-nav" aria-label="Mobile">
+        <a href="/services">Services</a>
+        <a href="/workflow-automation" aria-current="page">Workflow Automation</a>
         <a href="/ai-agents-for-business">AI Agents</a>
-        <a class="m-mobile-cta" href="https://calendly.com/hello-yudilabs/30min" target="_blank" rel="noopener noreferrer">Book a call</a>
+        <a href="/about">About</a>
+        <a href="/blog">Blog</a>
+        <a href="/contact">Contact</a>
+        <a class="m-mobile-cta" href="https://calendly.com/hello-yudilabs/30min" target="_blank" rel="noopener noreferrer">Book a free call<span class="sr-only"> (opens in new tab)</span></a>
       </nav>
     </div>
 
     <main id="main">
       <section class="page-hero">
         <div class="page-hero-inner">
-          <p class="eyebrow">Workflow Automation Services</p>
-          <h1>Workflow Automation That Delivers Return on Investment in Weeks.</h1>
+          <nav class="breadcrumbs" aria-label="Breadcrumb">
+            <ol>
+              <li><a href="/">Home</a></li>
+              <li><span aria-current="page">Workflow Automation</span></li>
+            </ol>
+          </nav>
+          <p class="eyebrow">Workflow automation services</p>
+          <h1>Workflow automation that delivers return on investment in weeks.</h1>
           <p>
             You already know the workflows consuming your team's week — portal
             checks, file collection, reconciliation, the same recurring steps each
             morning. Yudi Labs builds custom workflow automation inside the tools you
-            already use. Clients typically reclaim 10–20 hours per week, per role,
-            within the first month.
+            already use. A single automated workflow typically hands back 10–20
+            hours a week — and on the mapping call we put your numbers on it
+            before anything is built.
           </p>
-          <a class="button button-primary" href="https://calendly.com/hello-yudilabs/30min" target="_blank" rel="noopener noreferrer">Book a Mapping Call</a>
+          <div class="m-actions">
+            <a class="button button-primary" href="https://calendly.com/hello-yudilabs/30min" target="_blank" rel="noopener noreferrer">Book a mapping call<span class="sr-only"> (opens in new tab)</span></a>
+            <a class="button button-secondary" href="/contact#brief">Send the task first</a>
+          </div>
+          <p class="m-cta-note">Free 30-minute call · No commitment · Reply within 1 business day</p>
         </div>
       </section>
 
@@ -166,7 +203,7 @@
 
         <h2>Why businesses invest in workflow automation</h2>
         <ul class="checklist">
-          <li>Reclaim 10–20 hours per week, per role</li>
+          <li>Reclaim 10–20 hours a week, per workflow</li>
           <li>Eliminate transcription errors that compound across spreadsheets</li>
           <li>Identify exceptions before customers, regulators, or finance leads do</li>
           <li>Scale operations without proportional headcount growth</li>
@@ -178,9 +215,10 @@
           loaded, that single workflow costs roughly $25,000 a year — every year,
           before you count the errors, the delays, and the fact that nobody enjoys
           doing it. A build that removes it typically pays for itself inside the
-          first few months. We walk through this calculation for your specific
-          workflow on the <a href="/contact">mapping call</a>, with your numbers,
-          not ours.
+          first few months. You can run your own numbers in the
+          <a href="/services#roi">savings calculator</a> on the services page, and
+          we walk through the same calculation for your specific workflow on the
+          <a href="/contact">mapping call</a> — with your numbers, not ours.
         </p>
 
         <h2>What kinds of workflows are best to automate?</h2>
@@ -227,31 +265,31 @@
           review. Yudi Labs selects the combination that fits each engagement; we are
           not tied to a single platform.
         </p>
-        <div class="article-table-wrap">
+        <div class="article-table-wrap" tabindex="0" role="region" aria-label="Comparison of traditional RPA, no-code tools, and AI workflow automation">
           <table class="article-table">
             <thead>
               <tr>
-                <th>Approach</th>
-                <th>Where it shines</th>
-                <th>Where it breaks</th>
-                <th>Typical fit</th>
+                <th scope="col">Approach</th>
+                <th scope="col">Where it shines</th>
+                <th scope="col">Where it breaks</th>
+                <th scope="col">Typical fit</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td><strong>Traditional RPA</strong></td>
+                <th scope="row">Traditional RPA</th>
                 <td>Stable, unchanging interfaces with high-volume identical tasks</td>
                 <td>Silently fails when a screen, button, or layout changes</td>
                 <td>Large enterprises with dedicated RPA maintenance teams</td>
               </tr>
               <tr>
-                <td><strong>No-code tools (Zapier, Make, n8n)</strong></td>
+                <th scope="row">No-code tools (Zapier, Make, n8n)</th>
                 <td>Clean API-to-API handoffs — "new form entry creates a CRM record"</td>
                 <td>PDFs, judgment calls, exceptions, and anything without an API</td>
                 <td>Simple two-app connections a team can maintain itself</td>
               </tr>
               <tr>
-                <td><strong>AI workflow automation</strong></td>
+                <th scope="row">AI workflow automation</th>
                 <td>Messy inputs, judgment-heavy steps, exception handling with human review</td>
                 <td>Workflows that change shape completely on every run</td>
                 <td>The document-heavy admin work described on this page</td>
@@ -271,6 +309,7 @@
         <blockquote>
           "We don't pick a platform first and force your workflow into it. We pick the
           workflow first and choose tools that fit it."
+          <footer>— Deep Upadhyay, founder</footer>
         </blockquote>
 
         <h2>How long does workflow automation take to deliver?</h2>
@@ -287,17 +326,18 @@
           <li><strong>Week 4 — Run in parallel.</strong> The automation runs alongside the person for a week. When its output matches theirs, it takes over and they move to reviewing the exception list.</li>
         </ol>
         <p>
-          Nothing goes live on trust. It goes live because you watched it produce
-          the same output your team did, for a week, side by side.
+          Before it goes live, the automation runs alongside your team for a week
+          — it takes over only when its output matches theirs. Nothing goes live
+          on trust.
         </p>
 
         <h2>What does it cost?</h2>
         <p>
-          Single workflow builds begin in the low five figures, depending on the
+          A single-workflow build begins in the low five figures, depending on the
           number of systems involved and the degree of AI judgment required. The
-          Care Plan (hosting, monitoring, ongoing improvements) is structured as a
-          monthly retainer and starts at a smaller commitment. Every build is
-          quoted at a fixed fee — no open-ended hourly arrangements.
+          care plan (hosting, monitoring, ongoing improvements) is structured as a
+          small monthly retainer. Every build is quoted at a fixed fee — no
+          open-ended hourly arrangements.
         </p>
         <p>Four things move the price, in order of impact:</p>
         <ul>
@@ -314,58 +354,82 @@
         </p>
 
         <h2>Frequently asked questions</h2>
-        <details>
-          <summary>Will workflow automation replace my team?</summary>
-          <p>No. It removes the work your team doesn't want to do anyway — the repetitive admin layer — and gives them back the hours to do the work only humans can.</p>
-        </details>
-        <details>
-          <summary>What if my "workflow" only exists in someone's head?</summary>
-          <p>That's normal. The first week of any build is observation — we watch the real task and document it before we automate it. Tacit knowledge becomes a system you actually own.</p>
-        </details>
-        <details>
-          <summary>Do I need to use specific software for Yudi Labs to help?</summary>
-          <p>No. We work with whatever stack you have — Microsoft 365, Google Workspace, QuickBooks, Xero, Salesforce, HubSpot, NetSuite, Notion, custom internal tools, and the messy spreadsheets in between.</p>
-        </details>
-        <details>
-          <summary>How much does workflow automation cost for a small business?</summary>
-          <p>Single-workflow builds start in the low five figures as a fixed quote, with an optional monthly care plan after launch. The number of systems, the messiness of the documents, and the exception rate drive the price. We published an honest breakdown in <a href="/blog/how-much-does-workflow-automation-cost">our pricing article</a>.</p>
-        </details>
-        <details>
-          <summary>Is workflow automation safe for financial data?</summary>
-          <p>It should be — and that bar is where we started. Yudi Labs was founded on automation work inside RBC, CIBC, BMO, and TD, where every workflow needed audit logs, access controls, and approval gates by default. Your automations get the same structure: logged runs, least-privilege access, and a person approving anything that moves money or commitments.</p>
-        </details>
-        <details>
-          <summary>What happens if the automation breaks?</summary>
-          <p>It fails loudly, not silently. Every run is monitored; if a portal changes or an input looks wrong, the automation stops, flags a person, and the manual process continues uninterrupted. Under the care plan we fix breaks as part of the retainer — you never debug a workflow you didn't write.</p>
-        </details>
+        <div class="faq-list">
+          <details>
+            <summary>Will workflow automation replace my team?</summary>
+            <p>No. It removes the work your team doesn't want to do anyway — the repetitive admin layer — and gives them back the hours to do the work only humans can.</p>
+          </details>
+          <details>
+            <summary>What if my "workflow" only exists in someone's head?</summary>
+            <p>That's normal. The first week of any build is observation — we watch the real task and document it before we automate it. Tacit knowledge becomes a system you actually own.</p>
+          </details>
+          <details>
+            <summary>Do I need to use specific software for Yudi Labs to help?</summary>
+            <p>No. We work with whatever stack you have — Microsoft 365, Google Workspace, QuickBooks, Xero, Salesforce, HubSpot, NetSuite, Notion, custom internal tools, and the messy spreadsheets in between.</p>
+          </details>
+          <details>
+            <summary>How much does workflow automation cost for a small business?</summary>
+            <p>Single-workflow builds start in the low five figures as a fixed quote, with an optional monthly care plan after launch. The number of systems, the messiness of the documents, and the exception rate drive the price. We published an honest breakdown in <a href="/blog/how-much-does-workflow-automation-cost">our pricing article</a>.</p>
+          </details>
+          <details>
+            <summary>Is workflow automation safe for financial data?</summary>
+            <p>It should be — and we treat it that way by default. That bar comes from years automating inside Canada's largest banks. Your automations get the same structure: logged runs, least-privilege access, and a person approving anything that moves money or commitments.</p>
+          </details>
+          <details>
+            <summary>What happens if the automation breaks?</summary>
+            <p>It fails loudly, not silently. Every run is monitored; if a portal changes or an input looks wrong, the automation stops, flags a person, and the manual process continues uninterrupted. Under the care plan we fix breaks as part of the retainer — you never debug a workflow you didn't write.</p>
+          </details>
+        </div>
 
         <div class="cta-band">
-          <h3>Want a workflow automation roadmap for your team?</h3>
-          <p>Book a 30-minute workflow mapping call. We'll identify which workflow is highest ROI to automate first — even if you don't end up working with us.</p>
-          <a class="button" href="https://calendly.com/hello-yudilabs/30min" target="_blank" rel="noopener noreferrer">Book a Mapping Call</a>
+          <h2>Map the workflow your team wants gone.</h2>
+          <p>Free 30-minute call · No commitment · Reply within 1 business day.</p>
+          <div class="m-actions">
+            <a class="button button-primary" href="https://calendly.com/hello-yudilabs/30min" target="_blank" rel="noopener noreferrer">Book a mapping call<span class="sr-only"> (opens in new tab)</span></a>
+            <a class="button button-secondary" href="/contact#brief">Send the task first</a>
+          </div>
         </div>
       </article>
     </main>
 
     <footer class="m-footer">
       <div class="m-container m-footer-inner">
-        <a class="m-brand" href="/" aria-label="Yudi Labs home">
-          <img src="assets/yudilabs-logo.svg" alt="Yudi Labs" width="22" height="22" />
-          <span>Yudi Labs</span>
-        </a>
-        <nav class="m-footer-nav" aria-label="Footer">
-          <a href="/about">About</a>
-          <a href="/services">Services</a>
-          <a href="/workflow-automation">Workflow Automation</a>
-          <a href="/ai-agents-for-business">AI Agents</a>
-          <a href="/blog">Writing</a>
-          <a href="/contact">Contact</a>
-          <a href="/privacy">Privacy</a>
-          <a href="/terms">Terms</a>
+        <div class="m-footer-col">
+          <a class="m-brand" href="/" aria-label="Yudi Labs home">
+            <img src="/assets/yudilabs-logo.svg" alt="" width="22" height="22" />
+            <span>Yudi Labs</span>
+          </a>
+          <p class="m-footer-tagline">AI automation agency in Toronto. We remove repetitive admin work from the software you already use.</p>
+        </div>
+        <nav class="m-footer-col" aria-label="Footer">
+          <h2>Explore</h2>
+          <div class="m-footer-nav">
+            <a href="/services">Services</a>
+            <a href="/workflow-automation" aria-current="page">Workflow Automation</a>
+            <a href="/ai-agents-for-business">AI Agents</a>
+            <a href="/about">About</a>
+            <a href="/blog">Blog</a>
+            <a href="/contact">Contact</a>
+            <a href="/privacy">Privacy</a>
+            <a href="/terms">Terms</a>
+          </div>
         </nav>
-        <p class="m-footer-meta">© 2026 Yudi Labs · AI Automation Agency · Toronto</p>
+        <div class="m-footer-col">
+          <h2>Reach us</h2>
+          <div class="m-footer-contact">
+            <a href="mailto:hello@yudilabs.com">hello@yudilabs.com</a>
+            <a href="https://calendly.com/hello-yudilabs/30min" target="_blank" rel="noopener noreferrer">Book a free 30-min call<span class="sr-only"> (opens in new tab)</span></a>
+            <a href="https://www.linkedin.com/company/yudi-labs" target="_blank" rel="noopener noreferrer">LinkedIn<span class="sr-only"> (opens in new tab)</span></a>
+            <span>Toronto, Canada</span>
+          </div>
+        </div>
+        <p class="m-footer-meta">
+          <span>© 2026 Yudi Labs · AI Automation Agency · Toronto</span>
+          <span>Reply within 1 business day</span>
+        </p>
       </div>
     </footer>
-    <script src="/script.js?v=20260709" defer></script>
+
+    <script src="/script.js?v=20260807" defer></script>
   </body>
 </html>

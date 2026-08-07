@@ -1645,6 +1645,11 @@ main > .section:last-of-type { padding-bottom: 0; }
   gap: 20px;
 }
 
+/* four cards balance better 2x2 than 3+1 */
+.gap-grid:has(> article:nth-child(4)) {
+  grid-template-columns: repeat(2, 1fr);
+}
+
 .gap-grid article {
   display: flex;
   flex-direction: column;

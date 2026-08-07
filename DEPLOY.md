@@ -256,3 +256,29 @@ Live in 20 seconds.
 | **Total elapsed time** | **~30–80 min** |
 
 You can be live and indexed within an hour.
+
+---
+
+## Cache busting (required on every CSS/JS change)
+
+`vercel.json` serves `/styles.css`, `/script.js`, and everything under `/assets/`
+(including the self-hosted fonts) with a **1-year immutable cache**. Browsers will
+not re-download them unless the URL changes.
+
+- `styles.css` and `script.js` are referenced with a version token, e.g.
+  `/styles.css?v=20260807`. **Whenever you change either file, bump the token in
+  every HTML page** (use the current date):
+
+  ```bash
+  # list every file carrying a token
+  grep -rl 'styles.css?v=' *.html blog/*.html
+  # bump all tokens in one pass (example: to 20260901)
+  sed -i 's/v=20260807/v=20260901/g' *.html blog/*.html
+  ```
+
+- Files in `/assets/` have **no** version token. To update one (logo, icons,
+  og-image, fonts), save it under a **new filename** and update the references —
+  overwriting the old name will not reach returning visitors for up to a year.
+
+- `feed.xml` is cached for 1 hour and `sitemap.xml` follows the default —
+  no action needed for either.

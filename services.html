@@ -3,88 +3,108 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>document.documentElement.classList.add("js");</script>
 
     <title>AI Automation Services for Small Teams | Yudi Labs</title>
-    <meta name="description" content="Workflow automation services for small teams that need reports, files, portal checks, invoices, and updates handled inside their existing software." />
-    <meta name="robots" content="index, follow, max-image-preview:large" />
+
+    <meta name="description" content="AI automation services for small teams. We take one task your staff repeats by hand — invoices, portal checks, filing — and make it run itself, with fixed quotes and human approval." />
+    <meta name="author" content="Yudi Labs" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+    <meta name="theme-color" content="#070c0b" />
     <link rel="canonical" href="https://www.yudilabs.com/services" />
 
     <meta property="og:type" content="website" />
-    <meta property="og:image:height" content="630" />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:locale" content="en_US" />
     <meta property="og:site_name" content="Yudi Labs" />
-    <meta property="og:title" content="Yudi Labs Services — Workflow Automation for Small Business" />
-    <meta property="og:description" content="See what repetitive work can be automated, estimate the savings, and book a workflow mapping call." />
+    <meta property="og:locale" content="en_CA" />
     <meta property="og:url" content="https://www.yudilabs.com/services" />
+    <meta property="og:title" content="AI Automation Services for Small Teams — Yudi Labs" />
+    <meta property="og:description" content="Six things we build, what each one costs, and a calculator that prices the hours you are losing. Fixed quotes, live in 2–4 weeks, exceptions reviewed by your team." />
     <meta property="og:image" content="https://www.yudilabs.com/assets/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Yudi Labs — AI automation services" />
+
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@yudilabs" />
+    <meta name="twitter:title" content="AI Automation Services for Small Teams | Yudi Labs" />
+    <meta name="twitter:description" content="See the service catalog, fixed pricing, and estimate what one repeated task costs your team each year." />
     <meta name="twitter:image" content="https://www.yudilabs.com/assets/og-image.png" />
+    <meta name="twitter:image:alt" content="Yudi Labs — AI automation services" />
+
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png" />
     <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" sizes="180x180" />
     <link rel="manifest" href="/site.webmanifest" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400..900&family=Inter+Tight:wght@500..900&display=swap" />
-    <link rel="stylesheet" href="/styles.css?v=20260709" />
+    <link rel="preload" href="/assets/fonts/inter-tight-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="/styles.css?v=20260807" />
 
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Service",
-      "serviceType": "Small Business Workflow Automation Services",
-      "provider": {
-        "@type": "Organization",
-        "name": "Yudi Labs",
-        "url": "https://www.yudilabs.com/"
-      },
-      "areaServed": "Worldwide",
-      "description": "Workflow automation, invoice automation, AI assistants, workflow mapping, and ongoing support for small and mid-sized businesses.",
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Yudi Labs Automation Services",
-        "itemListElement": [
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Workflow Mapping Call" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Invoice and File Automation" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "App-to-App Workflow Automation" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "AI Assistants with Human Approval" } },
-          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Automation Care Plan" } }
-        ]
-      }
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://www.yudilabs.com/#organization",
+          "name": "Yudi Labs",
+          "url": "https://www.yudilabs.com/"
+        },
+        {
+          "@type": "Service",
+          "@id": "https://www.yudilabs.com/services#service",
+          "name": "AI Automation Services",
+          "serviceType": "AI Automation Services",
+          "url": "https://www.yudilabs.com/services",
+          "provider": { "@id": "https://www.yudilabs.com/#organization" },
+          "areaServed": ["Canada", "United States", "Europe"],
+          "description": "Fixed-quote AI automation services for small teams: document and invoice automation, app-to-app workflow automation, portal and inbox monitoring, AI agents with human approval, a fixed-fee automation audit, and an ongoing care plan.",
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Yudi Labs AI Automation Services",
+            "itemListElement": [
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "The automation audit" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Single-workflow build" } },
+              { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Care plan" } }
+            ]
+          }
+        }
+      ]
     }
     </script>
   </head>
-  <body class="minimal">
+  <body>
     <a class="skip-link" href="#main">Skip to main content</a>
 
     <header class="m-header">
       <a class="m-brand" href="/" aria-label="Yudi Labs home">
-        <img src="assets/yudilabs-logo.svg" alt="Yudi Labs" width="22" height="22" />
+        <img src="/assets/yudilabs-logo.svg" alt="" width="22" height="22" />
         <span>Yudi Labs</span>
       </a>
       <nav class="m-nav" aria-label="Primary">
-        <a href="/services">Work</a>
+        <a href="/services" aria-current="page">Services</a>
+        <a href="/workflow-automation">Workflow Automation</a>
+        <a href="/ai-agents-for-business">AI Agents</a>
         <a href="/about">About</a>
-        <a href="/blog">Writing</a>
+        <a href="/blog">Blog</a>
       </nav>
-      <button class="m-menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      <a class="m-cta" href="https://calendly.com/hello-yudilabs/30min" target="_blank" rel="noopener noreferrer">Book a call</a>
+      <div class="m-header-right">
+        <button class="m-menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <a class="m-cta" href="https://calendly.com/hello-yudilabs/30min" target="_blank" rel="noopener noreferrer">Book a call<span class="sr-only"> (opens in new tab)</span></a>
+      </div>
     </header>
 
     <div class="m-mobile-panel" id="mobile-nav" hidden>
-      <nav class="m-mobile-nav" aria-label="Mobile navigation">
-        <a href="/services">Work</a>
-        <a href="/about">About</a>
-        <a href="/blog">Writing</a>
+      <nav class="m-mobile-nav" aria-label="Mobile">
+        <a href="/services" aria-current="page">Services</a>
         <a href="/workflow-automation">Workflow Automation</a>
         <a href="/ai-agents-for-business">AI Agents</a>
-        <a class="m-mobile-cta" href="https://calendly.com/hello-yudilabs/30min" target="_blank" rel="noopener noreferrer">Book a call</a>
+        <a href="/about">About</a>
+        <a href="/blog">Blog</a>
+        <a href="/contact">Contact</a>
+        <a class="m-mobile-cta" href="https://calendly.com/hello-yudilabs/30min" target="_blank" rel="noopener noreferrer">Book a free call<span class="sr-only"> (opens in new tab)</span></a>
       </nav>
     </div>
 
@@ -92,34 +112,35 @@
       <section class="page-hero">
         <div class="page-hero-inner service-hero-grid">
           <div class="service-hero-copy">
-            <p class="eyebrow reveal">Workflow automation for busy teams</p>
-            <h1 class="reveal reveal-delay-1">Turn One Repeated Office Task Into a Workflow That Runs Every Week.</h1>
+            <p class="eyebrow reveal">AI automation services</p>
+            <h1 class="reveal reveal-delay-1">Bring us the task your team repeats. We&rsquo;ll make it run itself.</h1>
             <p class="reveal reveal-delay-2">
-              Bring us the task your team keeps doing by hand. We map the exact
-              steps, automate the repeatable parts, and keep a person in control
+              We map the exact steps of the work your team keeps doing by hand,
+              automate the repeatable parts, and keep a person in control
               anywhere a final decision matters.
             </p>
             <div class="service-hero-actions reveal reveal-delay-3">
-              <a class="button button-primary" href="https://calendly.com/hello-yudilabs/30min" target="_blank" rel="noopener noreferrer">Book a Mapping Call</a>
-              <a class="button button-secondary" href="#roi">Estimate Savings</a>
+              <a class="button button-primary" href="https://calendly.com/hello-yudilabs/30min" target="_blank" rel="noopener noreferrer">Book a mapping call<span class="sr-only"> (opens in new tab)</span></a>
+              <a class="button button-secondary" href="#roi">Estimate savings</a>
             </div>
+            <p class="m-cta-note reveal reveal-delay-3">Free 30-minute call · No commitment · Reply within 1 business day</p>
           </div>
-          <div class="service-map-preview reveal reveal-delay-2" data-parallax-scene aria-label="Workflow mapping preview">
-            <div class="map-node map-node-source" data-depth="0.14">
+          <div class="service-map-preview reveal reveal-delay-2" data-parallax-scene role="img" aria-label="Illustrative workflow map: 12 manual steps flow into an automation built by Yudi Labs, leaving only exceptions to review after launch — 8 hours saved weekly">
+            <div class="map-node map-node-source" data-depth="0.14" aria-hidden="true">
               <span>Current work</span>
               <strong>12 manual steps</strong>
             </div>
             <div class="map-path" aria-hidden="true"></div>
-            <div class="map-node map-node-build" data-depth="0.05">
+            <div class="map-node map-node-build" data-depth="0.05" aria-hidden="true">
               <span>Yudi Labs</span>
               <strong>Builds the repeatable path</strong>
             </div>
             <div class="map-path map-path-two" aria-hidden="true"></div>
-            <div class="map-node map-node-review" data-depth="-0.08">
+            <div class="map-node map-node-review" data-depth="-0.08" aria-hidden="true">
               <span>After launch</span>
               <strong>Review only exceptions</strong>
             </div>
-            <div class="map-stat" data-depth="-0.12">
+            <div class="map-stat" data-depth="-0.12" aria-hidden="true">
               <strong>8 hrs</strong>
               <span>saved weekly</span>
             </div>
@@ -130,7 +151,19 @@
       <section class="service-tool-strip" aria-label="Software Yudi Labs automates around">
         <div class="m-container">
           <p class="m-eyebrow">Built around tools teams already use</p>
-          <div class="service-tool-window" aria-label="Common tools">
+          <ul class="sr-only">
+            <li>QuickBooks</li>
+            <li>Xero</li>
+            <li>HubSpot</li>
+            <li>Salesforce</li>
+            <li>Gmail</li>
+            <li>Outlook</li>
+            <li>Google Sheets</li>
+            <li>Microsoft 365</li>
+            <li>Slack</li>
+            <li>Airtable</li>
+          </ul>
+          <div class="service-tool-window">
             <div class="service-tool-row m-marquee-track" aria-hidden="true">
               <span>QuickBooks</span>
               <span>Xero</span>
@@ -165,20 +198,20 @@
               <input type="number" min="10" max="250" step="5" value="35" data-roi-rate />
             </label>
           </div>
-          <div class="roi-result">
+          <div class="roi-result" aria-live="polite">
             <p>Potential annual savings</p>
-            <strong data-roi-annual>$14,560</strong>
+            <output data-roi-annual>$14,560</output>
             <span data-roi-summary>Based on 8 hours/week at $35/hour.</span>
-            <a class="button button-primary" href="https://calendly.com/hello-yudilabs/30min" target="_blank" rel="noopener noreferrer">Map This Workflow</a>
+            <a class="button button-primary" href="https://calendly.com/hello-yudilabs/30min" target="_blank" rel="noopener noreferrer">Map this workflow<span class="sr-only"> (opens in new tab)</span></a>
           </div>
         </div>
       </section>
 
-      <!-- TODO: when client-approved case studies exist, add real client numbers to these examples -->
       <section class="section before-after" aria-labelledby="before-after-title">
         <div class="section-heading">
           <p class="eyebrow">Before and after</p>
           <h2 id="before-after-title">Concrete examples, not buzzwords.</h2>
+          <p>Illustrative scenarios based on the workflows we automate. Your mapping call puts real numbers on yours.</p>
         </div>
         <div class="comparison-grid reveal" data-stagger>
           <article>
@@ -238,10 +271,10 @@
 
         <div class="service-card-grid reveal">
           <article class="service-card">
-            <div class="mini-flow" aria-hidden="true">
-              <span>PDF invoice</span>
-              <span>Check fields</span>
-              <span>Ready to review</span>
+            <div class="mini-flow" role="img" aria-label="Mini flow: a PDF invoice is checked field by field, then queued ready for review">
+              <span aria-hidden="true">PDF invoice</span>
+              <span aria-hidden="true">Check fields</span>
+              <span aria-hidden="true">Ready to review</span>
             </div>
             <p class="service-kicker">Invoices and files</p>
             <h3>
@@ -250,13 +283,13 @@
             </h3>
             <p data-service-copy="plain">We read incoming invoices, statements, and PDFs, pull out the key details, and put them where your team needs them.</p>
             <p data-service-copy="builder" hidden>We classify documents, extract structured fields, route files, and prepare exception queues for review.</p>
-            <a class="service-card-link" href="https://calendly.com/hello-yudilabs/30min" target="_blank" rel="noopener noreferrer">Book a Mapping Call</a>
+            <a class="service-card-link" href="/contact#brief">Send this task first <span aria-hidden="true">→</span></a>
           </article>
           <article class="service-card">
-            <div class="mini-flow" aria-hidden="true">
-              <span>New lead</span>
-              <span>Create records</span>
-              <span>Notify owner</span>
+            <div class="mini-flow" role="img" aria-label="Mini flow: a new lead arrives, records are created, and the owner is notified">
+              <span aria-hidden="true">New lead</span>
+              <span aria-hidden="true">Create records</span>
+              <span aria-hidden="true">Notify owner</span>
             </div>
             <p class="service-kicker">Apps and handoffs</p>
             <h3>
@@ -265,13 +298,13 @@
             </h3>
             <p data-service-copy="plain">When something changes in one tool, the next tool gets updated without someone copying and pasting.</p>
             <p data-service-copy="builder" hidden>We connect triggers, rules, files, approvals, and notifications across your current stack.</p>
-            <a class="service-card-link" href="https://calendly.com/hello-yudilabs/30min" target="_blank" rel="noopener noreferrer">Book a Mapping Call</a>
+            <a class="service-card-link" href="/contact#brief">Send this workflow first <span aria-hidden="true">→</span></a>
           </article>
           <article class="service-card">
-            <div class="mini-flow" aria-hidden="true">
-              <span>Portal check</span>
-              <span>Status changed</span>
-              <span>Team alerted</span>
+            <div class="mini-flow" role="img" aria-label="Mini flow: a portal check spots a status change and the team is alerted">
+              <span aria-hidden="true">Portal check</span>
+              <span aria-hidden="true">Status changed</span>
+              <span aria-hidden="true">Team alerted</span>
             </div>
             <p class="service-kicker">Portals and inboxes</p>
             <h3>
@@ -280,13 +313,13 @@
             </h3>
             <p data-service-copy="plain">We watch the places your team checks every day and only alert them when something needs attention.</p>
             <p data-service-copy="builder" hidden>We monitor portals, inboxes, and shared work queues, then surface only status changes and exceptions.</p>
-            <a class="service-card-link" href="https://calendly.com/hello-yudilabs/30min" target="_blank" rel="noopener noreferrer">Book a Mapping Call</a>
+            <a class="service-card-link" href="/contact#brief">Send your daily checklist <span aria-hidden="true">→</span></a>
           </article>
           <article class="service-card">
-            <div class="mini-flow" aria-hidden="true">
-              <span>Messy email</span>
-              <span>Draft answer</span>
-              <span>Human approves</span>
+            <div class="mini-flow" role="img" aria-label="Mini flow: a messy email becomes a drafted answer that a human approves">
+              <span aria-hidden="true">Messy email</span>
+              <span aria-hidden="true">Draft answer</span>
+              <span aria-hidden="true">Human approves</span>
             </div>
             <p class="service-kicker">AI with guardrails</p>
             <h3>
@@ -295,13 +328,13 @@
             </h3>
             <p data-service-copy="plain">The system can read, summarize, draft, and prepare work, but your team approves sensitive actions.</p>
             <p data-service-copy="builder" hidden>We build narrow AI agents with logging, approval gates, rollback paths, and clear boundaries.</p>
-            <a class="service-card-link" href="https://calendly.com/hello-yudilabs/30min" target="_blank" rel="noopener noreferrer">Book a Mapping Call</a>
+            <a class="service-card-link" href="https://calendly.com/hello-yudilabs/30min" target="_blank" rel="noopener noreferrer">Book a mapping call<span class="sr-only"> (opens in new tab)</span></a>
           </article>
           <article class="service-card">
-            <div class="mini-flow" aria-hidden="true">
-              <span>Watch task</span>
-              <span>Score effort</span>
-              <span>Pick first build</span>
+            <div class="mini-flow" role="img" aria-label="Mini flow: we watch the task, score the effort, and pick the first build">
+              <span aria-hidden="true">Watch task</span>
+              <span aria-hidden="true">Score effort</span>
+              <span aria-hidden="true">Pick first build</span>
             </div>
             <p class="service-kicker">First step</p>
             <h3>
@@ -310,13 +343,13 @@
             </h3>
             <p data-service-copy="plain">We watch the real task, estimate the savings, and tell you what is worth building first.</p>
             <p data-service-copy="builder" hidden>We map process steps, identify exceptions, score ROI, and sequence the build plan.</p>
-            <a class="service-card-link" href="https://calendly.com/hello-yudilabs/30min" target="_blank" rel="noopener noreferrer">Book a Mapping Call</a>
+            <a class="service-card-link" href="https://calendly.com/hello-yudilabs/30min" target="_blank" rel="noopener noreferrer">Book a mapping call<span class="sr-only"> (opens in new tab)</span></a>
           </article>
           <article class="service-card">
-            <div class="mini-flow" aria-hidden="true">
-              <span>Runs daily</span>
-              <span>Issue caught</span>
-              <span>Fix shipped</span>
+            <div class="mini-flow" role="img" aria-label="Mini flow: the automation runs daily, an issue is caught, and a fix ships">
+              <span aria-hidden="true">Runs daily</span>
+              <span aria-hidden="true">Issue caught</span>
+              <span aria-hidden="true">Fix shipped</span>
             </div>
             <p class="service-kicker">After launch</p>
             <h3>
@@ -325,8 +358,64 @@
             </h3>
             <p data-service-copy="plain">We host, monitor, fix, and improve the automation so your team does not become tech support.</p>
             <p data-service-copy="builder" hidden>We handle monitoring, maintenance, retries, alerts, change requests, and production support.</p>
-            <a class="service-card-link" href="https://calendly.com/hello-yudilabs/30min" target="_blank" rel="noopener noreferrer">Book a Mapping Call</a>
+            <a class="service-card-link" href="/contact#brief">Ask about the care plan <span aria-hidden="true">→</span></a>
           </article>
+        </div>
+      </section>
+
+      <section class="section" id="pricing" aria-labelledby="pricing-title">
+        <div class="section-heading">
+          <p class="eyebrow">What it costs</p>
+          <h2 id="pricing-title">Fixed quotes. No open-ended hourly.</h2>
+          <p>Every engagement is scoped up front. You approve a number before we build anything.</p>
+        </div>
+        <div class="pricing-band reveal" data-stagger>
+          <article>
+            <p class="price-label">Start here</p>
+            <h3>The automation audit</h3>
+            <p class="price">Low four figures</p>
+            <p>A fixed-fee diagnostic. We watch the real task, score the ROI, and sequence the build plan — so the first build is the one worth doing.</p>
+          </article>
+          <article class="is-featured">
+            <p class="price-label">The core build</p>
+            <h3>Single-workflow build</h3>
+            <p class="price">Low five figures</p>
+            <p>A fixed quote after the mapping call. Your workflow is live in 2–4 weeks, inside the tools you already use.</p>
+          </article>
+          <article>
+            <p class="price-label">After launch</p>
+            <h3>Care plan</h3>
+            <p class="price">Monthly retainer</p>
+            <p>Hosting, monitoring, fixes, and improvements — so your team never becomes tech support for a workflow it didn't write.</p>
+          </article>
+        </div>
+        <div class="m-container">
+          <p class="m-sub reveal">Before it goes live, the automation runs alongside your team for a week — it takes over only when its output matches theirs. Nothing goes live on trust.</p>
+        </div>
+      </section>
+
+      <section class="section faq" aria-labelledby="services-faq-title">
+        <div class="section-heading">
+          <p class="eyebrow">Quick questions</p>
+          <h2 id="services-faq-title">Before you book.</h2>
+        </div>
+        <div class="faq-list reveal">
+          <details>
+            <summary>How fast do you respond?</summary>
+            <p>Within one business day, every time. If your enquiry needs more than a quick reply, we'll schedule a 30-minute workflow mapping call.</p>
+          </details>
+          <details>
+            <summary>What's the minimum engagement?</summary>
+            <p>The automation audit (our fixed-fee diagnostic) starts in the low four figures. Single-workflow builds typically start in the low five figures. We share specific pricing on the first call.</p>
+          </details>
+          <details>
+            <summary>Do you sign NDAs?</summary>
+            <p>Yes. We sign mutual NDAs as a standard before any detailed scoping conversation involving your operational data or systems.</p>
+          </details>
+          <details>
+            <summary>Where are you based?</summary>
+            <p>Toronto, Ontario, Canada. We work remotely with clients across North America and Europe.</p>
+          </details>
         </div>
       </section>
 
@@ -340,16 +429,16 @@
             uncontrolled tool.
           </p>
         </div>
-        <div class="approval-board reveal" aria-label="Human approval workflow">
-          <div class="approval-step">
+        <div class="approval-board reveal" role="img" aria-label="Approval workflow: step one collects files, emails, and portal updates; step two checks the rules and prepares the update; then a person approves, edits, or holds it">
+          <div class="approval-step" aria-hidden="true">
             <span>1</span>
             <p>Collect files, emails, and portal updates</p>
           </div>
-          <div class="approval-step">
+          <div class="approval-step" aria-hidden="true">
             <span>2</span>
             <p>Check the rules and prepare the update</p>
           </div>
-          <div class="approval-decision">
+          <div class="approval-decision" aria-hidden="true">
             <p>Human review</p>
             <strong>Approve, edit, or hold</strong>
           </div>
@@ -367,8 +456,9 @@
               method="POST"
               accept-charset="UTF-8"
               aria-label="AI automation request form">
-                    <input type="hidden" name="_subject" value="New Yudi Labs enquiry" />
+          <input type="hidden" name="_subject" value="New Yudi Labs enquiry" />
           <input type="hidden" name="_next" value="https://www.yudilabs.com/thank-you" />
+          <input type="hidden" name="page" value="services" />
           <input class="honeypot" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" />
 
           <label>
@@ -379,31 +469,51 @@
             <span>The task</span>
             <textarea name="task" rows="3" maxlength="1200" placeholder="Every week we have to..." required></textarea>
           </label>
-          <button class="button button-primary" type="submit">Send the Task First</button>
-          <a class="button button-secondary" href="https://calendly.com/hello-yudilabs/30min" target="_blank" rel="noopener noreferrer">Book a Mapping Call</a>
+          <button class="button button-primary" type="submit">Send the task first</button>
+          <a class="button button-secondary" href="https://calendly.com/hello-yudilabs/30min" target="_blank" rel="noopener noreferrer">Book a mapping call<span class="sr-only"> (opens in new tab)</span></a>
+          <p class="m-cta-note">Free 30-minute call · No commitment · Reply within 1 business day</p>
         </form>
       </section>
     </main>
 
     <footer class="m-footer">
       <div class="m-container m-footer-inner">
-        <a class="m-brand" href="/" aria-label="Yudi Labs home">
-          <img src="assets/yudilabs-logo.svg" alt="Yudi Labs" width="22" height="22" />
-          <span>Yudi Labs</span>
-        </a>
-        <nav class="m-footer-nav" aria-label="Footer">
-          <a href="/about">About</a>
-          <a href="/services">Services</a>
-          <a href="/workflow-automation">Workflow Automation</a>
-          <a href="/ai-agents-for-business">AI Agents</a>
-          <a href="/blog">Writing</a>
-          <a href="/contact">Contact</a>
-          <a href="/privacy">Privacy</a>
-          <a href="/terms">Terms</a>
+        <div class="m-footer-col">
+          <a class="m-brand" href="/" aria-label="Yudi Labs home">
+            <img src="/assets/yudilabs-logo.svg" alt="" width="22" height="22" />
+            <span>Yudi Labs</span>
+          </a>
+          <p class="m-footer-tagline">AI automation agency in Toronto. We remove repetitive admin work from the software you already use.</p>
+        </div>
+        <nav class="m-footer-col" aria-label="Footer">
+          <h2>Explore</h2>
+          <div class="m-footer-nav">
+            <a href="/services" aria-current="page">Services</a>
+            <a href="/workflow-automation">Workflow Automation</a>
+            <a href="/ai-agents-for-business">AI Agents</a>
+            <a href="/about">About</a>
+            <a href="/blog">Blog</a>
+            <a href="/contact">Contact</a>
+            <a href="/privacy">Privacy</a>
+            <a href="/terms">Terms</a>
+          </div>
         </nav>
-        <p class="m-footer-meta">© 2026 Yudi Labs · AI Automation Agency · Toronto</p>
+        <div class="m-footer-col">
+          <h2>Reach us</h2>
+          <div class="m-footer-contact">
+            <a href="mailto:hello@yudilabs.com">hello@yudilabs.com</a>
+            <a href="https://calendly.com/hello-yudilabs/30min" target="_blank" rel="noopener noreferrer">Book a free 30-min call<span class="sr-only"> (opens in new tab)</span></a>
+            <a href="https://www.linkedin.com/company/yudi-labs" target="_blank" rel="noopener noreferrer">LinkedIn<span class="sr-only"> (opens in new tab)</span></a>
+            <span>Toronto, Canada</span>
+          </div>
+        </div>
+        <p class="m-footer-meta">
+          <span>© 2026 Yudi Labs · AI Automation Agency · Toronto</span>
+          <span>Reply within 1 business day</span>
+        </p>
       </div>
     </footer>
-    <script src="/script.js?v=20260709" defer></script>
+
+    <script src="/script.js?v=20260807" defer></script>
   </body>
 </html>

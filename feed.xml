@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Yudi Labs Blog</title>
+    <link>https://www.yudilabs.com/blog</link>
+    <atom:link href="https://www.yudilabs.com/feed.xml" rel="self" type="application/rss+xml" />
+    <description>Honest writing on AI automation, workflow design, and AI agents. No hype — clear, useful guidance on what to automate and how to ship workflow automation that actually runs.</description>
+    <language>en-ca</language>
+    <lastBuildDate>Fri, 07 Aug 2026 00:00:00 GMT</lastBuildDate>
+    <item>
+      <title>What Is AI Automation? A Plain-English Guide for Business Teams</title>
+      <link>https://www.yudilabs.com/blog/what-is-ai-automation</link>
+      <guid>https://www.yudilabs.com/blog/what-is-ai-automation</guid>
+      <pubDate>Wed, 08 Jul 2026 00:00:00 GMT</pubDate>
+      <description>What AI automation is, how it differs from Zapier and RPA, what it costs, and where it fits in a real business — explained in plain English.</description>
+    </item>
+    <item>
+      <title>How Much Does Workflow Automation Cost? An Honest Breakdown for Small Teams</title>
+      <link>https://www.yudilabs.com/blog/how-much-does-workflow-automation-cost</link>
+      <guid>https://www.yudilabs.com/blog/how-much-does-workflow-automation-cost</guid>
+      <pubDate>Mon, 06 Jul 2026 00:00:00 GMT</pubDate>
+      <description>A plain-English breakdown of workflow automation cost for small teams, including what affects price, the ranges we quote, and how to pick the first task worth automating.</description>
+    </item>
+    <item>
+      <title>AI Agents vs Zapier: When No-Code Stops Being Enough</title>
+      <link>https://www.yudilabs.com/blog/ai-agents-vs-zapier</link>
+      <guid>https://www.yudilabs.com/blog/ai-agents-vs-zapier</guid>
+      <pubDate>Mon, 06 Jul 2026 00:00:00 GMT</pubDate>
+      <description>AI agents vs Zapier explained in plain English, including when no-code automation is enough and when a custom workflow is the safer choice for your team.</description>
+    </item>
+    <item>
+      <title>How to Automate Repetitive Admin Work (A 2026 Playbook)</title>
+      <link>https://www.yudilabs.com/blog/how-to-automate-repetitive-admin-work</link>
+      <guid>https://www.yudilabs.com/blog/how-to-automate-repetitive-admin-work</guid>
+      <pubDate>Tue, 12 May 2026 00:00:00 GMT</pubDate>
+      <description>Learn how to automate repetitive admin work by choosing the right workflow, checking risk, and keeping people in control before anything goes live.</description>
+    </item>
+  </channel>
+</rss>

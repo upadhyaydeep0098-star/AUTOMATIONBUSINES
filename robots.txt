@@ -1,11 +1,10 @@
 # Yudi Labs — AI Automation Agency
 # https://www.yudilabs.com
+# Note: /thank-you, /subscribed and /blog/_template are excluded via meta
+# noindex on-page (robots-blocking them here would hide the noindex).
 
 User-agent: *
 Allow: /
-Disallow: /thank-you
-Disallow: /blog/_template
-Disallow: /blog/_template.html
 
 # Major AI crawlers — explicitly allowed so the brand surfaces in AI answers
 User-agent: GPTBot
