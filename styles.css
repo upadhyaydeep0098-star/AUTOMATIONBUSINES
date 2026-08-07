@@ -3427,3 +3427,199 @@ html:not(.js) .assemble-beam span { transform: scaleX(1); }
   from { opacity: 0; transform: translateY(-6px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
+/* --- Entry gate: boot sequence + curtain reveal --- */
+
+/* scroll runway that drives the gate; collapses when the gate is off */
+.gate-space { display: none; }
+html.js .gate-space { display: block; height: 185vh; }
+html.js.gate-off .gate-space { display: none; }
+
+.gate {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background:
+    radial-gradient(52vw 42vh at 50% -8%, rgba(45, 212, 191, 0.13), transparent 62%),
+    radial-gradient(46vw 40vh at 88% 108%, rgba(52, 211, 153, 0.09), transparent 60%),
+    var(--bg);
+  transform: translate3d(0, calc(var(--gate-y, 0) * -116%), 0);
+  will-change: transform;
+}
+
+.gate::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(90vw 80vh at 50% 45%, #000 20%, transparent 80%);
+  -webkit-mask-image: radial-gradient(90vw 80vh at 50% 45%, #000 20%, transparent 80%);
+}
+
+/* glowing lower edge so the curtain reads as a surface while lifting */
+.gate-edge {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(45, 212, 191, 0.7), transparent);
+  filter: drop-shadow(0 0 14px rgba(45, 212, 191, 0.8));
+}
+
+.gate.is-done { visibility: hidden; pointer-events: none; }
+html:not(.js) .gate { display: none; }
+html.js.gate-off .gate { display: none; }
+
+.gate-core {
+  position: relative;
+  width: min(560px, 100%);
+  text-align: center;
+}
+
+.gate-mark {
+  width: 92px;
+  height: 92px;
+  margin: 0 auto 30px;
+  filter: drop-shadow(0 0 22px rgba(45, 212, 191, calc(0.25 + var(--gp, 0) * 0.45)));
+  transform: scale(calc(0.92 + var(--gp, 0) * 0.08));
+}
+
+.gate-term {
+  margin: 0 auto 18px;
+  padding: 18px 22px;
+  text-align: left;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  background: rgba(13, 22, 20, 0.8);
+  font-family: ui-monospace, "SF Mono", "Cascadia Code", Menlo, Consolas, monospace;
+  font-size: 0.84rem;
+  line-height: 1.5;
+}
+
+.gate-line {
+  display: flex;
+  gap: 10px;
+  margin: 4px 0;
+  color: var(--text-soft);
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 420ms var(--ease-out), transform 420ms var(--ease-out);
+}
+
+.gate-line span { color: var(--teal); }
+
+.gate-line b {
+  margin-left: auto;
+  font-weight: 650;
+  color: var(--emerald);
+  opacity: 0;
+  transition: opacity 300ms ease 260ms;
+}
+
+.gate-line.on { opacity: 1; transform: none; }
+.gate-line.on b { opacity: 1; }
+
+.gate-bar {
+  height: 2px;
+  margin: 0 auto 34px;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+}
+
+.gate-bar span {
+  display: block;
+  height: 100%;
+  background: var(--grad-accent);
+  transform-origin: 0 50%;
+  transform: scaleX(var(--gp, 0));
+}
+
+.gate-title {
+  margin: 0 0 30px;
+  font-family: var(--font-display);
+  font-size: clamp(1.9rem, 4.6vw, 3.1rem);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.04em;
+  text-wrap: balance;
+  opacity: 0;
+  transform: translateY(16px);
+  filter: blur(6px);
+  transition: opacity 750ms var(--ease-out), transform 750ms var(--ease-out), filter 750ms var(--ease-out);
+}
+
+.gate.is-titled .gate-title { opacity: 1; transform: none; filter: none; }
+
+.gate-hint {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  transition: opacity 500ms ease;
+}
+
+.gate.is-leaving .gate-hint { opacity: 0; }
+
+.gate-enter {
+  display: inline-flex;
+  align-items: center;
+  min-height: 46px;
+  padding: 0 26px;
+  border: 0;
+  border-radius: 999px;
+  background: var(--grad-accent);
+  color: var(--ink-on-accent);
+  font-family: var(--font-body);
+  font-size: 0.94rem;
+  font-weight: 650;
+  cursor: pointer;
+  box-shadow: 0 0 0 1px rgba(45, 212, 191, 0.3), 0 10px 34px rgba(45, 212, 191, 0.22);
+  transition: transform 260ms var(--ease-spring), filter 200ms ease;
+}
+
+.gate-enter:hover { transform: translateY(-2px); filter: brightness(1.06); }
+
+.gate-scroll {
+  font-size: 0.9rem;
+  color: var(--text-dim);
+}
+
+.gate-arrow {
+  display: inline-block;
+  animation: gate-nudge 1.8s var(--ease-out) infinite;
+}
+
+@keyframes gate-nudge {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(5px); }
+}
+
+/* site arrival: main scales in and header fades as the curtain lifts */
+html.js body.gate-hold .m-header {
+  opacity: 0;
+  transform: translateY(-8px);
+}
+
+.m-header {
+  transition: background 260ms ease, border-color 260ms ease,
+    opacity 600ms var(--ease-out), transform 600ms var(--ease-out);
+}
+
+html.js body.gate-hold main {
+  transform: scale(calc(1.045 - var(--arrive, 0) * 0.045)) translateY(calc((1 - var(--arrive, 0)) * 14px));
+  transform-origin: 50% 18%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .gate,
+  .gate-space { display: none !important; }
+}

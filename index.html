@@ -36,7 +36,7 @@
     <link rel="manifest" href="/site.webmanifest" />
     <link rel="preload" href="/assets/fonts/inter-tight-latin.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="stylesheet" href="/styles.css?v=20260807b" />
+    <link rel="stylesheet" href="/styles.css?v=20260807c" />
 
     <script type="application/ld+json">
     {
@@ -113,6 +113,27 @@
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to main content</a>
+
+    <!-- Entry gate: the automation runtime boots, scroll lifts the curtain -->
+    <div class="gate-space" aria-hidden="true"></div>
+    <div class="gate" data-gate>
+      <div class="gate-core">
+        <img class="gate-mark" src="/assets/yudilabs-mark.svg" alt="" width="92" height="92" />
+        <div class="gate-term" aria-hidden="true">
+          <p class="gate-line"><span>›</span> initializing automation runtime <b>ok</b></p>
+          <p class="gate-line"><span>›</span> connecting inbox · sheets · portals <b>ok</b></p>
+          <p class="gate-line"><span>›</span> mapping this week's repeat work <b>ok</b></p>
+          <p class="gate-line"><span>›</span> agents ready — awaiting your week <b>ok</b></p>
+        </div>
+        <div class="gate-bar" aria-hidden="true"><span></span></div>
+        <p class="gate-title">The future of admin work<br /><span class="grad-text">runs itself.</span></p>
+        <div class="gate-hint">
+          <button class="gate-enter" type="button" data-gate-enter>Enter</button>
+          <span class="gate-scroll">or scroll <span class="gate-arrow" aria-hidden="true">↓</span></span>
+        </div>
+      </div>
+      <div class="gate-edge" aria-hidden="true"></div>
+    </div>
 
     <header class="m-header">
       <a class="m-brand" href="/" aria-label="Yudi Labs home">
@@ -538,6 +559,6 @@
       </div>
     </footer>
 
-    <script src="/script.js?v=20260807b" defer></script>
+    <script src="/script.js?v=20260807c" defer></script>
   </body>
 </html>

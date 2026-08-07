@@ -9,6 +9,17 @@ const mobilePanel = document.querySelector("#mobile-nav");
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 const finePointer = window.matchMedia("(pointer: fine)").matches;
 
+/* Entry gate runs once per session, never for reduced motion */
+let gateActive = false;
+if (document.querySelector("[data-gate]") && !reduceMotion) {
+  try {
+    gateActive = !sessionStorage.getItem("yl-gate-seen");
+  } catch {
+    gateActive = true;
+  }
+}
+if (!gateActive) document.documentElement.classList.add("gate-off");
+
 /* ---------- Header state ---------- */
 function setHeaderState() {
   header?.classList.toggle("is-scrolled", window.scrollY > 24);
@@ -273,11 +284,18 @@ if (displayEl && !reduceMotion) {
     el.style.transitionDelay = `${120 + i * 70}ms`;
   });
   const armSplit = () => displayEl.classList.add("split-ready");
-  requestAnimationFrame(() => {
-    requestAnimationFrame(armSplit);
-  });
-  // rAF can be throttled in background tabs — never leave the headline hidden.
-  setTimeout(armSplit, 400);
+  if (gateActive) {
+    // The entry gate arms the headline as its curtain lifts.
+    window.__ylArmSplit = armSplit;
+    // Safety net: never leave the headline hidden if the gate stalls.
+    setTimeout(armSplit, 12000);
+  } else {
+    requestAnimationFrame(() => {
+      requestAnimationFrame(armSplit);
+    });
+    // rAF can be throttled in background tabs — never leave the headline hidden.
+    setTimeout(armSplit, 400);
+  }
 }
 
 /* ---------- Hero cursor glow (fine pointers only) ---------- */
@@ -664,4 +682,78 @@ if (liveLog && !reduceMotion) {
     const entries = liveLog.querySelectorAll("p");
     if (entries.length > 3) entries[0].remove();
   }, 2600);
+}
+
+/* ---------- Entry gate: boot sequence + curtain reveal ---------- */
+const gate = document.querySelector("[data-gate]");
+if (gate && gateActive) {
+  document.body.classList.add("gate-hold");
+  const spacer = document.querySelector(".gate-space");
+  const lines = [...gate.querySelectorAll(".gate-line")];
+  const LINE_AT = [0.05, 0.13, 0.21, 0.29];
+  const main = document.querySelector("main");
+  let armed = false;
+  let done = false;
+  let gateTick = false;
+
+  const ease = (t) => 1 - Math.pow(1 - t, 3);
+  const win01 = (p, a, b) => Math.min(Math.max((p - a) / (b - a), 0), 1);
+
+  const markSeen = () => {
+    try {
+      sessionStorage.setItem("yl-gate-seen", "1");
+    } catch {
+      /* private mode — gate simply replays next visit */
+    }
+  };
+
+  const update = () => {
+    const runway = (spacer?.offsetHeight || window.innerHeight * 1.85) - 2;
+    const p = Math.min(window.scrollY / runway, 1);
+
+    lines.forEach((line, i) => line.classList.toggle("on", p >= LINE_AT[i]));
+    gate.style.setProperty("--gp", win01(p, 0, 0.4).toFixed(3));
+    gate.classList.toggle("is-titled", p >= 0.38);
+    gate.classList.toggle("is-leaving", p >= 0.58);
+    gate.style.setProperty("--gate-y", ease(win01(p, 0.6, 0.97)).toFixed(4));
+    main?.style.setProperty("--arrive", ease(win01(p, 0.62, 0.98)).toFixed(3));
+
+    if (p >= 0.7 && !armed) {
+      armed = true;
+      document.body.classList.remove("gate-hold");
+      window.__ylArmSplit?.();
+    }
+    if (p >= 0.99 && !done) {
+      done = true;
+      gate.classList.add("is-done");
+      markSeen();
+    }
+    if (p < 0.99 && done) {
+      done = false;
+      gate.classList.remove("is-done");
+    }
+    gateTick = false;
+  };
+
+  update();
+  window.addEventListener(
+    "scroll",
+    () => {
+      if (!gateTick) {
+        gateTick = true;
+        requestAnimationFrame(update);
+      }
+    },
+    { passive: true }
+  );
+  window.addEventListener("resize", update);
+
+  gate.querySelector("[data-gate-enter]")?.addEventListener("click", () => {
+    const runway = spacer?.offsetHeight || window.innerHeight * 1.85;
+    window.scrollTo({ top: runway, behavior: "smooth" });
+  });
+} else if (gate) {
+  // Gate skipped (repeat view or reduced motion): collapse it and let the
+  // rail re-measure section offsets now that the runway is gone.
+  window.dispatchEvent(new Event("resize"));
 }
