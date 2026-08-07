@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" role="img" aria-label="Yudi Labs">
+  <defs>
+    <linearGradient id="ylg" x1="10" y1="8" x2="54" y2="58" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2dd4bf"/>
+      <stop offset="0.55" stop-color="#34d399"/>
+      <stop offset="1" stop-color="#a7f3d0"/>
+    </linearGradient>
+  </defs>
+  <!-- discrete manual tasks in -->
+  <rect x="8" y="6" width="11" height="11" rx="3" stroke="#2dd4bf" stroke-width="3.2"/>
+  <rect x="45" y="6" width="11" height="11" rx="3" stroke="#2dd4bf" stroke-width="3.2"/>
+  <!-- circuit traces converging into one trunk -->
+  <path d="M13.5 20 V25 C13.5 30 16.5 33 21.5 33 H26.5 C30 33 32 35.5 32 39 V45" stroke="url(#ylg)" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M50.5 20 V25 C50.5 30 47.5 33 42.5 33 H37.5 C34 33 32 35.5 32 39 V45" stroke="url(#ylg)" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- one automated output -->
+  <circle cx="32" cy="52.5" r="5.5" fill="url(#ylg)"/>
+  <circle cx="32" cy="52.5" r="9.5" stroke="#34d399" stroke-opacity="0.35" stroke-width="1.6"/>
+</svg>

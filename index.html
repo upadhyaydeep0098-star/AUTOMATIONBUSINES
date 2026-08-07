@@ -19,7 +19,7 @@
     <meta property="og:url" content="https://www.yudilabs.com/" />
     <meta property="og:title" content="Yudi Labs — AI Automation Built Around Your Existing Stack" />
     <meta property="og:description" content="Custom workflow automation and AI agents for teams ready to remove manual admin work. Live in 2–4 weeks, inside the tools you already use." />
-    <meta property="og:image" content="https://www.yudilabs.com/assets/og-image.png" />
+    <meta property="og:image" content="https://www.yudilabs.com/assets/og-card.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content="Yudi Labs — AI automation agency" />
@@ -27,16 +27,16 @@
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Yudi Labs — AI Automation Agency" />
     <meta name="twitter:description" content="We give business teams back the hours their software was supposed to save." />
-    <meta name="twitter:image" content="https://www.yudilabs.com/assets/og-image.png" />
+    <meta name="twitter:image" content="https://www.yudilabs.com/assets/og-card.png" />
     <meta name="twitter:image:alt" content="Yudi Labs — AI automation agency" />
 
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <link rel="icon" href="/assets/favicon-32.png" sizes="32x32" type="image/png" />
-    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" sizes="180x180" />
+    <link rel="icon" href="/assets/favicon-32-mark.png" sizes="32x32" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/apple-touch-icon-mark.png" sizes="180x180" />
     <link rel="manifest" href="/site.webmanifest" />
     <link rel="preload" href="/assets/fonts/inter-tight-latin.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="stylesheet" href="/styles.css?v=20260807" />
+    <link rel="stylesheet" href="/styles.css?v=20260807b" />
 
     <script type="application/ld+json">
     {
@@ -48,8 +48,8 @@
           "name": "Yudi Labs",
           "alternateName": "Yudi Labs AI Automation",
           "url": "https://www.yudilabs.com/",
-          "logo": { "@type": "ImageObject", "url": "https://www.yudilabs.com/assets/yudilabs-logo.svg" },
-          "image": "https://www.yudilabs.com/assets/og-image.png",
+          "logo": { "@type": "ImageObject", "url": "https://www.yudilabs.com/assets/yudilabs-mark.svg" },
+          "image": "https://www.yudilabs.com/assets/og-card.png",
           "description": "AI automation agency helping businesses automate repetitive admin work inside the software they already use.",
           "sameAs": [
             "https://www.linkedin.com/company/yudi-labs"
@@ -91,7 +91,7 @@
           "@id": "https://www.yudilabs.com/#service",
           "name": "Yudi Labs AI Automation Services",
           "url": "https://www.yudilabs.com/services",
-          "image": "https://www.yudilabs.com/assets/og-image.png",
+          "image": "https://www.yudilabs.com/assets/og-card.png",
           "provider": { "@id": "https://www.yudilabs.com/#organization" },
           "address": {
             "@type": "PostalAddress",
@@ -116,7 +116,7 @@
 
     <header class="m-header">
       <a class="m-brand" href="/" aria-label="Yudi Labs home">
-        <img src="/assets/yudilabs-logo.svg" alt="" width="22" height="22" />
+        <img src="/assets/yudilabs-mark.svg" alt="" width="22" height="22" />
         <span>Yudi Labs</span>
       </a>
       <nav class="m-nav" aria-label="Primary">
@@ -151,7 +151,7 @@
     <main id="main">
 
       <!-- HERO ──────────────────────────────────────── -->
-      <section class="m-hero">
+      <section class="m-hero" data-stage="Intake">
         <div class="m-container m-hero-grid">
           <div class="m-hero-copy">
             <span class="m-pill reveal">
@@ -197,8 +197,8 @@
                 <span>Human review</span>
                 <strong>Approve, edit, or hold</strong>
               </div>
-              <div class="motion-runlog" data-depth="0.04">
-                <span>Today’s run</span>
+              <div class="motion-runlog" data-depth="0.04" data-live-log>
+                <span>Live run</span>
                 <p><i></i> Report downloaded</p>
                 <p><i></i> Sheet updated</p>
                 <p><i></i> 3 exceptions found</p>
@@ -250,43 +250,49 @@
         </div>
       </section>
 
-      <!-- MOTION STORY ──────────────────────────────────────── -->
-      <section class="m-section motion-story" aria-labelledby="motion-story-title">
-        <div class="m-container motion-story-grid">
-          <div class="motion-story-copy reveal">
-            <p class="m-eyebrow">What changes</p>
-            <h2 class="m-h2" id="motion-story-title">Messy admin work becomes one clean review queue.</h2>
-            <p class="m-sub">
-              AI automation, in one sentence: collect the repetitive pieces,
-              run the predictable steps, and only pull your team in when judgment is needed.
-            </p>
-          </div>
-          <div class="motion-flow-panel reveal reveal-delay-1" role="img" aria-label="Before: download report, check portal, copy to sheet, chase missing file. After: everything completed overnight, three items need review">
-            <div aria-hidden="true" class="motion-flow-column">
-              <span class="motion-flow-label">Before</span>
-              <div class="motion-chip chip-one">Download report</div>
-              <div class="motion-chip chip-two">Check portal</div>
-              <div class="motion-chip chip-three">Copy to sheet</div>
-              <div class="motion-chip chip-four">Chase missing file</div>
+      <!-- ASSEMBLY SCENE — pinned, scroll-scrubbed ─────────────── -->
+      <section class="assemble" data-stage="Map" data-assemble aria-labelledby="assemble-title">
+        <div class="assemble-sticky">
+          <div class="m-container">
+            <div class="assemble-head">
+              <p class="m-eyebrow">Scroll to run it</p>
+              <h2 class="m-h2" id="assemble-title">Watch one messy week assemble itself.</h2>
             </div>
-            <div aria-hidden="true" class="motion-flow-center">
-              <span class="motion-pulse-ring"></span>
-              <strong>Automation runs the repeat steps</strong>
-            </div>
-            <div aria-hidden="true" class="motion-flow-column">
-              <span class="motion-flow-label">After</span>
-              <div class="motion-result-card">
-                <span>Exception list</span>
-                <strong>3 items need review</strong>
-                <p>Everything else completed overnight.</p>
+            <div class="assemble-stage" role="img" aria-label="As you scroll, eight scattered manual tasks are pulled into an ordered four-stage pipeline — collect, check, update, escalate — which outputs one short review queue">
+              <div class="assemble-canvas" aria-hidden="true">
+                <div class="assemble-slots">
+                  <div class="assemble-slot"><span>Collect</span>
+                    <div class="a-chip" style="--fx:-260px; --fy:-190px; --fr:-9deg">Invoice PDF</div>
+                    <div class="a-chip" style="--fx:-150px; --fy:-260px; --fr:6deg">Inbox triage</div>
+                  </div>
+                  <div class="assemble-slot"><span>Check</span>
+                    <div class="a-chip" style="--fx:-190px; --fy:210px; --fr:8deg">Portal check</div>
+                    <div class="a-chip" style="--fx:-40px; --fy:-240px; --fr:-6deg">Missing fields</div>
+                  </div>
+                  <div class="assemble-slot"><span>Update</span>
+                    <div class="a-chip" style="--fx:60px; --fy:230px; --fr:-8deg">Copy to sheet</div>
+                    <div class="a-chip" style="--fx:190px; --fy:-230px; --fr:5deg">CRM record</div>
+                  </div>
+                  <div class="assemble-slot"><span>Escalate</span>
+                    <div class="a-chip" style="--fx:240px; --fy:200px; --fr:9deg">Chase the file</div>
+                    <div class="a-chip" style="--fx:290px; --fy:-160px; --fr:-5deg">Status update</div>
+                  </div>
+                </div>
+                <div class="assemble-beam"><span></span></div>
+                <div class="assemble-out">
+                  <span>Output</span>
+                  <strong><b data-assemble-count>47</b> steps automated</strong>
+                  <p>3 exceptions routed to a person.</p>
+                </div>
               </div>
+              <p class="assemble-status" aria-hidden="true" data-assemble-status>Eight manual tasks, scattered across the week…</p>
             </div>
           </div>
         </div>
       </section>
 
       <!-- AUTOMATION CONSOLE ──────────────────────────────────────── -->
-      <section class="m-section ops-system" aria-labelledby="ops-title">
+      <section class="m-section ops-system" data-stage="Build" aria-labelledby="ops-title">
         <div class="m-container ops-grid">
           <div class="ops-copy reveal">
             <p class="m-eyebrow">Built to feel calm</p>
@@ -439,7 +445,7 @@
       </section>
 
       <!-- NUMBERS ──────────────────────────────────────── -->
-      <section class="m-section-stats" aria-labelledby="numbers-title">
+      <section class="m-section-stats" data-stage="Review" aria-labelledby="numbers-title">
         <div class="m-container">
           <div class="m-section-head m-center reveal">
             <p class="m-eyebrow">Why trust the numbers</p>
@@ -480,7 +486,7 @@
       </section>
 
       <!-- CTA ──────────────────────────────────────── -->
-      <section class="m-cta-section">
+      <section class="m-cta-section" data-stage="Go live">
         <div class="m-container m-center reveal">
           <h2 class="m-display-md">Map the workflow your team wants gone.</h2>
           <p class="m-sub">Book a 30-minute call. We will walk through one repetitive workflow, estimate the hours being lost, and show the simplest path to automate it. Based in Toronto, working with teams across North America and Europe.</p>
@@ -498,7 +504,7 @@
       <div class="m-container m-footer-inner">
         <div class="m-footer-col">
           <a class="m-brand" href="/" aria-label="Yudi Labs home">
-            <img src="/assets/yudilabs-logo.svg" alt="" width="22" height="22" />
+            <img src="/assets/yudilabs-mark.svg" alt="" width="22" height="22" />
             <span>Yudi Labs</span>
           </a>
           <p class="m-footer-tagline">AI automation agency in Toronto. We remove repetitive admin work from the software you already use.</p>
@@ -532,6 +538,6 @@
       </div>
     </footer>
 
-    <script src="/script.js?v=20260807" defer></script>
+    <script src="/script.js?v=20260807b" defer></script>
   </body>
 </html>

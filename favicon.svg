@@ -1,7 +1,15 @@
-<svg width="32" height="32" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-  <g transform="rotate(15 24 24)" stroke="#df6d55" stroke-width="5" stroke-linecap="round">
-    <line x1="24" y1="9" x2="24" y2="39"/>
-    <line x1="11" y1="16.5" x2="37" y2="31.5"/>
-    <line x1="11" y1="31.5" x2="37" y2="16.5"/>
-  </g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none">
+  <defs>
+    <linearGradient id="ylg" x1="10" y1="8" x2="54" y2="58" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2dd4bf"/>
+      <stop offset="0.55" stop-color="#34d399"/>
+      <stop offset="1" stop-color="#a7f3d0"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="#070c0b"/>
+  <rect x="12" y="9" width="10" height="10" rx="3" stroke="#2dd4bf" stroke-width="3"/>
+  <rect x="42" y="9" width="10" height="10" rx="3" stroke="#2dd4bf" stroke-width="3"/>
+  <path d="M17 22 V26 C17 30 19.5 32.5 23.5 32.5 H27 C30 32.5 32 35 32 38 V43" stroke="url(#ylg)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M47 22 V26 C47 30 44.5 32.5 40.5 32.5 H37 C34 32.5 32 35 32 38 V43" stroke="url(#ylg)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="32" cy="49.5" r="5" fill="url(#ylg)"/>
 </svg>

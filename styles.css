@@ -3133,3 +3133,297 @@ html.js .reveal.in-view[data-stagger] > *:nth-child(8) { transition-delay: 620ms
 
   .motion-board { transform: none !important; }
 }
+
+/* ==========================================================================
+   13. Automation flows — the page runs like a workflow
+   ========================================================================== */
+
+/* --- Automation rail: fixed pipeline that executes as you scroll --- */
+
+.auto-rail {
+  position: fixed;
+  left: 26px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 40;
+  height: 46vh;
+  display: none;
+  pointer-events: none;
+}
+
+@media (min-width: 1240px) {
+  .auto-rail { display: block; }
+}
+
+.auto-rail-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 5px;
+  width: 2px;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.09);
+  overflow: hidden;
+}
+
+.auto-rail-fill {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: var(--grad-accent);
+  transform-origin: 0 0;
+  transform: scaleY(var(--rail-p, 0));
+}
+
+.auto-rail-pulse {
+  position: absolute;
+  left: 6px;
+  top: 0;
+  width: 10px;
+  height: 10px;
+  margin: -5px 0 0 -5px;
+  border-radius: 50%;
+  background: var(--mint);
+  box-shadow: 0 0 12px rgba(45, 212, 191, 0.9), 0 0 30px rgba(45, 212, 191, 0.45);
+  transform: translateY(calc(var(--rail-p, 0) * 46vh));
+}
+
+.auto-rail-node {
+  position: absolute;
+  left: 6px;
+  width: 8px;
+  height: 8px;
+  margin: -4px 0 0 -4px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: var(--bg);
+  transition: background 300ms ease, border-color 300ms ease, box-shadow 300ms ease;
+}
+
+.auto-rail-node span {
+  position: absolute;
+  left: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: var(--font-display);
+  font-size: 0.66rem;
+  font-weight: 650;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  opacity: 0.55;
+  white-space: nowrap;
+  transition: opacity 300ms ease, color 300ms ease;
+}
+
+.auto-rail-node.is-done {
+  background: var(--teal);
+  border-color: var(--teal);
+}
+
+.auto-rail-node.is-active {
+  background: var(--mint);
+  border-color: var(--mint);
+  box-shadow: 0 0 10px rgba(45, 212, 191, 0.8);
+}
+
+.auto-rail-node.is-active span { opacity: 1; color: var(--mint); }
+.auto-rail-node.is-done span { opacity: 0.8; }
+
+/* --- Assembly scene: pinned, scroll-scrubbed --- */
+
+.assemble { position: relative; }
+
+html.js .assemble[data-assemble] { height: 320vh; }
+
+.assemble-sticky {
+  display: flex;
+  align-items: center;
+  min-height: 100svh;
+  padding: calc(var(--header-h) + 10px) 0 20px;
+}
+
+html.js .assemble[data-assemble] .assemble-sticky {
+  position: sticky;
+  top: 0;
+  height: 100svh;
+  min-height: 0;
+}
+
+.assemble-head { max-width: 640px; margin-bottom: 40px; }
+
+.assemble-stage { position: relative; }
+
+.assemble-canvas {
+  position: relative;
+  padding: clamp(24px, 4vw, 48px) clamp(20px, 3vw, 44px) clamp(20px, 3vw, 36px);
+  border-radius: var(--radius-xl);
+  border: 1px solid var(--line);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.01)),
+    var(--bg-elev);
+  box-shadow: 0 36px 100px rgba(0, 0, 0, 0.5);
+  overflow: visible;
+}
+
+.assemble-slots {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+}
+
+.assemble-slot {
+  min-height: 150px;
+  padding: 14px;
+  border-radius: var(--radius);
+  border: 1px dashed rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.015);
+  transition: border-color 400ms ease, background 400ms ease;
+}
+
+.assemble-slot.is-filled {
+  border: 1px solid rgba(45, 212, 191, 0.4);
+  background: rgba(45, 212, 191, 0.05);
+}
+
+.assemble-slot > span {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 0.7rem;
+  font-weight: 650;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+.assemble-slot.is-filled > span { color: var(--teal); }
+
+/* chips live at their docked position; --t 0 = scattered, 1 = docked */
+.a-chip {
+  --t: 0;
+  margin: 6px 0;
+  padding: 9px 12px;
+  border-radius: 11px;
+  border: 1px solid var(--line);
+  background: rgba(13, 22, 20, 0.92);
+  font-size: 0.82rem;
+  font-weight: 570;
+  color: var(--text-soft);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.4);
+  transform:
+    translate(calc((1 - var(--t)) * var(--fx, 0px)), calc((1 - var(--t)) * var(--fy, 0px)))
+    rotate(calc((1 - var(--t)) * var(--fr, 0deg)))
+    scale(calc(0.94 + 0.06 * var(--t)));
+  opacity: calc(0.55 + 0.45 * var(--t));
+  will-change: transform;
+}
+
+html.js .assemble[data-assemble] .a-chip { transition: none; }
+
+/* beam under the slots fills with progress */
+.assemble-beam {
+  margin: 22px 2px 0;
+  height: 2px;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+}
+
+.assemble-beam span {
+  display: block;
+  height: 100%;
+  background: var(--grad-accent);
+  transform-origin: 0 50%;
+  transform: scaleX(var(--beam-p, 0));
+}
+
+.assemble-out {
+  --t: 0;
+  position: absolute;
+  right: clamp(16px, 3vw, 40px);
+  bottom: -34px;
+  padding: 16px 20px;
+  border-radius: var(--radius);
+  border: 1px solid rgba(52, 211, 153, 0.45);
+  background: linear-gradient(160deg, rgba(52, 211, 153, 0.14), rgba(13, 22, 20, 0.95) 60%);
+  box-shadow: 0 22px 60px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(52, 211, 153, 0.12);
+  transform: translateY(calc((1 - var(--t)) * 26px));
+  opacity: var(--t);
+}
+
+.assemble-out span {
+  display: block;
+  margin-bottom: 4px;
+  font-size: 0.7rem;
+  font-weight: 650;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--emerald);
+}
+
+.assemble-out strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 660;
+  letter-spacing: -0.015em;
+}
+
+.assemble-out strong b {
+  font-weight: 700;
+  background: var(--grad-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.assemble-out p { margin: 4px 0 0; font-size: 0.84rem; color: var(--text-soft); }
+
+.assemble-status {
+  margin: 52px 0 0;
+  font-family: var(--font-display);
+  font-size: 0.92rem;
+  font-weight: 570;
+  color: var(--text-dim);
+}
+
+.assemble-status::before {
+  content: "▸ ";
+  color: var(--teal);
+}
+
+/* static fallback: small screens, no JS, or reduced motion — final state */
+@media (max-width: 900px) {
+  html.js .assemble[data-assemble] { height: auto; }
+  html.js .assemble[data-assemble] .assemble-sticky { position: static; height: auto; min-height: 0; }
+  .a-chip { --t: 1 !important; }
+  .assemble-out { --t: 1 !important; position: static; margin-top: 18px; display: inline-block; }
+  .assemble-beam span { transform: scaleX(1); }
+  .assemble-slot { border: 1px solid rgba(45, 212, 191, 0.4); background: rgba(45, 212, 191, 0.05); }
+  .assemble-slots { grid-template-columns: repeat(2, 1fr); }
+}
+
+html:not(.js) .a-chip { --t: 1; }
+html:not(.js) .assemble-out { --t: 1; }
+html:not(.js) .assemble-beam span { transform: scaleX(1); }
+
+@media (prefers-reduced-motion: reduce) {
+  html.js .assemble[data-assemble] { height: auto; }
+  html.js .assemble[data-assemble] .assemble-sticky { position: static; height: auto; min-height: 0; }
+  .a-chip { --t: 1 !important; }
+  .assemble-out { --t: 1 !important; }
+  .assemble-beam span { transform: scaleX(1) !important; }
+  .assemble-slot { border: 1px solid rgba(45, 212, 191, 0.4); }
+  .auto-rail { display: none !important; }
+}
+
+/* --- Live hero run-log --- */
+
+.motion-runlog p.log-in {
+  animation: log-in 420ms var(--ease-out) both;
+}
+
+@keyframes log-in {
+  from { opacity: 0; transform: translateY(-6px); }
+  to { opacity: 1; transform: translateY(0); }
+}

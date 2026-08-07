@@ -498,3 +498,170 @@ if (calendlyEmbed) {
     mount();
   }
 }
+
+/* ---------- Automation rail: the page runs as a pipeline ---------- */
+const stageSections = document.querySelectorAll("[data-stage]");
+if (stageSections.length >= 2 && !reduceMotion) {
+  const rail = document.createElement("div");
+  rail.className = "auto-rail";
+  rail.setAttribute("aria-hidden", "true");
+  rail.innerHTML =
+    '<div class="auto-rail-line"><span class="auto-rail-fill"></span></div>' +
+    '<div class="auto-rail-pulse"></div>';
+  const nodes = [];
+  stageSections.forEach((section) => {
+    const node = document.createElement("div");
+    node.className = "auto-rail-node";
+    node.innerHTML = `<span>${section.dataset.stage}</span>`;
+    rail.appendChild(node);
+    nodes.push({ el: node, section, p: 0 });
+  });
+  document.body.appendChild(rail);
+
+  const placeNodes = () => {
+    const docH = document.documentElement.scrollHeight - window.innerHeight;
+    nodes.forEach((n) => {
+      n.p = docH > 0 ? Math.min(Math.max(n.section.offsetTop / docH, 0), 1) : 0;
+      n.el.style.top = `${(n.p * 100).toFixed(2)}%`;
+    });
+  };
+
+  let railTick = false;
+  const updateRail = () => {
+    const docH = document.documentElement.scrollHeight - window.innerHeight;
+    const p = docH > 0 ? Math.min(window.scrollY / docH, 1) : 0;
+    rail.style.setProperty("--rail-p", p.toFixed(4));
+    let activeIdx = -1;
+    nodes.forEach((n, i) => {
+      const done = p >= n.p - 0.005;
+      n.el.classList.toggle("is-done", done);
+      if (done) activeIdx = i;
+    });
+    nodes.forEach((n, i) => n.el.classList.toggle("is-active", i === activeIdx));
+    railTick = false;
+  };
+
+  placeNodes();
+  updateRail();
+  window.addEventListener(
+    "scroll",
+    () => {
+      if (!railTick) {
+        railTick = true;
+        requestAnimationFrame(updateRail);
+      }
+    },
+    { passive: true }
+  );
+  window.addEventListener("resize", () => {
+    placeNodes();
+    updateRail();
+  });
+  window.addEventListener("load", () => {
+    placeNodes();
+    updateRail();
+  });
+}
+
+/* ---------- Assembly scene: scroll-scrubbed pinned choreography ---------- */
+const assemble = document.querySelector("[data-assemble]");
+if (assemble && !reduceMotion && window.matchMedia("(min-width: 901px)").matches) {
+  const chips = [...assemble.querySelectorAll(".a-chip")];
+  const slots = [...assemble.querySelectorAll(".assemble-slot")];
+  const beam = assemble.querySelector(".assemble-beam");
+  const out = assemble.querySelector(".assemble-out");
+  const counter = assemble.querySelector("[data-assemble-count]");
+  const status = assemble.querySelector("[data-assemble-status]");
+  const TOTAL_STEPS = 47;
+  const STATUS_LINES = [
+    [0.0, "Eight manual tasks, scattered across the week…"],
+    [0.18, "Collecting inputs — invoices, portals, inboxes…"],
+    [0.4, "Checking fields and matching records…"],
+    [0.62, "Updating sheets and systems…"],
+    [0.82, "Escalating 3 exceptions to a person…"],
+    [0.96, "Run complete — 47 steps, zero copy-paste."],
+  ];
+  const easeOut = (t) => 1 - Math.pow(1 - t, 3);
+  const window01 = (p, a, b) => Math.min(Math.max((p - a) / (b - a), 0), 1);
+
+  let lastStatus = "";
+  let scrubTick = false;
+  const scrub = () => {
+    const rect = assemble.getBoundingClientRect();
+    const total = assemble.offsetHeight - window.innerHeight;
+    const p = total > 0 ? Math.min(Math.max(-rect.top / total, 0), 1) : 1;
+
+    chips.forEach((chip, i) => {
+      const start = 0.05 + i * 0.072;
+      chip.style.setProperty("--t", easeOut(window01(p, start, start + 0.3)).toFixed(3));
+    });
+    slots.forEach((slot, i) => {
+      const lastChipStart = 0.05 + (i * 2 + 1) * 0.072;
+      slot.classList.toggle("is-filled", p >= lastChipStart + 0.3);
+    });
+    beam?.style.setProperty("--beam-p", window01(p, 0.1, 0.9).toFixed(3));
+    out?.style.setProperty("--t", easeOut(window01(p, 0.78, 0.94)).toFixed(3));
+    if (counter) {
+      counter.textContent = Math.round(easeOut(window01(p, 0.5, 0.95)) * TOTAL_STEPS).toString();
+    }
+    if (status) {
+      let line = STATUS_LINES[0][1];
+      STATUS_LINES.forEach(([threshold, text]) => {
+        if (p >= threshold) line = text;
+      });
+      if (line !== lastStatus) {
+        lastStatus = line;
+        status.textContent = line;
+      }
+    }
+    scrubTick = false;
+  };
+
+  scrub();
+  window.addEventListener(
+    "scroll",
+    () => {
+      if (!scrubTick) {
+        scrubTick = true;
+        requestAnimationFrame(scrub);
+      }
+    },
+    { passive: true }
+  );
+  window.addEventListener("resize", scrub);
+}
+
+/* ---------- Live hero run-log ---------- */
+const liveLog = document.querySelector("[data-live-log]");
+if (liveLog && !reduceMotion) {
+  const LOG_LINES = [
+    "Report downloaded",
+    "Sheet updated",
+    "3 exceptions found",
+    "Invoice #1042 matched",
+    "Portal status changed",
+    "2 rows reconciled",
+    "File renamed + filed",
+    "CRM record created",
+    "Reminder scheduled",
+    "Exception → review queue",
+  ];
+  let logIdx = 3;
+  let logVisible = true;
+  if ("IntersectionObserver" in window) {
+    new IntersectionObserver(
+      (entries) => entries.forEach((e) => (logVisible = e.isIntersecting)),
+      { rootMargin: "40px" }
+    ).observe(liveLog);
+  }
+  setInterval(() => {
+    if (!logVisible || document.hidden) return;
+    const line = document.createElement("p");
+    line.className = "log-in";
+    line.innerHTML = "<i></i> " + LOG_LINES[logIdx % LOG_LINES.length];
+    logIdx += 1;
+    liveLog.appendChild(line);
+    const entries = liveLog.querySelectorAll("p");
+    if (entries.length > 3) entries[0].remove();
+  }, 2600);
+}
