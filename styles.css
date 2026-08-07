@@ -3428,42 +3428,64 @@ html:not(.js) .assemble-beam span { transform: scaleX(1); }
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* --- Entry gate: boot sequence + curtain reveal --- */
+/* --- Entry lock screen: your workweek at 6:47 AM — swipe up to unlock --- */
 
-/* scroll runway that drives the gate; collapses when the gate is off */
 .gate-space { display: none; }
-html.js .gate-space { display: block; height: 185vh; }
+html.js .gate-space { display: block; height: 145vh; }
 html.js.gate-off .gate-space { display: none; }
 
 .gate {
   position: fixed;
   inset: 0;
   z-index: 90;
-  display: grid;
-  place-items: center;
-  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(26px, 4.5vh, 46px);
+  padding: 40px 24px;
+  overflow: hidden;
   background:
-    radial-gradient(52vw 42vh at 50% -8%, rgba(45, 212, 191, 0.13), transparent 62%),
-    radial-gradient(46vw 40vh at 88% 108%, rgba(52, 211, 153, 0.09), transparent 60%),
+    radial-gradient(70vw 60vh at 50% -12%, rgba(45, 212, 191, 0.17), transparent 62%),
+    radial-gradient(50vw 44vh at 90% 108%, rgba(52, 211, 153, 0.1), transparent 60%),
+    radial-gradient(44vw 40vh at 4% 88%, rgba(45, 212, 191, 0.07), transparent 60%),
     var(--bg);
   transform: translate3d(0, calc(var(--gate-y, 0) * -116%), 0);
+  border-radius: 0 0 calc(var(--gate-y, 0) * 40px) calc(var(--gate-y, 0) * 40px);
+  box-shadow: 0 40px 120px rgba(0, 0, 0, calc(var(--gate-y, 0) * 0.8));
   will-change: transform;
 }
 
+/* slow ambient drift, like a lock-screen wallpaper breathing */
 .gate::before {
+  content: "";
+  position: absolute;
+  inset: -20%;
+  pointer-events: none;
+  background:
+    radial-gradient(42vw 36vh at 30% 30%, rgba(45, 212, 191, 0.09), transparent 65%),
+    radial-gradient(38vw 34vh at 72% 62%, rgba(52, 211, 153, 0.07), transparent 60%);
+  animation: lock-drift 16s ease-in-out infinite alternate;
+}
+
+@keyframes lock-drift {
+  from { transform: translate3d(-2%, -1.5%, 0) scale(1); }
+  to { transform: translate3d(2%, 1.5%, 0) scale(1.06); }
+}
+
+.gate::after {
   content: "";
   position: absolute;
   inset: 0;
   pointer-events: none;
   background-image:
-    linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
   background-size: 56px 56px;
-  mask-image: radial-gradient(90vw 80vh at 50% 45%, #000 20%, transparent 80%);
-  -webkit-mask-image: radial-gradient(90vw 80vh at 50% 45%, #000 20%, transparent 80%);
+  mask-image: radial-gradient(90vw 85vh at 50% 40%, #000 15%, transparent 80%);
+  -webkit-mask-image: radial-gradient(90vw 85vh at 50% 40%, #000 15%, transparent 80%);
 }
 
-/* glowing lower edge so the curtain reads as a surface while lifting */
 .gate-edge {
   position: absolute;
   left: 0;
@@ -3472,138 +3494,188 @@ html.js.gate-off .gate-space { display: none; }
   height: 2px;
   background: linear-gradient(90deg, transparent, rgba(45, 212, 191, 0.7), transparent);
   filter: drop-shadow(0 0 14px rgba(45, 212, 191, 0.8));
+  opacity: var(--gate-y, 0);
 }
 
 .gate.is-done { visibility: hidden; pointer-events: none; }
 html:not(.js) .gate { display: none; }
 html.js.gate-off .gate { display: none; }
 
-.gate-core {
+/* parallax layers: each lifts at its own rate while unlocking */
+.lock-layer,
+.lock-unlock {
   position: relative;
-  width: min(560px, 100%);
-  text-align: center;
+  transform: translate3d(0, calc(var(--gate-y, 0) * var(--lift, 1) * -34vh), 0);
+  will-change: transform;
 }
 
-.gate-mark {
-  width: 92px;
-  height: 92px;
-  margin: 0 auto 30px;
-  filter: drop-shadow(0 0 22px rgba(45, 212, 191, calc(0.25 + var(--gp, 0) * 0.45)));
-  transform: scale(calc(0.92 + var(--gp, 0) * 0.08));
-}
+.lock-layer-clock { --lift: 1.25; }
+.lock-layer-notifs { --lift: 0.92; }
+.lock-unlock { --lift: 0.8; }
 
-.gate-term {
-  margin: 0 auto 18px;
-  padding: 18px 22px;
-  text-align: left;
-  border-radius: var(--radius);
-  border: 1px solid var(--line);
-  background: rgba(13, 22, 20, 0.8);
-  font-family: ui-monospace, "SF Mono", "Cascadia Code", Menlo, Consolas, monospace;
-  font-size: 0.84rem;
-  line-height: 1.5;
-}
+.lock-layer-clock { text-align: center; }
 
-.gate-line {
-  display: flex;
-  gap: 10px;
-  margin: 4px 0;
-  color: var(--text-soft);
-  opacity: 0;
-  transform: translateY(6px);
-  transition: opacity 420ms var(--ease-out), transform 420ms var(--ease-out);
-}
-
-.gate-line span { color: var(--teal); }
-
-.gate-line b {
-  margin-left: auto;
-  font-weight: 650;
-  color: var(--emerald);
-  opacity: 0;
-  transition: opacity 300ms ease 260ms;
-}
-
-.gate-line.on { opacity: 1; transform: none; }
-.gate-line.on b { opacity: 1; }
-
-.gate-bar {
-  height: 2px;
-  margin: 0 auto 34px;
-  border-radius: 2px;
-  background: rgba(255, 255, 255, 0.08);
-  overflow: hidden;
-}
-
-.gate-bar span {
-  display: block;
-  height: 100%;
-  background: var(--grad-accent);
-  transform-origin: 0 50%;
-  transform: scaleX(var(--gp, 0));
-}
-
-.gate-title {
-  margin: 0 0 30px;
-  font-family: var(--font-display);
-  font-size: clamp(1.9rem, 4.6vw, 3.1rem);
-  font-weight: 700;
-  line-height: 1.08;
-  letter-spacing: -0.04em;
-  text-wrap: balance;
-  opacity: 0;
-  transform: translateY(16px);
-  filter: blur(6px);
-  transition: opacity 750ms var(--ease-out), transform 750ms var(--ease-out), filter 750ms var(--ease-out);
-}
-
-.gate.is-titled .gate-title { opacity: 1; transform: none; filter: none; }
-
-.gate-hint {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 18px;
-  transition: opacity 500ms ease;
-}
-
-.gate.is-leaving .gate-hint { opacity: 0; }
-
-.gate-enter {
+.lock-status {
   display: inline-flex;
   align-items: center;
-  min-height: 46px;
-  padding: 0 26px;
-  border: 0;
+  gap: 9px;
+  margin: 0 0 clamp(10px, 2vh, 20px);
+  padding: 8px 16px;
   border-radius: 999px;
-  background: var(--grad-accent);
-  color: var(--ink-on-accent);
-  font-family: var(--font-body);
-  font-size: 0.94rem;
-  font-weight: 650;
-  cursor: pointer;
-  box-shadow: 0 0 0 1px rgba(45, 212, 191, 0.3), 0 10px 34px rgba(45, 212, 191, 0.22);
-  transition: transform 260ms var(--ease-spring), filter 200ms ease;
+  border: 1px solid rgba(45, 212, 191, 0.28);
+  background: rgba(45, 212, 191, 0.07);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  font-size: 0.86rem;
+  font-weight: 550;
+  color: var(--mint);
+  animation: lock-in 900ms var(--ease-out) both;
 }
 
-.gate-enter:hover { transform: translateY(-2px); filter: brightness(1.06); }
+.lock-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--emerald);
+  box-shadow: 0 0 10px rgba(52, 211, 153, 0.9);
+}
 
-.gate-scroll {
-  font-size: 0.9rem;
+.lock-clock {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(5.4rem, 17vh, 10.5rem);
+  font-weight: 250;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  color: var(--text);
+  text-shadow: 0 0 60px rgba(45, 212, 191, 0.25);
+  animation: lock-in 900ms var(--ease-out) 90ms both;
+}
+
+.lock-colon { animation: lock-blink 2s steps(1) infinite; }
+
+@keyframes lock-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.25; }
+}
+
+.lock-date {
+  margin: clamp(4px, 1vh, 10px) 0 0;
+  font-size: clamp(1rem, 2.2vh, 1.2rem);
+  font-weight: 500;
+  color: var(--text-soft);
+  animation: lock-in 900ms var(--ease-out) 180ms both;
+}
+
+/* notification stack — glass cards, staggered arrival */
+.lock-layer-notifs {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: min(430px, 100%);
+}
+
+.lock-notif {
+  display: flex;
+  gap: 13px;
+  align-items: flex-start;
+  padding: 13px 16px;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(16, 26, 24, 0.6);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+  backdrop-filter: blur(16px) saturate(140%);
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.35);
+}
+
+.lock-notif:nth-child(1) { animation: lock-in 800ms var(--ease-out) 500ms both; }
+.lock-notif:nth-child(2) { animation: lock-in 800ms var(--ease-out) 950ms both; }
+.lock-notif:nth-child(3) { animation: lock-in 800ms var(--ease-out) 1400ms both; }
+
+@keyframes lock-in {
+  from { opacity: 0; transform: translateY(18px); filter: blur(5px); }
+  to { opacity: 1; transform: translateY(0); filter: none; }
+}
+
+.lock-notif-icon {
+  flex-shrink: 0;
+  width: 34px;
+  height: 34px;
+  margin-top: 2px;
+  border-radius: 10px;
+  background:
+    url("/assets/yudilabs-mark.svg") center / 20px no-repeat,
+    rgba(45, 212, 191, 0.1);
+  border: 1px solid rgba(45, 212, 191, 0.3);
+}
+
+.lock-notif-title {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 0 0 2px;
+  font-size: 0.92rem;
+  font-weight: 640;
+  color: var(--text);
+}
+
+.lock-notif-title em {
+  font-style: normal;
+  font-weight: 500;
+  font-size: 0.78rem;
   color: var(--text-dim);
 }
 
-.gate-arrow {
-  display: inline-block;
-  animation: gate-nudge 1.8s var(--ease-out) infinite;
+.lock-notif-body {
+  margin: 0;
+  font-size: 0.85rem;
+  line-height: 1.45;
+  color: var(--text-soft);
 }
 
-@keyframes gate-nudge {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(5px); }
+/* unlock affordance */
+.lock-unlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  animation: lock-in 900ms var(--ease-out) 1900ms both;
 }
 
-/* site arrival: main scales in and header fades as the curtain lifts */
+.lock-btn {
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  border: 1px solid rgba(45, 212, 191, 0.4);
+  border-radius: 50%;
+  background: rgba(45, 212, 191, 0.1);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  color: var(--mint);
+  cursor: pointer;
+  transition: transform 260ms var(--ease-spring), background 200ms ease, box-shadow 260ms ease;
+}
+
+.lock-btn:hover {
+  transform: translateY(-3px);
+  background: rgba(45, 212, 191, 0.18);
+  box-shadow: 0 10px 30px rgba(45, 212, 191, 0.25);
+}
+
+.lock-btn svg { animation: lock-rise 2s var(--ease-out) infinite; }
+
+@keyframes lock-rise {
+  0%, 100% { transform: translateY(2px); opacity: 0.7; }
+  50% { transform: translateY(-2px); opacity: 1; }
+}
+
+.lock-hint {
+  font-size: 0.88rem;
+  color: var(--text-dim);
+}
+
+/* site arrival beneath the lifting glass */
 html.js body.gate-hold .m-header {
   opacity: 0;
   transform: translateY(-8px);
@@ -3614,9 +3686,18 @@ html.js body.gate-hold .m-header {
     opacity 600ms var(--ease-out), transform 600ms var(--ease-out);
 }
 
-html.js body.gate-hold main {
-  transform: scale(calc(1.045 - var(--arrive, 0) * 0.045)) translateY(calc((1 - var(--arrive, 0)) * 14px));
-  transform-origin: 50% 18%;
+/* While unlocking, main is pinned beneath the glass (--gate-pin cancels the
+   document scroll) and comes into focus as the sheet lifts — like a home
+   screen behind a lock screen. All values reach identity exactly at p=1. */
+html.js body.gate-run main {
+  transform: translateY(var(--gate-pin, 0px)) scale(calc(1.06 - var(--arrive, 0) * 0.06));
+  transform-origin: 50% 22%;
+  filter: blur(calc((1 - var(--arrive, 0)) * 6px)) brightness(calc(0.5 + var(--arrive, 0) * 0.5));
+}
+
+@media (max-height: 700px) {
+  .gate { gap: 18px; }
+  .lock-notif:nth-child(2) { display: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {

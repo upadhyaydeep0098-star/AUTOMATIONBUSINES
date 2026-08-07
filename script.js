@@ -684,51 +684,56 @@ if (liveLog && !reduceMotion) {
   }, 2600);
 }
 
-/* ---------- Entry gate: boot sequence + curtain reveal ---------- */
+/* ---------- Entry lock screen: swipe up to unlock the site ---------- */
 const gate = document.querySelector("[data-gate]");
 if (gate && gateActive) {
-  document.body.classList.add("gate-hold");
+  document.body.classList.add("gate-hold", "gate-run");
   const spacer = document.querySelector(".gate-space");
-  const lines = [...gate.querySelectorAll(".gate-line")];
-  const LINE_AT = [0.05, 0.13, 0.21, 0.29];
   const main = document.querySelector("main");
   let armed = false;
   let done = false;
   let gateTick = false;
 
-  const ease = (t) => 1 - Math.pow(1 - t, 3);
+  const dateEl = gate.querySelector("[data-lock-date]");
+  if (dateEl) {
+    dateEl.textContent = new Intl.DateTimeFormat("en-CA", {
+      weekday: "long",
+      month: "long",
+      day: "numeric",
+    }).format(new Date());
+  }
+
+  const smooth = (t) => t * t * (3 - 2 * t);
+  const easeOut = (t) => 1 - Math.pow(1 - t, 3);
   const win01 = (p, a, b) => Math.min(Math.max((p - a) / (b - a), 0), 1);
 
   const markSeen = () => {
     try {
       sessionStorage.setItem("yl-gate-seen", "1");
     } catch {
-      /* private mode — gate simply replays next visit */
+      /* private mode — the lock screen simply replays next visit */
     }
   };
 
   const update = () => {
-    const runway = (spacer?.offsetHeight || window.innerHeight * 1.85) - 2;
+    const runway = (spacer?.offsetHeight || window.innerHeight * 1.45) - 2;
     const p = Math.min(window.scrollY / runway, 1);
 
-    lines.forEach((line, i) => line.classList.toggle("on", p >= LINE_AT[i]));
-    gate.style.setProperty("--gp", win01(p, 0, 0.4).toFixed(3));
-    gate.classList.toggle("is-titled", p >= 0.38);
-    gate.classList.toggle("is-leaving", p >= 0.58);
-    gate.style.setProperty("--gate-y", ease(win01(p, 0.6, 0.97)).toFixed(4));
-    main?.style.setProperty("--arrive", ease(win01(p, 0.62, 0.98)).toFixed(3));
+    gate.style.setProperty("--gate-y", smooth(p).toFixed(4));
+    main?.style.setProperty("--gate-pin", `${Math.min(window.scrollY - runway, 0).toFixed(1)}px`);
+    main?.style.setProperty("--arrive", easeOut(win01(p, 0.1, 0.9)).toFixed(3));
 
-    if (p >= 0.7 && !armed) {
+    if (p >= 0.25 && !armed) {
       armed = true;
       document.body.classList.remove("gate-hold");
       window.__ylArmSplit?.();
     }
-    if (p >= 0.99 && !done) {
+    if (p >= 0.97 && !done) {
       done = true;
       gate.classList.add("is-done");
       markSeen();
     }
-    if (p < 0.99 && done) {
+    if (p < 0.97 && done) {
       done = false;
       gate.classList.remove("is-done");
     }
@@ -749,11 +754,11 @@ if (gate && gateActive) {
   window.addEventListener("resize", update);
 
   gate.querySelector("[data-gate-enter]")?.addEventListener("click", () => {
-    const runway = spacer?.offsetHeight || window.innerHeight * 1.85;
+    const runway = spacer?.offsetHeight || window.innerHeight * 1.45;
     window.scrollTo({ top: runway, behavior: "smooth" });
   });
 } else if (gate) {
-  // Gate skipped (repeat view or reduced motion): collapse it and let the
-  // rail re-measure section offsets now that the runway is gone.
+  // Lock screen skipped (repeat view or reduced motion): the runway is
+  // collapsed by CSS — let the rail re-measure section offsets.
   window.dispatchEvent(new Event("resize"));
 }

@@ -36,7 +36,7 @@
     <link rel="manifest" href="/site.webmanifest" />
     <link rel="preload" href="/assets/fonts/inter-tight-latin.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="stylesheet" href="/styles.css?v=20260807c" />
+    <link rel="stylesheet" href="/styles.css?v=20260807d" />
 
     <script type="application/ld+json">
     {
@@ -114,23 +114,42 @@
   <body>
     <a class="skip-link" href="#main">Skip to main content</a>
 
-    <!-- Entry gate: the automation runtime boots, scroll lifts the curtain -->
+    <!-- Entry: the lock screen of your workweek — swipe up to unlock -->
     <div class="gate-space" aria-hidden="true"></div>
     <div class="gate" data-gate>
-      <div class="gate-core">
-        <img class="gate-mark" src="/assets/yudilabs-mark.svg" alt="" width="92" height="92" />
-        <div class="gate-term" aria-hidden="true">
-          <p class="gate-line"><span>›</span> initializing automation runtime <b>ok</b></p>
-          <p class="gate-line"><span>›</span> connecting inbox · sheets · portals <b>ok</b></p>
-          <p class="gate-line"><span>›</span> mapping this week's repeat work <b>ok</b></p>
-          <p class="gate-line"><span>›</span> agents ready — awaiting your week <b>ok</b></p>
+      <div class="lock-layer lock-layer-clock" data-lift="1.25">
+        <p class="lock-status"><span class="lock-dot"></span> Yudi agents ran overnight</p>
+        <p class="lock-clock">6<span class="lock-colon">:</span>47</p>
+        <p class="lock-date" data-lock-date>Tuesday, August 7</p>
+      </div>
+      <div class="lock-layer lock-layer-notifs" data-lift="0.92">
+        <div class="lock-notif">
+          <span class="lock-notif-icon" aria-hidden="true"></span>
+          <div>
+            <p class="lock-notif-title">Overnight run complete <em>6:02</em></p>
+            <p class="lock-notif-body">47 routine steps finished across QuickBooks, Gmail and Sheets.</p>
+          </div>
         </div>
-        <div class="gate-bar" aria-hidden="true"><span></span></div>
-        <p class="gate-title">The future of admin work<br /><span class="grad-text">runs itself.</span></p>
-        <div class="gate-hint">
-          <button class="gate-enter" type="button" data-gate-enter>Enter</button>
-          <span class="gate-scroll">or scroll <span class="gate-arrow" aria-hidden="true">↓</span></span>
+        <div class="lock-notif">
+          <span class="lock-notif-icon" aria-hidden="true"></span>
+          <div>
+            <p class="lock-notif-title">Invoices filed <em>5:31</em></p>
+            <p class="lock-notif-body">3 invoices matched, coded, and ready for approval.</p>
+          </div>
         </div>
+        <div class="lock-notif">
+          <span class="lock-notif-icon" aria-hidden="true"></span>
+          <div>
+            <p class="lock-notif-title">Only 3 things need you <em>6:45</em></p>
+            <p class="lock-notif-body">Exceptions queued with full context. Everything else is done.</p>
+          </div>
+        </div>
+      </div>
+      <div class="lock-unlock" data-lift="0.8">
+        <button class="lock-btn" type="button" data-gate-enter aria-label="Unlock and enter the site">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 14 12 8 18 14"/></svg>
+        </button>
+        <span class="lock-hint">Swipe or scroll up — your day is ready</span>
       </div>
       <div class="gate-edge" aria-hidden="true"></div>
     </div>
@@ -559,6 +578,6 @@
       </div>
     </footer>
 
-    <script src="/script.js?v=20260807c" defer></script>
+    <script src="/script.js?v=20260807d" defer></script>
   </body>
 </html>
