@@ -120,6 +120,52 @@ workflowItems.forEach((item) => item.addEventListener("toggle", () => {
   if (item.open) workflowItems.forEach((other) => { if (other !== item) other.open = false; });
 }));
 
+/* Start with ordinary fragment links; enhance to tabs only when JS is ready. */
+const caseBrowser = document.querySelector("[data-case-browser]");
+if (caseBrowser) {
+  const navigation = caseBrowser.querySelector(".m-case-nav");
+  const links = [...navigation.querySelectorAll("a")];
+  const panels = [...caseBrowser.querySelectorAll("[data-case-panel]")];
+  const selectCase = (index, focus = false) => {
+    links.forEach((link, i) => {
+      link.setAttribute("aria-selected", String(i === index));
+      link.tabIndex = i === index ? 0 : -1;
+      panels[i].hidden = i !== index;
+    });
+    if (focus) links[index].focus();
+  };
+  navigation.setAttribute("role", "tablist");
+  links.forEach((link, index) => {
+    link.id = panels[index].id + "-tab";
+    link.setAttribute("role", "tab");
+    link.setAttribute("aria-controls", panels[index].id);
+    panels[index].setAttribute("role", "tabpanel");
+    panels[index].setAttribute("aria-labelledby", link.id);
+    panels[index].tabIndex = 0;
+    link.addEventListener("click", (event) => {
+      event.preventDefault();
+      selectCase(index);
+    });
+    link.addEventListener("keydown", (event) => {
+      let next = index;
+      if (["ArrowRight", "ArrowDown"].includes(event.key)) next = (index + 1) % links.length;
+      else if (["ArrowLeft", "ArrowUp"].includes(event.key)) next = (index + links.length - 1) % links.length;
+      else if (event.key === "Home") next = 0;
+      else if (event.key === "End") next = links.length - 1;
+      else return;
+      event.preventDefault();
+      selectCase(next, true);
+    });
+  });
+  const selectHash = () => {
+    const index = panels.findIndex((panel) => "#" + panel.id === window.location.hash);
+    selectCase(index < 0 ? 0 : index);
+  };
+  caseBrowser.classList.add("is-enhanced");
+  selectHash();
+  window.addEventListener("hashchange", selectHash);
+}
+
 document.querySelectorAll(".m-marquee-track, .service-tool-row").forEach((track) => {
   if (track.dataset.marqueeReady) return;
   [...track.children].forEach((child) => {
@@ -219,6 +265,8 @@ if (calculator) {
     hours.style.setProperty("--roi-fill", ((hourCount - Number(hours.min)) / (Number(hours.max) - Number(hours.min)) * 100) + "%");
     hours.setAttribute("aria-valuetext", hourCount + " hours per week");
     calculator.querySelector("[data-roi-hours-value]").textContent = hourCount;
+    const yearlyHours = calculator.querySelector("[data-roi-year-hours]");
+    if (yearlyHours) yearlyHours.textContent = (hourCount * 52).toLocaleString("en-US");
     calculator.querySelector("[data-roi-annual]").textContent = valid ? currency.format(hourCount * rateValue * 52) : "Enter a rate";
     calculator.querySelector("[data-roi-summary]").textContent = valid
       ? "Based on " + hourCount + " hours/week at " + currency.format(rateValue) + "/hour. USD; before automation costs."

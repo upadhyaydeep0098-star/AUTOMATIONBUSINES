@@ -7,7 +7,7 @@
 
     <title>AI Automation Agency for Admin Work | Yudi Labs</title>
 
-    <meta name="description" content="Yudi Labs is an AI automation agency in Toronto. We automate the repetitive admin work inside the software you already use — done before your team logs in." />
+    <meta name="description" content="Yudi Labs builds practical AI and workflow automations around your existing tools. Reduce repetitive admin work while your team keeps control of decisions." />
     <meta name="author" content="Yudi Labs" />
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
     <meta name="theme-color" content="#ffffff" />
@@ -17,8 +17,8 @@
     <meta property="og:site_name" content="Yudi Labs" />
     <meta property="og:locale" content="en_CA" />
     <meta property="og:url" content="https://www.yudilabs.com/" />
-    <meta property="og:title" content="Yudi Labs — AI Automation Built Around Your Existing Stack" />
-    <meta property="og:description" content="Custom workflow automation and AI agents for teams ready to remove manual admin work. Live in 2–4 weeks, inside the tools you already use." />
+    <meta property="og:title" content="Yudi Labs | AI Automation. A Lighter Workday." />
+    <meta property="og:description" content="The software is already there. We connect the steps your team still handles by hand, with clear rules and human review." />
     <meta property="og:image" content="https://www.yudilabs.com/assets/og-card.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
@@ -36,9 +36,10 @@
     <link rel="manifest" href="/site.webmanifest" />
     <link rel="preload" href="/assets/fonts/inter-tight-latin.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="stylesheet" href="/styles.css?v=20260918" />
+    <link rel="stylesheet" href="/styles.css?v=20261010" />
 
-    <link rel="stylesheet" href="/refresh.css?v=20260918" />
+    <link rel="stylesheet" href="/refresh.css?v=20261010" />
+    <link rel="stylesheet" href="/home-palette.css?v=20261010" />
 
     <script type="application/ld+json">
     {
@@ -134,115 +135,108 @@
     </div>
     <main id="main">
       <section class="m-home-hero" aria-labelledby="hero-title">
-        <div class="m-container">
-          <div class="m-home-intro">
-            <h1 id="hero-title" class="m-home-title">Admin work,<br />done before<br /><span>your team logs in.</span></h1>
-            <p class="m-home-lead">We automate the repetitive work between your tools.<br class="m-desktop-break" /> Your team keeps the decisions. We take care of the steps.</p>
-            <div class="m-actions m-actions-center">
-              <a class="m-btn" href="https://calendly.com/hello-yudilabs/30min" target="_blank" rel="noopener noreferrer">Book a mapping call<span class="sr-only"> (opens in new tab)</span><span class="m-arrow" aria-hidden="true"></span></a>
-              <a class="m-link" href="#workflows">See a workflow<span class="m-arrow" aria-hidden="true"></span></a>
+        <div class="m-container m-home-intro">
+          <h1 id="hero-title" class="m-home-title">AI automation.<br /><span>A lighter workday.</span></h1>
+          <div class="m-hero-aside">
+            <p>We take care of the repetitive work between your tools. Your people keep the decisions.</p>
+            <div class="m-actions"><a class="m-btn" href="https://calendly.com/hello-yudilabs/30min" target="_blank" rel="noopener noreferrer">Book a mapping call<span class="sr-only"> (opens in new tab)</span><span class="m-arrow" aria-hidden="true"></span></a><a class="m-link" href="#workflows">Explore the workflows<span class="m-arrow" aria-hidden="true"></span></a></div>
+          </div>
+        </div>
+        <div class="m-flow-stage" data-workflow-demo aria-label="Illustrative supplier quote workflow with sample data">
+          <div class="m-container m-flow-layout">
+            <div class="m-source-window">
+              <div class="m-window-heading"><img src="/assets/ui/mail.svg" alt="" width="22" height="22" /><strong>Outlook</strong><span>Supplier quotes</span></div>
+              <p class="m-window-copy">Same request. Three different attachments.</p>
+              <div class="m-quote-source" data-step="0"><img src="/assets/ui/file-text.svg" alt="" width="22" height="22" /><div><strong>Aster.pdf</strong><span>Shipping boxes · 100 units</span></div><span>$2.40 / box</span></div>
+              <div class="m-quote-source" data-step="1"><img src="/assets/ui/file-text.svg" alt="" width="22" height="22" /><div><strong>Beacon.pdf</strong><span>Shipping boxes · 100 units</span></div><span>$2.30 / box</span></div>
+              <div class="m-quote-source" data-step="2"><img src="/assets/ui/file-text.svg" alt="" width="22" height="22" /><div><strong>Cedar.pdf</strong><span>Shipping boxes · 100 units</span></div><span>$2.50 / box</span></div>
+            </div>
+            <div class="m-flow-connector" aria-hidden="true"></div>
+            <div class="m-flow-center"><div><img src="/assets/yudilabs-mark.svg" alt="" width="62" height="62" /></div><strong>Read. Match. Check.</strong></div>
+            <div class="m-flow-connector" aria-hidden="true"></div>
+            <div class="m-result-window">
+              <div class="m-window-heading"><img src="/assets/ui/table-2.svg" alt="" width="22" height="22" /><strong>Excel</strong><span>Quote comparison</span></div>
+              <table class="m-demo-table"><caption class="sr-only">Sample quotes for 100 shipping boxes; all prices in USD</caption><thead><tr><th scope="col">Supplier</th><th scope="col">Price / box</th><th scope="col">Delivery</th></tr></thead><tbody><tr><th scope="row">Aster</th><td>$2.40</td><td>$20</td></tr><tr><th scope="row">Beacon</th><td>$2.30</td><td class="m-cell-warning">Not stated</td></tr><tr><th scope="row">Cedar</th><td>$2.50</td><td>Included</td></tr></tbody></table>
+              <p class="m-table-note">A lower unit price is not the whole picture.</p>
             </div>
           </div>
-          <div class="m-workflow-demo" data-workflow-demo aria-label="Illustrative invoice workflow">
-            <div class="m-source-stack">
-              <div class="m-source" data-step="0"><span class="m-app-icon m-mail-icon" aria-hidden="true"><img src="/assets/ui/mail.svg" alt="" width="24" height="24" /></span><div><strong>Invoice received</strong><span>From your inbox</span></div><span class="m-source-time">08:14</span></div>
-              <div class="m-source" data-step="1"><span class="m-app-icon m-file-icon" aria-hidden="true"><img src="/assets/ui/file-text.svg" alt="" width="24" height="24" /></span><div><strong>Statement collected</strong><span>From a supplier portal</span></div><span class="m-source-time">08:15</span></div>
-              <div class="m-source" data-step="2"><span class="m-app-icon m-sheet-icon" aria-hidden="true"><img src="/assets/ui/table-2.svg" alt="" width="24" height="24" /></span><div><strong>Records matched</strong><span>With your tracking sheet</span></div><span class="m-source-time">08:16</span></div>
-            </div>
-            <div class="m-flow-wire m-flow-wire-in" aria-hidden="true"><span></span><span></span><span></span><i></i></div>
-            <div class="m-flow-hub">
-              <img src="/assets/yudilabs-mark.svg" alt="" width="36" height="36" />
-              <strong>Yudi Labs</strong><span>Match &amp; check</span>
-              <div class="m-hub-indicator" aria-hidden="true"><i></i><i></i><i></i></div>
-            </div>
-            <div class="m-flow-wire m-flow-wire-out" aria-hidden="true"><span></span><i></i></div>
-            <div class="m-review">
-              <div class="m-review-heading"><span class="m-check-icon" aria-hidden="true"><img src="/assets/ui/check.svg" alt="" width="22" height="22" /></span><div><strong>Ready for review</strong><span>The routine work is handled.</span></div></div>
-              <ul class="m-review-list">
-                <li><span>Invoice details</span><span class="m-state m-state-done">Matched</span></li>
-                <li><span>Supporting files</span><span class="m-state m-state-done">Filed</span></li>
-                <li><span>Amount mismatch</span><span class="m-state m-state-review">Needs you</span></li>
-              </ul>
-              <div class="m-review-note"><span class="m-status-dot"></span>Your team has the final say.</div>
-            </div>
-          </div>
-          <div class="m-demo-caption"><span>Illustrative workflow</span><button type="button" class="m-motion-toggle" data-motion-toggle aria-label="Pause workflow animation" aria-pressed="false" hidden><img src="/assets/ui/pause.svg" alt="" width="14" height="14" /><span>Pause</span></button></div>
+          <div class="m-container m-demo-caption"><div><button type="button" class="m-motion-toggle" data-motion-toggle aria-label="Pause workflow animation" aria-pressed="false" hidden><img src="/assets/ui/pause.svg" alt="" width="16" height="16" /><span>Pause</span></button><span>Illustrative workflow. Sample data.</span></div><p>Prepared by automation. Reviewed by you.</p></div>
         </div>
       </section>
-      <section class="m-tools-band" aria-label="Tools we work with">
-        <div class="m-container">
-          <p>Inside the tools you already use</p>
-          <ul class="m-tools"><li><span class="m-tool-mark m-qb" aria-hidden="true">qb</span>QuickBooks</li><li><span class="m-tool-mark m-ms" aria-hidden="true"><i></i><i></i><i></i><i></i></span>Microsoft 365</li><li><span class="m-tool-mark m-slack" aria-hidden="true">#</span>Slack</li><li class="m-hubspot">HubSpot</li><li><span class="m-tool-mark m-google" aria-hidden="true">G</span>Google Workspace</li></ul>
-        </div>
-      </section>
+      <section class="m-tools-band" aria-label="Working with your existing software"><div class="m-container"><h2>Your tools stay. The busywork goes.</h2><ul><li>Outlook</li><li>Excel</li><li>QuickBooks</li><li>Shopify</li></ul></div></section>
+
       <section class="m-home-section" id="workflows" aria-labelledby="workflows-title">
         <div class="m-container">
-          <div class="m-editorial-heading" data-enter>
-            <div><p class="m-eyebrow">The work between your tools</p><h2 id="workflows-title">Your software is good.<br />The gaps are the problem.</h2></div>
-            <p>Portals that need checking. Invoices that need matching. Reports that need pulling together. We handle the repeat steps your software leaves behind.</p>
+          <div class="m-editorial-heading" data-enter><h2 id="workflows-title">Familiar tools.<br /><span>Fewer manual steps.</span></h2><p>The software is already there. We connect the steps your team still handles by hand.</p></div>
+          <div class="m-case-browser" data-case-browser>
+            <nav class="m-case-nav" aria-label="Workflow examples">
+              <a href="#case-receipts"><span>01</span><div><strong>Match missing receipts</strong><small>QuickBooks + Gmail</small></div><span class="m-arrow" aria-hidden="true"></span></a>
+              <a href="#case-quotes"><span>02</span><div><strong>Compare supplier quotes</strong><small>Outlook + Excel</small></div><span class="m-arrow" aria-hidden="true"></span></a>
+              <a href="#case-stock"><span>03</span><div><strong>Prepare stock updates</strong><small>Supplier files + Shopify</small></div><span class="m-arrow" aria-hidden="true"></span></a>
+            </nav>
+            <div class="m-case-panels">
+              <article id="case-receipts" class="m-case-panel" data-case-panel>
+                <h3>The receipt is there.<br />Now find it.</h3>
+                <div class="m-match-visual" aria-label="Example expense and suggested matching receipt">
+                  <div class="m-match-record"><span>QUICKBOOKS EXPENSE</span><strong>Northstar Supplies</strong><small>Sep 10</small><b>$128.40</b></div>
+                  <div class="m-match-bridge" aria-hidden="true"><img src="/assets/ui/check.svg" alt="" width="22" height="22" /></div>
+                  <div class="m-match-record"><span>GMAIL ATTACHMENT</span><strong>Northstar Supplies</strong><small>Sep 10 · NS-1042.pdf</small><b>$128.40</b></div>
+                </div>
+                <div class="m-before-after"><div><span>Today</span><p>Search the inbox. Check the date and amount. Chase what's missing.</p></div><div><span>With automation</span><p>Suggested matches, source files, and a short list for review.</p></div></div>
+                <div class="m-case-bottom"><a class="m-link" href="/contact#brief">Map a workflow like this<span class="m-arrow" aria-hidden="true"></span></a><small>Illustrative example. You confirm the match.</small></div>
+              </article>
+              <article id="case-quotes" class="m-case-panel" data-case-panel>
+                <h3>Compare the details.<br />Not just the price.</h3>
+                <div class="m-quote-visual"><span>OUTLOOK ATTACHMENTS → EXCEL COMPARISON</span><table class="m-demo-table"><caption class="sr-only">Illustrative supplier comparison in USD</caption><thead><tr><th scope="col">Supplier</th><th scope="col">Price / box</th><th scope="col">Delivery</th></tr></thead><tbody><tr><th scope="row">Aster</th><td>$2.40</td><td>$20</td></tr><tr><th scope="row">Beacon</th><td>$2.30</td><td class="m-cell-warning">Not stated</td></tr><tr><th scope="row">Cedar</th><td>$2.50</td><td>Included</td></tr></tbody></table></div>
+                <div class="m-before-after"><div><span>Today</span><p>Open each PDF. Retype the line items. Check units and delivery charges.</p></div><div><span>With automation</span><p>A comparison sheet with missing details flagged. Your buyer chooses.</p></div></div>
+                <div class="m-case-bottom"><a class="m-link" href="/contact#brief">Map a workflow like this<span class="m-arrow" aria-hidden="true"></span></a><small>Illustrative example. No automatic purchases.</small></div>
+              </article>
+              <article id="case-stock" class="m-case-panel" data-case-panel>
+                <h3>New stock file.<br />No blind overwrites.</h3>
+                <div class="m-quote-visual"><span>SUPPLIER CSV → SHOPIFY UPDATE DRAFT</span><table class="m-demo-table"><caption class="sr-only">Illustrative supplier stock mapping</caption><thead><tr><th scope="col">Supplier code</th><th scope="col">Store variant</th><th scope="col">Check</th></tr></thead><tbody><tr><th scope="row">SUP-104</th><td>BOX-SM</td><td>Mapped</td></tr><tr><th scope="row">SUP-108</th><td>BOX-LG</td><td>Mapped</td></tr><tr><th scope="row">SUP-220</th><td>Unmatched</td><td class="m-cell-warning">Review</td></tr></tbody></table></div>
+                <div class="m-before-after"><div><span>Today</span><p>Translate supplier codes, check pack sizes, and prepare store updates by hand.</p></div><div><span>With automation</span><p>A mapped update draft. Unknown items and unusual changes stay out until reviewed.</p></div></div>
+                <div class="m-case-bottom"><a class="m-link" href="/contact#brief">Map a workflow like this<span class="m-arrow" aria-hidden="true"></span></a><small>Illustrative example. Availability is not sellable stock.</small></div>
+              </article>
+            </div>
           </div>
-          <div class="m-workflow-list" data-enter>
-            <details class="m-workflow-item" name="workflows" open>
-              <summary><span class="m-workflow-number">01</span><h3>Invoice intake</h3><span class="m-chevron" aria-hidden="true"></span></summary>
-              <div class="m-workflow-content">
-                <div class="m-before-after"><div><span>Before</span><p>Download files from email and supplier portals. Match each one to a purchase order.</p></div><div><span>After</span><p>Invoices collected, checked and filed. Only mismatches reach your team.</p></div><a class="m-link" href="/contact#brief">Map a workflow like this<span class="m-arrow" aria-hidden="true"></span></a></div>
-                <div class="m-mini-invoice" aria-label="Example invoice: matched and ready to file"><div class="m-mini-top"><strong>Invoice</strong><span class="m-state m-state-done">Matched</span></div><dl><div><dt>Source</dt><dd>Supplier portal</dd></div><div><dt>Invoice number</dt><dd>INV-10483</dd></div><div><dt>Purchase order</dt><dd>PO-0281</dd></div><div><dt>Status</dt><dd>Ready to file</dd></div></dl><div class="m-mini-paper" aria-hidden="true"><img src="/assets/ui/file-text.svg" alt="" width="38" height="38" /><span></span><span></span><span></span><i></i></div></div>
-              </div>
-            </details>
-            <details class="m-workflow-item" name="workflows">
-              <summary><span class="m-workflow-number">02</span><h3>Month-end reconciliation</h3><span class="m-chevron" aria-hidden="true"></span></summary>
-              <div class="m-workflow-content">
-                <div class="m-before-after"><div><span>Before</span><p>Export transactions from two systems. Compare rows in a spreadsheet and investigate the differences.</p></div><div><span>After</span><p>Records cross-checked every night. Your team starts with a focused list of unmatched entries.</p></div><a class="m-link" href="/workflow-automation">Explore workflow automation<span class="m-arrow" aria-hidden="true"></span></a></div>
-                <div class="m-mini-invoice"><div class="m-mini-top"><strong>Daily reconciliation</strong><span class="m-state m-state-done">Checked</span></div><dl class="m-mini-wide"><div><dt>Source records</dt><dd>Collected</dd></div><div><dt>Matching entries</dt><dd>Reconciled</dd></div><div><dt>Unmatched entries</dt><dd>Ready for review</dd></div></dl></div>
-              </div>
-            </details>
-            <details class="m-workflow-item" name="workflows">
-              <summary><span class="m-workflow-number">03</span><h3>Daily portal checks</h3><span class="m-chevron" aria-hidden="true"></span></summary>
-              <div class="m-workflow-content">
-                <div class="m-before-after"><div><span>Before</span><p>Log in to carrier, insurer or supplier portals each morning. Refresh pages and copy status changes into your tracker.</p></div><div><span>After</span><p>Scheduled checks update your records. Only a changed status, missing file or stalled item needs your attention.</p></div><a class="m-link" href="/services">See more use cases<span class="m-arrow" aria-hidden="true"></span></a></div>
-                <div class="m-mini-invoice"><div class="m-mini-top"><strong>Morning status check</strong><span class="m-state m-state-done">Complete</span></div><dl class="m-mini-wide"><div><dt>Portal reports</dt><dd>Downloaded</dd></div><div><dt>Tracking sheet</dt><dd>Updated</dd></div><div><dt>Missing document</dt><dd>Flagged for your team</dd></div></dl></div>
-              </div>
-            </details>
-          </div>
-          <p class="m-example-note">Illustrative workflows. Your mapping call establishes what is possible for your business.</p>
+          <p class="m-example-note">We start with what your software already does. Custom work is for the gaps that remain.</p>
         </div>
       </section>
-      <section class="m-control-band" aria-labelledby="control-title">
-        <div class="m-container">
-          <div class="m-control-heading" data-enter><h2 id="control-title">The boring work runs quietly.<br />Your team sees what matters.</h2><p><img src="/assets/ui/check.svg" alt="" width="20" height="20" />You keep the approve button.</p></div>
-          <ol class="m-process-track" data-enter>
-            <li><span class="m-process-number">01</span><h3>Collect</h3><i aria-hidden="true"></i><p>Pull files from your emails, portals and shared drives.</p></li>
-            <li><span class="m-process-number">02</span><h3>Check</h3><i aria-hidden="true"></i><p>Match records and flag anything that does not fit.</p></li>
-            <li><span class="m-process-number">03</span><h3>Update</h3><i aria-hidden="true"></i><p>Post to the right place and keep your records tidy.</p></li>
-            <li><span class="m-process-number">04</span><h3>Human review</h3><i aria-hidden="true"></i><p>Your team reviews exceptions before the work moves on.</p></li>
-          </ol>
-          <a class="m-control-link" href="/workflow-automation">See how we build your workflow<span class="m-arrow" aria-hidden="true"></span></a>
+
+      <section class="m-control-band" aria-labelledby="control-title"><div class="m-container m-control-layout"><h2 id="control-title">Less chasing.<br /><span>More control.</span></h2><ol><li><i aria-hidden="true"></i><h3>Collect</h3><p>The right files, from approved sources.</p></li><li><i aria-hidden="true"></i><h3>Check</h3><p>Agreed rules. Missing details flagged.</p></li><li><i aria-hidden="true"></i><h3>Review</h3><p>Your people keep the final decision.</p></li></ol></div></section>
+
+      <section class="m-home-section" id="how-it-works" aria-labelledby="process-title"><div class="m-container">
+        <h2 class="m-home-h2" id="process-title" data-enter>Start with one task.<br /><span>Make room for better work.</span></h2>
+        <div class="m-engagement-steps" data-enter>
+          <article><span>01</span><h3>Map the real task</h3><p>Show us the steps, the tools, and what goes wrong.</p><a class="m-link" href="/contact">Start with a mapping call<span class="m-arrow" aria-hidden="true"></span></a></article>
+          <article><span>02</span><h3>Build around your tools</h3><p>We connect the repeatable steps and test the exceptions.</p><a class="m-link" href="/services">Explore our services<span class="m-arrow" aria-hidden="true"></span></a></article>
+          <article><span>03</span><h3>Keep it working</h3><p>Monitoring, fixes, and improvements as your business changes.</p><a class="m-link" href="/services#pricing">See the care plan<span class="m-arrow" aria-hidden="true"></span></a></article>
         </div>
-      </section>
-      <section class="m-home-section" id="how-it-works" aria-labelledby="process-title">
-        <div class="m-container">
-          <div data-enter><p class="m-eyebrow">How we work</p><h2 class="m-home-h2" id="process-title">A real workflow. A clear plan.</h2></div>
-          <div class="m-engagement-steps" data-enter>
-            <article><span>01</span><h3>Observe</h3><p>We document the real workflow, including the exceptions.</p><a class="m-link" href="/contact">Start with a mapping call<span class="m-arrow" aria-hidden="true"></span></a></article>
-            <article><span>02</span><h3>Build</h3><p>We build and test inside the tools your team already uses.</p><a class="m-link" href="/services">Explore our services<span class="m-arrow" aria-hidden="true"></span></a></article>
-            <article><span>03</span><h3>Maintain</h3><p>We monitor the work and fix what changes.</p><a class="m-link" href="/services#pricing">The ongoing care plan<span class="m-arrow" aria-hidden="true"></span></a></article>
-          </div>
+      </div></section>
+
+      <section class="m-cost-band" id="roi" aria-labelledby="cost-title"><div class="m-container m-cost-layout" data-roi-calculator>
+        <div><h2 id="cost-title">Small tasks.<br />Real costs.</h2><p>See the annual value of time spent on one repetitive task.</p><div class="roi-controls"><label><span>Hours per week</span><div class="m-range-line"><input type="range" min="1" max="40" value="8" data-roi-hours /><strong><span data-roi-hours-value>8</span></strong></div></label><label><span>Hourly team cost (USD)</span><input type="number" min="10" max="250" step="1" value="35" data-roi-rate /></label></div></div>
+        <div class="m-cost-result"><output data-roi-annual aria-live="polite">$14,560</output><h3>Annual cost of manual time</h3><p><span data-roi-year-hours>416</span> hours / year</p><div class="m-cost-assumptions"><p data-roi-summary>Based on 8 hours/week at $35/hour. USD; before automation costs.</p><p>A cost estimate, not guaranteed savings. Build, software, maintenance, and review costs are not included.</p></div><a class="m-btn" href="https://calendly.com/hello-yudilabs/30min" target="_blank" rel="noopener noreferrer">Talk through the numbers<span class="sr-only"> (opens in new tab)</span><span class="m-arrow" aria-hidden="true"></span></a></div>
+      </div></section>
+
+      <section class="m-home-section" aria-labelledby="founder-title"><div class="m-container m-founder-layout" data-enter>
+        <figure class="m-founder-image"><img src="/assets/workflow-notes-960.webp" srcset="/assets/workflow-notes-480.webp 480w, /assets/workflow-notes-960.webp 960w" sizes="(max-width: 720px) calc(100vw - 40px), 45vw" alt="Illustrative workflow notes: collect and check completed, review still with a person." width="960" height="960" loading="lazy" decoding="async" /></figure>
+        <div><h2 class="m-home-h2" id="founder-title">Built for work<br /><span>that has to be right.</span></h2><p class="m-founder-statement">Founded by Deep Upadhyay, with experience building automation and reporting systems in RBC, CIBC, BMO and TD environments.</p><p class="m-example-note">Founder experience, not client endorsements.</p><a class="m-link" href="/about">Meet the founder<span class="m-arrow" aria-hidden="true"></span></a></div>
+      </div></section>
+
+      <section class="m-home-section m-home-faq" aria-labelledby="faq-title"><div class="m-container m-faq-layout">
+        <h2 class="m-home-h2" id="faq-title">A few good<br />questions.</h2>
+        <div class="m-faq-list">
+          <details open><summary>Do we need new software?<span class="m-chevron" aria-hidden="true"></span></summary><p>Usually, no. We start with the tools you already use and check what they can already do. Any additional software and costs are discussed before a build.</p></details>
+          <details><summary>What stays with our team?<span class="m-chevron" aria-hidden="true"></span></summary><p>Decisions, approvals, and anything outside the agreed rules. We define what can run automatically and what needs a person before the workflow goes live.</p></details>
+          <details><summary>Where does AI actually help?<span class="m-chevron" aria-hidden="true"></span></summary><p>Reading varied documents, organizing information, and preparing drafts. Clear, predictable tasks often need straightforward automation instead. We use the simplest approach that fits.</p></details>
+          <details><summary>How do you price the work?<span class="m-chevron" aria-hidden="true"></span></summary><p>The build is scoped and quoted before work starts. Hosting, monitoring, fixes, and ongoing improvements can be covered by a separate care plan. <a href="/services#pricing">See our engagement options.</a></p></details>
         </div>
-      </section>
-      <section class="m-founder-band" aria-labelledby="founder-title">
-        <div class="m-container m-founder-layout" data-enter>
-          <div><p class="m-eyebrow">Our perspective</p><h2 class="m-home-h2" id="founder-title">Built for the work<br />that has to be right.</h2></div>
-          <div><p class="m-founder-statement">Even the best software leaves gaps. We close them.</p><p class="m-founder-name"><strong>Deep Upadhyay</strong><span>Founder, Yudi Labs</span></p><p class="m-founder-context">Experience building automation and reporting systems in RBC, CIBC, BMO and TD environments.</p><a class="m-link" href="/about">Meet the founder<span class="m-arrow" aria-hidden="true"></span></a></div>
-        </div>
-      </section>
-      <section class="m-home-cta" aria-labelledby="cta-title">
-        <div class="m-container" data-enter>
-          <p class="m-eyebrow">Let's talk</p>
-          <h2 id="cta-title">Map the workflow<br />your team wants gone.</h2>
-          <p class="m-home-cta-copy">A free 30-minute conversation. One repetitive task. A practical next step.</p>
-          <div class="m-actions"><a class="m-btn" href="https://calendly.com/hello-yudilabs/30min" target="_blank" rel="noopener noreferrer">Book a mapping call<span class="sr-only"> (opens in new tab)</span><span class="m-arrow" aria-hidden="true"></span></a><a class="m-link" href="/contact#brief">Send the task first<span class="m-arrow" aria-hidden="true"></span></a></div>
-        </div>
-      </section>
+      </div></section>
+
+      <section class="m-home-cta" id="contact" aria-labelledby="cta-title"><div class="m-container m-cta-layout">
+        <h2 id="cta-title">One repetitive task.<br />Let's start there.</h2><div><p>Bring the task your team keeps putting off. We will map the steps, the gaps, and what is worth automating.</p><div class="m-actions"><a class="m-btn" href="https://calendly.com/hello-yudilabs/30min" target="_blank" rel="noopener noreferrer">Book a mapping call<span class="sr-only"> (opens in new tab)</span><span class="m-arrow" aria-hidden="true"></span></a><a class="m-link" href="/contact#brief">Send a brief instead<span class="m-arrow" aria-hidden="true"></span></a></div><small>30 minutes. No commitment.</small></div>
+      </div></section>
     </main>
     <footer class="m-footer">
       <div class="m-container m-footer-inner">
@@ -272,16 +266,15 @@
             <a href="mailto:hello@yudilabs.com">hello@yudilabs.com</a>
             <a href="https://calendly.com/hello-yudilabs/30min" target="_blank" rel="noopener noreferrer">Book a free 30-min call<span class="sr-only"> (opens in new tab)</span></a>
             <a href="https://www.linkedin.com/company/yudi-labs" target="_blank" rel="noopener noreferrer">LinkedIn<span class="sr-only"> (opens in new tab)</span></a>
-            <span>Toronto, Canada</span>
           </div>
         </div>
         <p class="m-footer-meta">
-          <span>© 2026 Yudi Labs · AI Automation Agency · Toronto</span>
+          <span>© 2026 Yudi Labs · AI Automation Agency</span>
           <span>Reply within 1 business day</span>
         </p>
       </div>
     </footer>
 
-    <script src="/script.js?v=20260918" defer></script>
+    <script src="/script.js?v=20261010" defer></script>
   </body>
 </html>

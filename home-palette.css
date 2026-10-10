@@ -1,0 +1,105 @@
+/* Approved homepage palette: the header, opening, and workflow examples. */
+.m-home :is(.m-header, .m-mobile-panel, .m-home-hero, .m-tools-band, #workflows) {
+  --text: #17191c;
+  --text-soft: #5d636b;
+  --text-dim: #5d636b;
+  --line: #dce0e4;
+  --line-strong: #b9c0c7;
+  --blue: #c43d2d;
+  --surface: #f2f4f5;
+  --surface-2: #e9edf0;
+  color: var(--text);
+}
+
+.m-home :is(.m-header, .m-mobile-panel, .m-home-hero, #workflows) ::selection {
+  background: #f7ddd8;
+  color: #17191c;
+}
+
+.m-home :is(.m-header .m-cta, .m-mobile-cta, .m-home-hero .m-btn) {
+  background: #c43d2d;
+  border-color: #c43d2d;
+  color: #fff;
+}
+
+.m-home :is(.m-header .m-cta, .m-mobile-cta, .m-home-hero .m-btn):hover {
+  background: #a32f22;
+  border-color: #a32f22;
+}
+
+.m-home :is(.m-home-title > span, #workflows .m-editorial-heading h2 > span) {
+  color: var(--text);
+}
+
+.m-home .m-hero-aside > p { color: var(--text-soft); }
+.m-home .m-hero-aside .m-link { color: var(--text); }
+.m-home .m-hero-aside .m-link:hover { color: var(--blue); }
+
+.m-home .m-flow-stage {
+  background: #f2f4f5;
+  border-top: 1px solid #e4e7ea;
+  border-bottom: 1px solid #e4e7ea;
+}
+
+.m-home :is(.m-source-window, .m-result-window) {
+  border-color: #d4d9de;
+  box-shadow: 0 4px 16px rgb(23 25 28 / 4%);
+}
+
+.m-home .m-window-heading { border-color: #e4e7ea; }
+.m-home .m-quote-source { border-color: #e9ecef; }
+.m-home .m-quote-source.is-active {
+  background: #fbebe8;
+  box-shadow: inset 3px 0 #c43d2d;
+}
+.m-home .m-flow-connector { background: #c8cfd5; }
+.m-home .m-flow-center > div { background: #17191c; }
+.m-home .m-demo-caption > p { background: transparent; padding-inline: 0; }
+
+.m-home .m-tools-band {
+  background: #fff;
+  border-bottom: 1px solid #dce0e4;
+}
+.m-home .m-tools-band li { color: #5d636b; }
+
+.m-home #workflows .m-case-panel {
+  background: #f2f4f5;
+  border-color: #dce0e4;
+}
+.m-home #workflows .m-case-nav a {
+  transition: border-color 180ms;
+}
+.m-home #workflows .m-case-nav a[aria-selected='true'] {
+  border-bottom-color: #c43d2d;
+}
+.m-home #workflows .m-match-record { border-top-color: #b9c0c7; }
+.m-home #workflows .m-match-bridge { border-top-color: #b9c0c7; }
+.m-home #workflows .m-match-bridge img {
+  background: #e1ece5;
+  border-color: #e1ece5;
+}
+.m-home #workflows .m-case-bottom .m-link { color: #a32f22; }
+.m-home #workflows .m-case-bottom .m-link:hover { color: #17191c; }
+
+@media (max-width: 600px) {
+  .m-home .m-home-title { font-size: 36px; }
+  .m-home .m-home-hero { padding-top: 24px; }
+  .m-home .m-home-intro { gap: 18px; padding-bottom: 24px; }
+}
+
+@media (max-width: 380px) {
+  .m-home .m-home-title { font-size: 32px; }
+}
+
+@media (max-height: 740px) and (max-width: 600px) {
+  .m-home .m-home-hero { padding-top: 16px; }
+  .m-home .m-home-intro { gap: 10px; padding-bottom: 16px; }
+  .m-home .m-hero-aside > p { margin-bottom: 12px; }
+  .m-home .m-flow-stage { padding-bottom: 8px; }
+  .m-home .m-demo-caption { min-height: 44px; }
+  .m-home .m-tools-band .m-container { padding-block: 18px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .m-home #workflows .m-case-nav a { transition: none; }
+}

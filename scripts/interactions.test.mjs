@@ -22,7 +22,7 @@ function element() {
   };
 }
 
-function fixture({ reduced = false, withForm = false, fetchResponse } = {}) {
+function fixture({ reduced = false, withForm = false, withCalculator = false, fetchResponse } = {}) {
   const preference = { ...element(), matches: reduced };
   const toggle = element();
   const label = element();
@@ -41,11 +41,23 @@ function fixture({ reduced = false, withForm = false, fetchResponse } = {}) {
   form.querySelector = () => button;
   form.appendChild = child => { form.status = child; };
   form.reset = () => { form.resets += 1; };
+  const hours = { ...element(), value: '8', min: '1', max: '40', style: { setProperty() {} } };
+  const rate = { ...element(), value: '35', min: '10', max: '250' };
+  rate.checkValidity = () => Number(rate.value) >= 10 && Number(rate.value) <= 250;
+  const annual = element();
+  const yearlyHours = element();
+  const calculatorFields = {
+    '[data-roi-hours]': hours, '[data-roi-rate]': rate,
+    '[data-roi-annual]': annual, '[data-roi-year-hours]': yearlyHours,
+    '[data-roi-hours-value]': element(), '[data-roi-summary]': element(),
+  };
+  const calculator = { querySelector: selector => calculatorFields[selector] };
   const document = {
     ...element(), hidden: false,
     querySelector(selector) {
       if (selector === '[data-workflow-demo]') return demo;
       if (selector === '[data-motion-toggle]') return toggle;
+      if (selector === '[data-roi-calculator]' && withCalculator) return calculator;
       return null;
     },
     querySelectorAll: selector => selector === '.task-form' && withForm ? [form] : [],
@@ -60,7 +72,7 @@ function fixture({ reduced = false, withForm = false, fetchResponse } = {}) {
     setInterval: callback => { timers.add(callback); return callback; },
     clearInterval: timer => timers.delete(timer),
   });
-  return { preference, toggle, demo, timers, document, form, button, requests: () => requests };
+  return { preference, toggle, demo, timers, document, form, button, hours, rate, annual, yearlyHours, requests: () => requests };
 }
 
 test('reduced motion starts with a static visible workflow and no timer', () => {
@@ -138,4 +150,34 @@ test('a second submission is ignored while the first is pending', async () => {
   complete({ ok: true });
   await first;
   assert.equal(app.form.resets, 1);
+});
+
+test('manual time calculator shows the annual cost and hours, not net savings', () => {
+  const app = fixture({ withCalculator: true });
+  assert.equal(app.annual.textContent, '$14,560');
+  assert.equal(app.yearlyHours.textContent, '416');
+});
+
+test('calculator recomputes when either input changes', () => {
+  const app = fixture({ withCalculator: true });
+  app.hours.value = '12';
+  app.hours.events.input();
+  app.rate.value = '40';
+  app.rate.events.input();
+  assert.equal(app.annual.textContent, '$24,960');
+  assert.equal(app.yearlyHours.textContent, '624');
+});
+
+test('calculator asks for a rate instead of showing a misleading zero', () => {
+  const app = fixture({ withCalculator: true });
+  app.rate.value = '';
+  app.rate.events.input();
+  assert.equal(app.annual.textContent, 'Enter a rate');
+});
+
+test('calculator does not display an out-of-range cost', () => {
+  const app = fixture({ withCalculator: true });
+  app.rate.value = '9999';
+  app.rate.events.input();
+  assert.equal(app.annual.textContent, 'Enter a rate');
 });
