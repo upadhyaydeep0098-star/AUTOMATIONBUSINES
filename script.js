@@ -284,7 +284,7 @@ if (calendlyEmbed) {
     calendlyEmbed.dataset.calendlyReady = "true";
     const widget = document.createElement("div");
     widget.className = "calendly-inline-widget";
-    widget.dataset.url = calendlyEmbed.dataset.calendlyUrl + "?background_color=ffffff&text_color=161a20&primary_color=315efb";
+    widget.dataset.url = calendlyEmbed.dataset.calendlyUrl + "?background_color=ffffff&text_color=17191c&primary_color=c43d2d";
     widget.style.minWidth = "280px";
     widget.style.height = "700px";
     calendlyEmbed.appendChild(widget);
